@@ -45,9 +45,8 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .prose{max-width:64ch;}
 .whogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,400px);
   gap:clamp(36px,6vw,80px);align-items:start;}
-.portrait{margin:0;border-radius:24px;overflow:hidden;padding-top:30px;
-  background:linear-gradient(180deg,#EFE7E3 0%,#E6DAD5 100%);}
-.portrait img{width:92%;margin:0 auto;display:block;}
+.portrait{margin:0;border-radius:24px;overflow:hidden;background:#E6DAD5;}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
 .prose p{margin:0 0 1.15em;}
 .prose p:last-child{margin-bottom:0;}
 
@@ -70,10 +69,17 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .btn:hover{background:#e04745;transform:translateY(-2px);box-shadow:0 8px 22px rgba(236,91,89,.32);}
 
 /* ── Hero ──────────────────────────────────────────────── */
-.hero{padding-block:clamp(56px,10vw,120px) clamp(52px,8vw,96px);}
+.hero{padding-block:clamp(48px,7vw,92px) clamp(52px,8vw,96px);}
+.herogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);
+  gap:clamp(30px,5vw,72px);align-items:center;}
+.heroshot{margin:0;position:relative;}
+.heroshot::before{content:"";position:absolute;left:4%;right:4%;bottom:0;top:9%;
+  border-radius:999px 999px 28px 28px;
+  background:linear-gradient(170deg,#F3E7E4 0%,#EFE0DC 55%,rgba(236,91,89,.16) 100%);}
+.heroshot img{position:relative;width:100%;display:block;}
 .hero .kicker{font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-soft);margin:0 0 26px;}
-.hero h1{font-size:clamp(38px,6.4vw,80px);max-width:19ch;}
+.hero h1{font-size:clamp(38px,5.1vw,66px);max-width:17ch;}
 .hero .mark{position:relative;white-space:nowrap;}
 .hero .mark svg{position:absolute;left:0;right:0;bottom:-.19em;width:100%;height:.26em;
   color:var(--coral);overflow:visible;}
@@ -88,10 +94,11 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .anchor em{font-style:normal;color:var(--coral);}
 .tiles{display:grid;gap:1px;background:rgba(181,172,168,.28);
   grid-template-columns:repeat(auto-fit,minmax(255px,1fr));border:1px solid rgba(181,172,168,.28);}
-.tile{background:var(--dark);padding:30px 28px;display:flex;gap:16px;align-items:flex-start;}
-.tile .n{font-family:var(--serif);font-variation-settings:var(--display);font-weight:600;
-  font-size:15px;color:var(--coral);line-height:1.5;flex:none;}
-.tile p{margin:0;font-size:16.5px;line-height:1.5;color:var(--sand);}
+.tile{background:var(--dark);padding:32px 30px;display:flex;gap:20px;align-items:flex-start;}
+.tile .n{font-family:var(--serif);font-variation-settings:var(--display);font-weight:700;
+  font-size:38px;color:var(--coral);line-height:.95;flex:none;min-width:1.7em;
+  letter-spacing:-0.02em;}
+.tile p{margin:0;font-size:19px;line-height:1.45;color:var(--sand);}
 
 /* ── Section head ──────────────────────────────────────── */
 .shead{margin-bottom:clamp(34px,4vw,54px);}
@@ -115,7 +122,10 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 /* ── Framework diagram ─────────────────────────────────── */
 .fw{margin-top:34px;border-top:1px solid var(--rule);padding-top:32px;}
 .fw-cap{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-soft);margin:0 0 18px;}
+  color:var(--ink-soft);margin:0 0 18px;display:flex;align-items:center;gap:10px;}
+.fw-cap::after{content:"";flex:1;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,#3D39E7 0 33.3%,#0A5A12 33.3% 66.6%,#8A2124 66.6% 100%);
+  opacity:.5;}
 .fw-comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;
   margin-bottom:26px;}
 .fw-comp div{border:1.5px solid;border-radius:12px;padding:16px 18px;}
@@ -127,10 +137,10 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .c3{--accent:#8A2124;background:#F7E7E6;border-color:rgba(138,33,36,.32);}
 .fw-layer.c1,.fw-layer.c2,.fw-layer.c3{background:none;}
 .fw-layer{display:grid;grid-template-columns:minmax(150px,190px) 1fr;gap:18px;align-items:start;
-  padding:18px 0 18px 18px;border-top:1px solid var(--rule);border-left:3px solid var(--accent);}
+  padding:18px 0 18px 20px;border-top:1px solid var(--rule);border-left:5px solid var(--accent);}
 .fw-layer:first-of-type{border-top:none;}
 .fw-layer h4{margin:0;font-family:var(--serif);font-variation-settings:var(--display);
-  font-weight:600;font-size:18px;}
+  font-weight:600;font-size:18px;color:var(--accent);}
 .fw-layer h4 span{display:block;font-family:var(--sans);font-size:12px;font-weight:700;
   letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;}
@@ -187,6 +197,8 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
   .nav .nav-cta{color:var(--coral);font-weight:700;border-bottom-color:var(--coral);}
 }
 @media (max-width:820px){
+  .herogrid{grid-template-columns:1fr;gap:34px;}
+  .heroshot{max-width:330px;margin-inline:auto;}
   .whogrid{grid-template-columns:1fr;}
   .portrait{max-width:340px;margin-inline:auto;}
   .fw-layer{grid-template-columns:1fr;gap:12px;}
@@ -215,12 +227,19 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 
   <!-- HERO -->
   <section class="hero wrap">
+    <div class="herogrid">
+    <div>
     <p class="kicker">Jeremy Rivers &middot; Operations and team leadership &middot; McKinney, Texas</p>
     <h1>I help overwhelmed leaders build ops and teams that run on a
       <span class="mark">system<svg viewBox="0 0 220 12" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path d="M3 8.4C48 3.6 122 2.4 217 6.2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>,
       not on them.</h1>
     <p class="support">The system is simple: a clear plan, clear roles, and a checkpoint rhythm that runs weekly to yearly and holds everyone accountable. It gets the entire team on the same page, executing with confidence day-to-day in the right direction.</p>
     <a class="btn" href="#connect">Connect</a>
+    </div>
+    <figure class="heroshot">
+      <img src="assets/img/jeremy-portrait.png" alt="Jeremy Rivers" width="744" height="768">
+    </figure>
+    </div>
   </section>
 
   <!-- ANCHOR + CREDIBILITY -->
@@ -252,7 +271,7 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <p>That system is what I install now. First through Frontier Group, the practice I built to pass it on, and most recently rebuilding a two location business from a single Gmail account into a full operating system. I don’t just run operations. I build the thing operations run on.</p>
       </div>
       <figure class="portrait">
-        <img src="assets/img/jeremy-portrait.png" alt="Jeremy Rivers" width="744" height="768">
+        <img src="assets/img/jeremy-speaking.jpg" alt="Jeremy Rivers facilitating a session" width="900" height="1125">
       </figure>
       </div>
     </div>
@@ -270,7 +289,7 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <p class="label">The diagnostic</p>
         <h3>Baseline</h3>
         <p>A full organizational health assessment I designed from scratch. It scores a team across clarity, communication, and culture, names the real constraint, and hands the leader a prioritized plan. I built the instrument, not just the opinion.</p>
-        <a class="artifact" href="assets/artifacts/baseline-sample-report.html">See it
+        <a class="artifact" href="assets/artifacts/baseline-sample-report.html" target="_blank" rel="noopener noreferrer">See it
           <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </article>
@@ -307,10 +326,10 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <p class="label">The engine</p>
         <h3>The Reaction Draft Method</h3>
         <p>My method for building strategy: driven by inquiry, modeled through proven frameworks, and committed into action. It produces finished, usable strategy in a fraction of the time a typical brainstorm takes. I do not just have ideas, I systematize them.</p>
-        <a class="artifact" href="assets/artifacts/master-planning-kit-sample.pdf" target="_blank" rel="noopener">See it
+        <a class="artifact" href="assets/artifacts/2-page-strategy-session-guide.pdf" target="_blank" rel="noopener noreferrer">See it
           <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p style="margin-top:14px;font-size:14px;color:var(--ink-soft)">Sample pages from the Master Planning Facilitator Kit, Part 1 of the Frontier Framework.</p>
+        <p style="margin-top:14px;font-size:14px;color:var(--ink-soft)">The 2 Page Strategy Strategic Session Guide, one of the guides I facilitate from.</p>
       </article>
 
     </div>
@@ -322,7 +341,7 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
     <p class="eyebrow">The book</p>
     <h2>I’m writing <span class="title">Uncommon Momentum</span>, on the only skill that unlocks the potential in small teams.</h2>
     <p>You can follow the thinking now on my newsletter, Take Account.</p>
-    <a class="artifact" href="https://takeaccount.substack.com" target="_blank" rel="noopener">Read Take Account
+    <a class="artifact" href="https://takeaccount.substack.com" target="_blank" rel="noopener noreferrer">Read Take Account
       <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -377,11 +396,11 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
     <h2>Let’s talk.</h2>
     <p class="lede">I’m open to the right operator role, and available for select consulting.</p>
     <div class="links">
-      <a href="https://www.linkedin.com/in/jeremyfrontier" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/jeremyfrontier" target="_blank" rel="noopener noreferrer">
         <span class="lbl">LinkedIn</span><span class="val">linkedin.com/in/jeremyfrontier</span></a>
-      <a href="https://takeaccount.substack.com" target="_blank" rel="noopener">
+      <a href="https://takeaccount.substack.com" target="_blank" rel="noopener noreferrer">
         <span class="lbl">Newsletter</span><span class="val">Take Account on Substack</span></a>
-      <a href="mailto:jeremy@thefrontiergroup.co">
+      <a href="mailto:jeremy@thefrontiergroup.co" target="_blank" rel="noopener noreferrer">
         <span class="lbl">Email</span><span class="val">jeremy@thefrontiergroup.co</span></a>
     </div>
   </div>

@@ -35,7 +35,10 @@ The six testimonial headshots still live only on the Kajabi CDN, which this sess
 ## D6. Two testimonials added beyond the brief's six (2026-09-09)
 Brief §3 says sweep the full capture so none are dropped. Two more were found in the capture's workshop and kits pages: a second Ben J. quote (Owner, Gather Better) and a second Harrison K. quote about the AI Builders. Both are on the wall. A Bret S. quote is referenced in the capture but its text was not preserved.
 
-## D7. Kit sample is a trimmed extract, not the shipped PDF (2026-09-09)
+## D7b. RDM artifact swapped to the 2 Page Strategy Session Guide (2026-09-09)
+Jeremy replaced the trimmed Master Planning brochure with the real thing: `~/Downloads/2-Page Strategy - Strategic Session Guide .pdf`, now at `assets/artifacts/2-page-strategy-session-guide.pdf`. Five pages, no phone number, one embedded link to the 2 Page Strategy AI Builder GPT, left intact. This is genuine paid IP from Kit 1 and Jeremy published it knowingly after the D7 flag. The Master Planning extract was removed.
+
+## D7. Kit sample is a trimmed extract, not the shipped PDF (2026-09-09, superseded by D7b)
 Jeremy asked for the Master Planning Facilitator Kit as the download on the RDM card. The source PDF (`Frontier Books Resources/Facilitator Kits/01 Kit PDFs/Master Planning.pdf`, 9 pages) could not go up as is:
 - **Page 8 carries six live links to the paid IP**: three Google Docs Session Guides on anyone with the link sharing, and three custom GPT AI Builders. Publishing that page hands the $495 kit to anyone who downloads the file.
 - **Page 9 carries Jeremy's personal mobile number** with a "text me" CTA. That is a public page a hiring manager reads; a personal cell on it invites scrapers and reads as a sales pitch, against the brief's positioning.
@@ -48,3 +51,12 @@ Per Jeremy: keep the later Ben J. and Harrison K. quotes, drop the earlier ones.
 
 ## D9. Color on the framework diagram (2026-09-09)
 The three competencies and the three layers now carry three accents from the brand's extended palette: Cobalt for Clarity and Planning, a deepened Forest for Communication and Structure, a deepened Berry for Culture and Execution Checkpoints. Competency cards get a tinted fill and matching title; layer rows get a colored left rule and eyebrow, with chips tinted to their layer. Coral stays reserved for the page's primary accents so the diagram does not compete with the buttons.
+
+## D10. Photographs (2026-09-09)
+Hero carries the keyed out headshot cutout (`jeremy-portrait.png`) on a soft warm arch. Who I Am carries the speaking photo (`jeremy-speaking.jpg`, from `~/Downloads/speaking pic .png`, cropped 4:5 to frame Jeremy right of centre with the laptop and gesture in shot, 900x1125, JPEG). The Who I Am panel switched from a padded cutout frame to a full bleed cover crop.
+
+## D11. New tab on every outbound and document link (2026-09-09)
+LinkedIn, Substack (both instances), the mailto, the session guide PDF and the Baseline sample report all carry `target="_blank" rel="noopener noreferrer"`. Baseline was not on Jeremy's list but behaves as a document like the PDF, so it matches.
+
+## D12. Credibility tiles and framework colour, second pass (2026-09-09)
+Tile numerals went 15px/600 to 38px/700 and tile body 16.5px to 19px. Framework diagram picked up more colour: layer names now carry their accent, the left rule went 3px to 5px, and both section captions get a three segment Cobalt, Forest and Berry rule.
