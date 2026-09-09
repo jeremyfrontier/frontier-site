@@ -34,3 +34,17 @@ The six testimonial headshots still live only on the Kajabi CDN, which this sess
 
 ## D6. Two testimonials added beyond the brief's six (2026-09-09)
 Brief §3 says sweep the full capture so none are dropped. Two more were found in the capture's workshop and kits pages: a second Ben J. quote (Owner, Gather Better) and a second Harrison K. quote about the AI Builders. Both are on the wall. A Bret S. quote is referenced in the capture but its text was not preserved.
+
+## D7. Kit sample is a trimmed extract, not the shipped PDF (2026-09-09)
+Jeremy asked for the Master Planning Facilitator Kit as the download on the RDM card. The source PDF (`Frontier Books Resources/Facilitator Kits/01 Kit PDFs/Master Planning.pdf`, 9 pages) could not go up as is:
+- **Page 8 carries six live links to the paid IP**: three Google Docs Session Guides on anyone with the link sharing, and three custom GPT AI Builders. Publishing that page hands the $495 kit to anyone who downloads the file.
+- **Page 9 carries Jeremy's personal mobile number** with a "text me" CTA. That is a public page a hiring manager reads; a personal cell on it invites scrapers and reads as a sales pitch, against the brief's positioning.
+- **Pages 2, 3 and 4 are the same page three times**, a defect in the source export.
+**Shipped:** `assets/artifacts/master-planning-kit-sample.pdf`, pages 1, 2, 5, 6 and 7, with every link annotation stripped and the title metadata reset. Cover, the Part 1 overview once, the three documents breakdown, RDM Thinking, and How To Use Your Kit. Five pages, no live links, no phone number.
+**To reverse:** re-run the qpdf page selection with the pages Jeremy wants. Do not publish page 8 while those share links are live.
+
+## D8. Testimonial wall trimmed to six (2026-09-09)
+Per Jeremy: keep the later Ben J. and Harrison K. quotes, drop the earlier ones. Removed Ben J. (Owner, Gather Better, the 90 days quote) and Harrison K. (Author, the AI tools quote). The wall is back to the brief's original six.
+
+## D9. Color on the framework diagram (2026-09-09)
+The three competencies and the three layers now carry three accents from the brand's extended palette: Cobalt for Clarity and Planning, a deepened Forest for Communication and Structure, a deepened Berry for Culture and Execution Checkpoints. Competency cards get a tinted fill and matching title; layer rows get a colored left rule and eyebrow, with chips tinted to their layer. Coral stays reserved for the page's primary accents so the diagram does not compete with the buttons.

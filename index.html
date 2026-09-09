@@ -118,20 +118,25 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
   color:var(--ink-soft);margin:0 0 18px;}
 .fw-comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;
   margin-bottom:26px;}
-.fw-comp div{border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px;}
+.fw-comp div{border:1.5px solid;border-radius:12px;padding:16px 18px;}
 .fw-comp strong{display:block;font-family:var(--serif);font-variation-settings:var(--display);
-  font-weight:600;font-size:19px;margin-bottom:3px;}
+  font-weight:600;font-size:19px;margin-bottom:3px;color:var(--accent);}
 .fw-comp span{font-size:13.5px;color:var(--ink-soft);}
+.c1{--accent:#3D39E7;background:#EAE9FD;border-color:rgba(61,57,231,.38);}
+.c2{--accent:#0A5A12;background:#E5EFE4;border-color:rgba(10,90,18,.34);}
+.c3{--accent:#8A2124;background:#F7E7E6;border-color:rgba(138,33,36,.32);}
+.fw-layer.c1,.fw-layer.c2,.fw-layer.c3{background:none;}
 .fw-layer{display:grid;grid-template-columns:minmax(150px,190px) 1fr;gap:18px;align-items:start;
-  padding:18px 0;border-top:1px solid var(--rule);}
+  padding:18px 0 18px 18px;border-top:1px solid var(--rule);border-left:3px solid var(--accent);}
 .fw-layer:first-of-type{border-top:none;}
 .fw-layer h4{margin:0;font-family:var(--serif);font-variation-settings:var(--display);
   font-weight:600;font-size:18px;}
 .fw-layer h4 span{display:block;font-family:var(--sans);font-size:12px;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:5px;}
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;}
-.chips li{background:var(--sand);border:1px solid var(--rule);border-radius:999px;
-  padding:7px 15px;font-size:14px;color:var(--ink-soft);}
+.chips li{background:color-mix(in srgb,var(--accent) 7%,var(--sand));
+  border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);border-radius:999px;
+  padding:7px 15px;font-size:14px;color:var(--ink);}
 
 /* ── Book ──────────────────────────────────────────────── */
 .book{background:var(--paper);border-block:1px solid var(--rule);}
@@ -278,20 +283,20 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <div class="fw">
           <p class="fw-cap">Three competencies it builds</p>
           <div class="fw-comp">
-            <div><strong>Clarity</strong><span>Purpose. Direction. Expectations.</span></div>
-            <div><strong>Communication</strong><span>Rhythm. Discipline.</span></div>
-            <div><strong>Culture</strong><span>Collective. Individual.</span></div>
+            <div class="c1"><strong>Clarity</strong><span>Purpose. Direction. Expectations.</span></div>
+            <div class="c2"><strong>Communication</strong><span>Rhythm. Discipline.</span></div>
+            <div class="c3"><strong>Culture</strong><span>Collective. Individual.</span></div>
           </div>
           <p class="fw-cap">Three layers it installs</p>
-          <div class="fw-layer">
+          <div class="fw-layer c1">
             <h4><span>Layer 01</span>Planning</h4>
             <ul class="chips"><li>2 Page Strategy</li><li>1 Page Plan</li><li>The Playbook</li></ul>
           </div>
-          <div class="fw-layer">
+          <div class="fw-layer c2">
             <h4><span>Layer 02</span>Structure</h4>
             <ul class="chips"><li>Role Descriptions</li><li>Key Processes</li></ul>
           </div>
-          <div class="fw-layer">
+          <div class="fw-layer c3">
             <h4><span>Layer 03</span>Execution Checkpoints</h4>
             <ul class="chips"><li>Annual Retreat</li><li>Quarterly Planning</li><li>Monthly Score Review</li><li>Weekly Huddle</li></ul>
           </div>
@@ -302,7 +307,10 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <p class="label">The engine</p>
         <h3>The Reaction Draft Method</h3>
         <p>My method for building strategy: driven by inquiry, modeled through proven frameworks, and committed into action. It produces finished, usable strategy in a fraction of the time a typical brainstorm takes. I do not just have ideas, I systematize them.</p>
-        <span class="artifact muted">Sample coming soon</span>
+        <a class="artifact" href="assets/artifacts/master-planning-kit-sample.pdf" target="_blank" rel="noopener">See it
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p style="margin-top:14px;font-size:14px;color:var(--ink-soft)">Sample pages from the Master Planning Facilitator Kit, Part 1 of the Frontier Framework.</p>
       </article>
 
     </div>
@@ -348,15 +356,6 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <figcaption><b>Luke B., Ph.D.</b><span>Nonprofit Executive</span></figcaption>
       </figure>
 
-      <figure class="q">
-        <blockquote>Our first 90 days together back in the spring were the most focused and productive I’ve ever been, finally landed that 6-figure client and hit every single goal in 30 days. I thought I could coast the next 90 on my own. Big mistake. Lost direction fast. Literally, I’m 1 week back working with him and one of my team members said, “You’re working with Jeremy again, aren’t you?”</blockquote>
-        <figcaption><b>Ben J.</b><span>Owner, Gather Better</span></figcaption>
-      </figure>
-
-      <figure class="q">
-        <blockquote>I just finished with the AI tools and I’m impressed and, honestly, really relieved. I was worried going into building out the plans, but your AI tool really made it all a breeze and I couldn’t be happier with the result. Super easy, super impactful, and it’s given me clarity in direction I never knew I needed.</blockquote>
-        <figcaption><b>Harrison K.</b><span>Author</span></figcaption>
-      </figure>
 
       <figure class="q">
         <blockquote>I can confidently say Jeremy is one of the most insightful and impactful individuals I’ve ever worked with. What truly sets Jeremy apart is his ability to operate at both the 30,000-foot view and in the trenches. His knack for connecting dots others might miss, combined with his gift for asking insightful questions, is nothing short of a superpower. Since working alongside Jeremy for nearly a decade as a soloprenuer, my business has grown substantially, thanks to partnering with his strategic insights and practical solutions that inspire and drive meaningful change. His experience, track record of success, and deep relational approach make him both relatable and highly effective.</blockquote>

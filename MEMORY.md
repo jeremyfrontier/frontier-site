@@ -6,6 +6,7 @@
 A single scroll static page for Jeremy Rivers at thefrontiergroup.co, replacing the Kajabi site before its 2026-10-06 cancellation deadline. Primary reader is a hiring manager. It sells nothing.
 
 ## State
+- **2026-09-09 (4).** Wall trimmed to six quotes, Master Planning kit sample (5 trimmed pages) added to the RDM card, framework diagram colored. See DECISIONS D7 to D9.
 - **2026-09-09 (3).** Pushed to github.com/jeremyfrontier/frontier-site and deployed to GitHub Pages. Live at https://jeremyfrontier.github.io/frontier-site/. Auth was a GitHub device flow Jeremy approved in his browser; the token lives at `~/scratch/gh_token.txt` on the build VM and dies with the session.
 - **2026-09-09 (2).** Testimonial wall reduced to text only, no avatars. Jeremy's portrait added to Who I Am from `~/Downloads/website headshot.png`, background keyed out.
 - **2026-09-09.** Repo scaffolded to the Jeremy OS Code Project Standard. v1 page built and verified locally at 390px, 900px, and 1440px: no horizontal overflow, no failed requests, copy gate passing. Committed locally. **Not pushed:** no GitHub credential on this machine.
@@ -15,7 +16,6 @@ See `docs/DECISIONS.md`. The load bearing ones: Fields is desktop licensed so th
 
 ## Open threads
 1. **Domain repoint.** Needs Jeremy: find the registrar, set the DNS records, then cancel Kajabi.
-3. **Facilitator kit sample.** Login gated, never captured. The RDM card shows "Sample coming soon" until Jeremy supplies one or two pages.
 4. **Testimonial photographs.** Still only on the Kajabi CDN, unreachable from the build session. Grab them from Kajabi admin before cancelling, though the wall is deliberately text only now.
 5. **Framework graphic.** If an official one exists, it replaces the HTML diagram.
 
