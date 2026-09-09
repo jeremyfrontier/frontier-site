@@ -28,8 +28,9 @@
 Section titles that used a dash as a separator ("Baseline - the diagnostic") are rendered as a label above the name instead of a dash.
 Testimonials are quoted verbatim, hyphens included, because they are other people's words. The copy gate exempts `<blockquote>`.
 
-## D5. No photographs in v1 (2026-09-09)
-Jeremy's headshot and the six testimonial headshots live only on the Kajabi CDN, which this session's network policy blocks. The testimonial wall uses initials avatars, which reads cleanly and does not look like a gap. Drop `jeremy-portrait.jpg` into `assets/img/` when it is available and it can go in the story section.
+## D5. Portrait in, testimonial photos out (2026-09-09, revised)
+Jeremy supplied `website headshot.png` (a cutout on a near white ground). The near white background was keyed to transparency with a soft alpha ramp and the subject cropped to `assets/img/jeremy-portrait.png`, sitting in a warm rounded panel in the Who I Am section and bleeding to the panel's bottom edge.
+The six testimonial headshots still live only on the Kajabi CDN, which this session's network policy blocks. Per Jeremy 2026-09-09 the wall is text only: quote, then name, title and org above a hairline rule. No avatars, no initials. Do not add them back.
 
 ## D6. Two testimonials added beyond the brief's six (2026-09-09)
 Brief §3 says sweep the full capture so none are dropped. Two more were found in the capture's workshop and kits pages: a second Ben J. quote (Owner, Gather Better) and a second Harrison K. quote about the AI Builders. Both are on the wall. A Bret S. quote is referenced in the capture but its text was not preserved.

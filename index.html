@@ -43,6 +43,11 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;color:var(--coral);margin:0 0 18px;}
 .prose{max-width:64ch;}
+.whogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,400px);
+  gap:clamp(36px,6vw,80px);align-items:start;}
+.portrait{margin:0;border-radius:24px;overflow:hidden;padding-top:30px;
+  background:linear-gradient(180deg,#EFE7E3 0%,#E6DAD5 100%);}
+.portrait img{width:92%;margin:0 auto;display:block;}
 .prose p{margin:0 0 1.15em;}
 .prose p:last-child{margin-bottom:0;}
 
@@ -142,13 +147,10 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .q blockquote{margin:0;font-size:16.5px;line-height:1.6;color:var(--ink);}
 .q blockquote::before{content:"";display:block;width:34px;height:3px;background:var(--coral);
   margin-bottom:20px;border-radius:2px;}
-.q figcaption{margin-top:20px;display:flex;align-items:center;gap:13px;}
-.q .av{width:40px;height:40px;flex:none;border-radius:50%;background:var(--sand);
-  border:1px solid var(--rule);display:grid;place-items:center;font-family:var(--serif);
-  font-variation-settings:var(--display);font-weight:600;font-size:14px;color:var(--ink-soft);}
-.q .who{font-size:14.5px;line-height:1.35;}
-.q .who b{display:block;font-weight:700;}
-.q .who span{color:var(--ink-soft);}
+.q figcaption{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);
+  font-size:14.5px;line-height:1.4;}
+.q figcaption b{display:block;font-weight:700;letter-spacing:.005em;}
+.q figcaption span{color:var(--ink-soft);}
 
 /* ── Connect ───────────────────────────────────────────── */
 .connect{background:var(--dark);color:var(--sand);}
@@ -180,6 +182,8 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
   .nav .nav-cta{color:var(--coral);font-weight:700;border-bottom-color:var(--coral);}
 }
 @media (max-width:820px){
+  .whogrid{grid-template-columns:1fr;}
+  .portrait{max-width:340px;margin-inline:auto;}
   .fw-layer{grid-template-columns:1fr;gap:12px;}
 }
 @media (prefers-reduced-motion:reduce){
@@ -231,15 +235,20 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 
   <!-- WHO I AM -->
   <section id="who" class="band">
-    <div class="wrap narrow">
+    <div class="wrap">
       <div class="shead">
         <p class="eyebrow">Who I am</p>
         <h2>I build the thing operations run on.</h2>
       </div>
+      <div class="whogrid">
       <div class="prose">
         <p>Twenty years ago I watched a mission I believed in nearly come apart. Not from a lack of passion. From a lack of a system. Good people, real purpose, and nothing holding it together. I lived the fallout, and I swore I would never do it again.</p>
         <p>Then I got the opportunity and responsibility to build a team and operation from the ground up, determined to do it differently. Over eight years as Founding COO of a nonprofit, we grew it from 2 people to 50 across 10 departments, sent 11,000 leaders to the Holy Land, and held it together through a pandemic and a war. We kept what worked and cut what didn’t until we had an operation that ran on more than my presence.</p>
         <p>That system is what I install now. First through Frontier Group, the practice I built to pass it on, and most recently rebuilding a two location business from a single Gmail account into a full operating system. I don’t just run operations. I build the thing operations run on.</p>
+      </div>
+      <figure class="portrait">
+        <img src="assets/img/jeremy-portrait.png" alt="Jeremy Rivers" width="744" height="768">
+      </figure>
       </div>
     </div>
   </section>
@@ -321,42 +330,42 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 
       <figure class="q">
         <blockquote>Working alongside Jeremy was one of the most rewarding professional experiences of my career. He brought a unique blend of strategic vision, steady leadership, and genuine care for the people he worked with. Whether navigating long-range planning or responding to day-to-day learnings, Jeremy consistently led with clarity, kindness, purpose, and integrity. What set Jeremy apart from other leaders was his ability to inspire others. He could see potential where others only saw roadblocks. His leadership consistently led our team toward a shared mission with enthusiasm and focus. Jeremy led by example, modeling what it meant to lead with both strength and humility simultaneously. I continue to admire Jeremy’s vision and commitment to excellence, and it is an honor to recommend him.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">AP</span><span class="who"><b>Ashley P.</b><span>Nonprofit Executive</span></span></figcaption>
+        <figcaption><b>Ashley P.</b><span>Nonprofit Executive</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>Over the years, Jeremy has been my boss, my coach, and my friend. He’s the real deal. I cannot recommend him highly enough. Not only will Jeremy help you take your operational effectiveness to new heights, but you will find that his guidance enables you to see that you are capable of so much more than you thought. You can’t put a price tag on that.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">MD</span><span class="who"><b>Mattanah D.</b><span>Director of Marketing, Christ Church</span></span></figcaption>
+        <figcaption><b>Mattanah D.</b><span>Director of Marketing, Christ Church</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>Jeremy’s approach transformed our team from a group of individuals into a cohesive, heart-driven machine. For me personally, his coaching helped resolve the struggle to balance results with trust &amp; empowerment. By prioritizing relationships, I saw a renewed sense of purpose and fulfillment in my leadership. Jeremy’s influence has truly brought heart into the fabric of our organization.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">TW</span><span class="who"><b>Tiffany W.</b><span>Nonprofit Leader</span></span></figcaption>
+        <figcaption><b>Tiffany W.</b><span>Nonprofit Leader</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>I had the privilege of working alongside Jeremy Rivers for nearly seven years, and he stands out as one of the most exceptional leaders I’ve known. Jeremy’s deep compassion and empathy are the foundation of his unparalleled ability to align people with mission and strategy. His expertise in change management, conflict resolution, and leadership efficiency is matched by his ability to communicate complex ideas with clarity. As a master of organizational development, he listens intently, diagnoses challenges with precision, and delivers actionable insights that inspire confidence.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">LB</span><span class="who"><b>Luke B., Ph.D.</b><span>Nonprofit Executive</span></span></figcaption>
+        <figcaption><b>Luke B., Ph.D.</b><span>Nonprofit Executive</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>Our first 90 days together back in the spring were the most focused and productive I’ve ever been, finally landed that 6-figure client and hit every single goal in 30 days. I thought I could coast the next 90 on my own. Big mistake. Lost direction fast. Literally, I’m 1 week back working with him and one of my team members said, “You’re working with Jeremy again, aren’t you?”</blockquote>
-        <figcaption><span class="av" aria-hidden="true">BJ</span><span class="who"><b>Ben J.</b><span>Owner, Gather Better</span></span></figcaption>
+        <figcaption><b>Ben J.</b><span>Owner, Gather Better</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>I just finished with the AI tools and I’m impressed and, honestly, really relieved. I was worried going into building out the plans, but your AI tool really made it all a breeze and I couldn’t be happier with the result. Super easy, super impactful, and it’s given me clarity in direction I never knew I needed.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">HK</span><span class="who"><b>Harrison K.</b><span>Author</span></span></figcaption>
+        <figcaption><b>Harrison K.</b><span>Author</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>I can confidently say Jeremy is one of the most insightful and impactful individuals I’ve ever worked with. What truly sets Jeremy apart is his ability to operate at both the 30,000-foot view and in the trenches. His knack for connecting dots others might miss, combined with his gift for asking insightful questions, is nothing short of a superpower. Since working alongside Jeremy for nearly a decade as a soloprenuer, my business has grown substantially, thanks to partnering with his strategic insights and practical solutions that inspire and drive meaningful change. His experience, track record of success, and deep relational approach make him both relatable and highly effective.</blockquote>
-        <figcaption><span class="av" aria-hidden="true">BJ</span><span class="who"><b>Ben J.</b><span>Small Business Owner</span></span></figcaption>
+        <figcaption><b>Ben J.</b><span>Small Business Owner</span></figcaption>
       </figure>
 
       <figure class="q">
         <blockquote>Jeremy is a right Good Will Hunting when it comes to organizational leadership! His ability and expertise have helped me grow as a professional and seek success beyond what I thought possible for myself. Under his coaching, I began to see the potential I truly had, and it was Jeremy who had pulled that out of me. My friends and family ask how I’m able to do the things I’m now doing, and I credit Jeremy with unlocking that path forward for me. He took what I had, helped me see how to be better, exemplified it even, and gave me the tools to make it happen for myself. I cannot recommend enough working with Jeremy to maximize your professional and personal advancement!</blockquote>
-        <figcaption><span class="av" aria-hidden="true">HK</span><span class="who"><b>Harrison K.</b><span>Author and Former Colleague</span></span></figcaption>
+        <figcaption><b>Harrison K.</b><span>Author and Former Colleague</span></figcaption>
       </figure>
 
     </div>
