@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baseline Organization Health Assessment · Meridian Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #EC5B59;
+    --accent-soft: #F7DDDC;
+    --accent-deep: #B8433F;
+    --charcoal: #2C2C2C;
+    --charcoal-soft: #5A5A5A;
+    --charcoal-muted: #8A8A8A;
+    --sand: #F6F1EF;
+    --sand-deep: #EDE6E2;
+    --cream: #FAF7F5;
+    --white: #FFFFFF;
+    --line: rgba(44, 44, 44, 0.08);
+    --line-strong: rgba(44, 44, 44, 0.16);
+    --healthy: #4A7A5C;
+    --healthy-soft: #DCE8DF;
+    --risk: #C97A2F;
+    --risk-soft: #F2E4D1;
+    --critical: #EC5B59;
+    --critical-soft: #F7DDDC;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow-sm: 0 1px 2px rgba(44, 44, 44, 0.04);
+    --shadow-md: 0 4px 12px rgba(44, 44, 44, 0.06);
+    --shadow-lg: 0 12px 32px rgba(44, 44, 44, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ==================== LAYOUT ==================== */
+  .shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    .shell { padding: 0 20px; }
+  }
+
+  /* ==================== HEADER ==================== */
+  .masthead {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 48px 0 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: radial-gradient(circle at top right, rgba(236, 91, 89, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+
+  .brand-mark {
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+
+  .brand-mark span {
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+
+  .report-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+  }
+
+  .report-title em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    font-size: 14px;
+    color: rgba(246, 241, 239, 0.7);
+    letter-spacing: 0.02em;
+    padding-top: 20px;
+    border-top: 1px solid rgba(246, 241, 239, 0.12);
+  }
+
+  .report-meta-item strong {
+    color: var(--cream);
+    font-weight: 600;
+    display: block;
+    font-size: 16px;
+    margin-top: 2px;
+    font-family: var(--serif);
+  }
+
+  /* ==================== SCORE SCALE ==================== */
+  .scale-bar {
+    background: var(--sand);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background: rgba(246, 241, 239, 0.94);
+  }
+
+  .scale-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--charcoal-muted);
+    font-weight: 500;
+  }
+
+  .scale-label { font-weight: 600; color: var(--charcoal); }
+  .scale-item { display: flex; align-items: center; gap: 8px; }
+  .scale-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+  .scale-dot.healthy { background: var(--healthy); }
+  .scale-dot.risk { background: var(--risk); }
+  .scale-dot.critical { background: var(--critical); }
+
+  /* ==================== SECTION ==================== */
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .eyebrow {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.15;
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-lede {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--charcoal-soft);
+    max-width: 680px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+
+  /* ==================== SCORE GRID ==================== */
+  .score-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 900px) {
+    .score-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .score-tile {
+    background: var(--white);
+    padding: 36px 32px;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+
+  .score-tile:hover { background: var(--sand); }
+
+  .score-tile.primary {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+
+  .score-tile.primary:hover { background: #1f1f1f; }
+
+  .score-tile-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--charcoal-muted);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .score-tile.primary .score-tile-label { color: rgba(246, 241, 239, 0.6); }
+
+  .score-value {
+    font-family: var(--serif);
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .score-value.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .score-value-suffix {
+    font-size: 28px;
+    color: var(--charcoal-muted);
+    font-style: italic;
+  }
+
+  .score-tile.primary .score-value-suffix { color: rgba(246, 241, 239, 0.5); }
+
+  .score-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--charcoal-soft);
+    margin-top: 10px;
+  }
+
+  .score-tile.primary .score-label { color: rgba(246, 241, 239, 0.8); }
+
+  .score-label.at-risk { color: var(--risk); }
+  .score-tile.primary .score-label.at-risk { color: #F2C591; }
+
+  .score-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--sand-deep);
+  }
+
+  .score-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .score-bar-fill.healthy { background: var(--healthy); }
+  .score-bar-fill.risk { background: var(--risk); }
+  .score-bar-fill.critical { background: var(--critical); }
+
+  /* ==================== LEADER LIMIT CALLOUT ==================== */
+  .leader-cap {
+    background: var(--accent);
+    color: var(--white);
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 36px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .leader-cap::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+    pointer-events: none;
+  }
+
+  .leader-cap-score {
+    border-right: 1px solid rgba(255, 255, 255, 0.24);
+    padding-right: 36px;
+  }
+
+  .leader-cap-score-value {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .leader-cap-score-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  .leader-cap-text {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 760px;
+  }
+
+  .leader-cap-text strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 700px) {
+    .leader-cap { grid-template-columns: 1fr; gap: 20px; }
+    .leader-cap-score { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.24); padding-right: 0; padding-bottom: 20px; }
+  }
+
+  /* ==================== INSIGHTS GRID ==================== */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 900px) { .insights-grid { grid-template-columns: 1fr; } }
+
+  .insight-card {
+    background: var(--white);
+    padding: 32px 28px;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .insight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--line-strong);
+  }
+
+  .insight-number {
+    font-family: var(--serif);
+    font-size: 48px;
+    color: var(--accent);
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .insight-headline {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .insight-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal-soft);
+  }
+
+  /* ==================== PERCEPTION GAP ==================== */
+  .perception-wrapper {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 40px;
+    margin-top: 40px;
+  }
+
+  .perception-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .perception-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .perception-legend {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: var(--charcoal-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch {
+    width: 14px; height: 14px; border-radius: 2px;
+  }
+  .legend-swatch.team { background: var(--charcoal); }
+  .legend-swatch.leader { background: var(--accent-soft); border: 1px solid var(--accent); }
+
+  .perception-chart { display: flex; flex-direction: column; gap: 24px; }
+
+  .perception-row {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    .perception-row {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "label gap"
+        "bars bars";
+      gap: 6px 12px;
+      align-items: baseline;
+    }
+    .perception-label { grid-area: label; }
+    .perception-bars { grid-area: bars; margin-top: 6px; }
+    .perception-gap-label { grid-area: gap; }
+  }
+
+  .perception-label {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .perception-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+  }
+
+  .perception-bar {
+    height: 18px;
+    background: var(--sand-deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .perception-bar-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .perception-bar-fill.team { background: var(--charcoal); }
+  .perception-bar-fill.leader { background: var(--accent-soft); border-right: 2px solid var(--accent); }
+
+  .perception-gap-label {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent);
+    min-width: 48px;
+    text-align: right;
+  }
+
+  .perception-note {
+    font-family: var(--serif);
+    font-size: 14px;
+    color: var(--charcoal-soft);
+    line-height: 1.6;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    max-width: 780px;
+  }
+
+  /* ==================== CATEGORY EXPANDABLE ==================== */
+  .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .category {
+    background: var(--white);
+    border: 1px solid var(--line);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .category:hover { border-color: var(--line-strong); }
+  .category.open { border-color: var(--charcoal); box-shadow: var(--shadow-md); }
+
+  .category-summary {
+    padding: 32px 36px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 32px;
+    align-items: center;
+    transition: background 0.25s ease;
+  }
+
+  .category-summary:hover { background: var(--sand); }
+
+  .category-summary > div:first-child {
+    min-width: 0;
+  }
+
+  @media (max-width: 700px) {
+    .category-summary {
+      grid-template-columns: 1fr auto auto;
+      gap: 14px;
+      padding: 24px 20px;
+    }
+    .category-summary .category-score-mini { display: none; }
+    .category-toggle { width: 36px; height: 36px; }
+  }
+
+  @media (max-width: 400px) {
+    .category-summary {
+      gap: 10px;
+      padding: 20px 16px;
+    }
+    .category-number { font-size: 11px; letter-spacing: 0.12em; }
+  }
+
+  .category-number {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--charcoal-muted);
+    letter-spacing: 0.14em;
+    font-style: italic;
+  }
+
+  .category-name {
+    font-family: var(--serif);
+    font-size: clamp(19px, 5vw, 28px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    overflow-wrap: break-word;
+  }
+
+  .category-score {
+    font-family: var(--serif);
+    font-size: clamp(28px, 6.5vw, 40px);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .category-score-mini {
+    font-size: 13px;
+    font-style: italic;
+    font-family: var(--serif);
+    color: var(--charcoal-soft);
+  }
+
+  .category-toggle {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .category.open .category-toggle {
+    background: var(--accent);
+    transform: rotate(180deg);
+  }
+
+  .category-toggle svg {
+    transition: stroke 0.3s ease;
+    stroke: var(--accent);
+  }
+
+  .category.open .category-toggle svg { stroke: var(--cream); }
+
+  .category-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .category.open .category-body { max-height: 6000px; }
+
+  .category-body-inner {
+    padding: 0 36px 48px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 700px) {
+    .category-body-inner { padding: 0 20px 36px; }
+  }
+
+  .category-summary-text {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--charcoal-soft);
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    max-width: 800px;
+  }
+
+  /* Category instruction pill */
+  .category-instruction {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 14px 20px;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-left: 2px solid var(--accent);
+    max-width: 640px;
+    line-height: 1.5;
+  }
+
+  .category-instruction svg {
+    stroke: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ==================== SUBCATEGORY TABS ==================== */
+  .subcat-tabs {
+    display: flex;
+    gap: 0;
+    margin-top: 36px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+
+  .subcat-tab {
+    background: transparent;
+    border: none;
+    padding: 16px 24px 18px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--charcoal-muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.25s ease;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .subcat-tab:hover { color: var(--charcoal); }
+
+  .subcat-tab.active {
+    color: var(--charcoal);
+  }
+
+  .subcat-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .subcat-tab-score {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--charcoal);
+    font-weight: 700;
+    padding: 2px 8px;
+    background: var(--sand);
+    border-radius: 2px;
+  }
+
+  .subcat-tab.active .subcat-tab-score {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+
+  /* ==================== SUBCAT PANEL ==================== */
+  .subcat-panel { display: none; padding-top: 32px; }
+  .subcat-panel.active { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .subcat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .subcat-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .subcat-section-title {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Question bars */
+  .question-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .question-row { display: flex; flex-direction: column; gap: 6px; }
+
+  .question-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 14px;
+  }
+
+  .question-label { color: var(--charcoal); font-weight: 500; }
+
+  .question-score {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .question-score.healthy { color: var(--healthy); }
+  .question-score.risk { color: var(--risk); }
+  .question-score.critical { color: var(--critical); }
+
+  .question-bar {
+    height: 4px;
+    background: var(--sand-deep);
+    overflow: hidden;
+  }
+
+  .question-bar-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .question-bar-fill.healthy { background: var(--healthy); }
+  .question-bar-fill.risk { background: var(--risk); }
+  .question-bar-fill.critical { background: var(--critical); }
+
+  /* Qualitative */
+  .qual-block {
+    background: var(--sand);
+    padding: 24px 28px;
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--charcoal-soft);
+    border-left: 2px solid var(--accent);
+  }
+
+  /* Improvement priorities */
+  .priorities {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .priority-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 900px) { .priority-list { grid-template-columns: 1fr; } }
+
+  .priority {
+    background: var(--cream);
+    padding: 24px;
+    border: 1px solid var(--line);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .priority:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+
+  .priority-label {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+  }
+
+  .priority-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal-soft);
+  }
+
+  /* ==================== LEADER LIMIT SECTION ==================== */
+  .leader-section {
+    background: var(--charcoal);
+    color: var(--cream);
+  }
+
+  .leader-section .section-title { color: var(--cream); }
+  .leader-section .eyebrow { color: var(--accent); }
+  .leader-section .section-lede { color: rgba(246, 241, 239, 0.7); }
+
+  .leader-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 900px) { .leader-grid { grid-template-columns: 1fr; } }
+
+  .leader-summary {
+    background: rgba(255,255,255,0.04);
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .leader-score-big {
+    font-family: var(--serif);
+    font-size: 96px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .leader-score-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+
+  .leader-summary-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(246, 241, 239, 0.82);
+  }
+
+  .leader-questions { display: flex; flex-direction: column; gap: 16px; }
+
+  .leader-q {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .leader-q-label {
+    font-size: 14px;
+    color: rgba(246, 241, 239, 0.85);
+  }
+
+  .leader-q-label strong {
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--cream);
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    color: var(--accent);
+  }
+
+  .leader-q-bar {
+    width: 120px;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .leader-q-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .leader-q-bar-fill.good { background: #8FB8A0; }
+
+  .leader-q-score {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--cream);
+    min-width: 32px;
+    text-align: right;
+  }
+
+  @media (max-width: 700px) {
+    .leader-q { grid-template-columns: 1fr auto; }
+    .leader-q-bar { display: none; }
+  }
+
+  .leader-qual {
+    background: rgba(236, 91, 89, 0.08);
+    border-left: 2px solid var(--accent);
+    padding: 24px 28px;
+    margin-top: 40px;
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(246, 241, 239, 0.88);
+  }
+
+  /* ==================== NEXT STEPS ==================== */
+  .steps-intro {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--charcoal-soft);
+    max-width: 720px;
+    line-height: 1.55;
+    margin-bottom: 48px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .step {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: start;
+    transition: padding-left 0.3s ease;
+  }
+
+  .step:hover { padding-left: 12px; }
+
+  @media (max-width: 700px) {
+    .step { grid-template-columns: 60px 1fr; gap: 20px; padding: 24px 0; }
+  }
+
+  .step-number {
+    font-family: var(--serif);
+    font-size: 40px;
+    color: var(--accent);
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .step-content strong {
+    font-family: var(--serif);
+    font-size: 20px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+
+  .step-content p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--charcoal-soft);
+    max-width: 780px;
+  }
+
+  /* ==================== QUALITATIVE THEMES ==================== */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 1100px) { .themes-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .themes-grid { grid-template-columns: 1fr; } }
+
+  .theme-card {
+    background: var(--white);
+    padding: 28px 24px;
+    border: 1px solid var(--line);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .theme-card:hover {
+    border-color: var(--charcoal);
+    transform: translateY(-2px);
+  }
+
+  .theme-quote {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .theme-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal-soft);
+  }
+
+  /* ==================== DEVELOPMENT PLAN ==================== */
+  .plan-intro-box {
+    background: var(--accent);
+    color: var(--white);
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .plan-intro-label {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 4px;
+  }
+
+  .plan-intro-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 700px) {
+    .plan-intro-box { grid-template-columns: 1fr; gap: 16px; padding: 28px; }
+  }
+
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) { .phases { grid-template-columns: 1fr; } }
+
+  .phase {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 32px 28px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .phase:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .phase-number {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .phase-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .phase-dates {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--charcoal-muted);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .phase-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .phase-list li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal-soft);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .phase-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px;
+    width: 8px; height: 2px;
+    background: var(--accent);
+  }
+
+  /* ==================== CTA FOOTER ==================== */
+  .cta {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(236, 91, 89, 0.1), transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-eyebrow {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .cta-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.2;
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto 28px;
+    position: relative;
+  }
+
+  .cta-title em { color: var(--accent); font-style: italic; }
+
+  .cta-body {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(246, 241, 239, 0.72);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 18px 40px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+
+  .cta-button:hover {
+    background: var(--accent-deep);
+    transform: translateY(-2px);
+  }
+
+  .cta-signature {
+    margin-top: 60px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(246, 241, 239, 0.5);
+    position: relative;
+  }
+
+  .cta-signature strong {
+    color: var(--cream);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* ==================== ENGAGEMENT BLOCK ==================== */
+  .engagement-box {
+    background: var(--sand);
+    padding: 36px 40px;
+    margin-top: 40px;
+    border-top: 3px solid var(--accent);
+  }
+
+  .engagement-label {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .engagement-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .engagement-body {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--charcoal-soft);
+    max-width: 780px;
+  }
+
+  .engagement-pricing {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--charcoal);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-weight: 700;
+  }
+
+  .section-divider {
+    padding: 0;
+    margin: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--line-strong), transparent);
+    border: none;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ==================== MASTHEAD ==================== -->
+<header class="masthead">
+  <div class="shell">
+    <div class="brand-mark"><span></span>Frontier Group · Baseline Organization Health Assessment</div>
+    <h1 class="report-title">Meridian Group <em>·</em> Health Report</h1>
+    <div class="report-meta">
+      <div class="report-meta-item">Period<strong>April 2026</strong></div>
+      <div class="report-meta-item">Respondents<strong>14 Total</strong></div>
+      <div class="report-meta-item">Team<strong>12 Members</strong></div>
+      <div class="report-meta-item">Leadership<strong>2 Members</strong></div>
+      <div class="report-meta-item">Weighting<strong>80 / 20</strong></div>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== SCALE BAR ==================== -->
+<div class="scale-bar">
+  <div class="shell scale-inner">
+    <span class="scale-label">Score Scale</span>
+    <span class="scale-item"><span class="scale-dot healthy"></span>3.5 – 5.0 · Healthy</span>
+    <span class="scale-item"><span class="scale-dot risk"></span>2.5 – 3.4 · At Risk</span>
+    <span class="scale-item"><span class="scale-dot critical"></span>Below 2.5 · Critical</span>
+  </div>
+</div>
+
+<!-- ==================== TOP SCORES ==================== -->
+<section>
+  <div class="shell">
+    <div class="eyebrow">The Scoreboard</div>
+    <h2 class="section-title">Organizational Health at a Glance</h2>
+    <p class="section-lede">The Overall Health Score is not an average. It is set at the lowest category score and capped at the Leader Limit. The weakest competency defines the floor.</p>
+
+    <div class="score-grid">
+      <div class="score-tile primary">
+        <div class="score-tile-label">Overall Health</div>
+        <div><span class="score-value" data-score="2.8">2.8</span></div>
+        <div class="score-label at-risk">At Risk · Capped at Leader Limit</div>
+        <div class="score-bar"><div class="score-bar-fill risk" data-fill="56"></div></div>
+      </div>
+      <div class="score-tile">
+        <div class="score-tile-label">Clarity</div>
+        <div><span class="score-value" data-score="2.9">2.9</span></div>
+        <div class="score-label">Vague &amp; Inconsistent</div>
+        <div class="score-bar"><div class="score-bar-fill risk" data-fill="58"></div></div>
+      </div>
+      <div class="score-tile">
+        <div class="score-tile-label">Communication</div>
+        <div><span class="score-value" data-score="3.0">3.0</span></div>
+        <div class="score-label">Inconsistent</div>
+        <div class="score-bar"><div class="score-bar-fill risk" data-fill="60"></div></div>
+      </div>
+      <div class="score-tile">
+        <div class="score-tile-label">Culture</div>
+        <div><span class="score-value" data-score="3.8">3.8</span></div>
+        <div class="score-label">Healthy &amp; Stable</div>
+        <div class="score-bar"><div class="score-bar-fill healthy" data-fill="76"></div></div>
+      </div>
+    </div>
+
+    <div class="leader-cap">
+      <div class="leader-cap-score">
+        <div class="leader-cap-score-value">2.8</div>
+        <div class="leader-cap-score-label">Developing Leader</div>
+      </div>
+      <div class="leader-cap-text">
+        <strong>Leader Limit · The Ceiling</strong>
+        Overall Health is capped at the Leader Limit. The organization is running at the ceiling of its current leadership capacity. Growth requires both system build and leadership development simultaneously.
+      </div>
+    </div>
+
+    <div class="perception-wrapper">
+      <div class="perception-header">
+        <div class="perception-title">Perception Gap · Leadership vs Team</div>
+        <div class="perception-legend">
+          <div class="legend-item"><span class="legend-swatch team"></span>Team Experience</div>
+          <div class="legend-item"><span class="legend-swatch leader"></span>Leadership Perception</div>
+        </div>
+      </div>
+
+      <div class="perception-chart">
+        <div class="perception-row">
+          <div class="perception-label">Clarity</div>
+          <div class="perception-bars">
+            <div class="perception-bar"><div class="perception-bar-fill team" data-fill="58"></div></div>
+            <div class="perception-bar"><div class="perception-bar-fill leader" data-fill="75"></div></div>
+          </div>
+          <div class="perception-gap-label">+0.85</div>
+        </div>
+        <div class="perception-row">
+          <div class="perception-label">Communication</div>
+          <div class="perception-bars">
+            <div class="perception-bar"><div class="perception-bar-fill team" data-fill="60"></div></div>
+            <div class="perception-bar"><div class="perception-bar-fill leader" data-fill="72"></div></div>
+          </div>
+          <div class="perception-gap-label">+0.60</div>
+        </div>
+        <div class="perception-row">
+          <div class="perception-label">Culture</div>
+          <div class="perception-bars">
+            <div class="perception-bar"><div class="perception-bar-fill team" data-fill="76"></div></div>
+            <div class="perception-bar"><div class="perception-bar-fill leader" data-fill="84"></div></div>
+          </div>
+          <div class="perception-gap-label">+0.40</div>
+        </div>
+      </div>
+
+      <div class="perception-note">
+        Leadership rates the organization higher across all three categories. The widest gap is in Clarity. This is the most common and most costly blind spot in leader dependent organizations.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CRITICAL INSIGHTS ==================== -->
+<section>
+  <div class="shell">
+    <div class="eyebrow">Top Three</div>
+    <h2 class="section-title">Critical Insights</h2>
+    <p class="section-lede">Three patterns define what is actually happening inside Meridian Group. Everything else downstream of these is compromised until these are addressed.</p>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <span class="insight-number">01</span>
+        <div class="insight-headline">Direction is the primary constraint.</div>
+        <div class="insight-body">Two of three Direction subcategory questions scored below 2.5. The team cannot see where the organization is going, what the decision criteria are, or what 90 day success looks like. Everything downstream of direction is compromised.</div>
+      </div>
+      <div class="insight-card">
+        <span class="insight-number">02</span>
+        <div class="insight-headline">Expectations are not landing at the individual level.</div>
+        <div class="insight-body">Role clarity, expected outcomes, and work flow all scored below 2.6. People execute on instinct and assumption rather than documented standards. This is the root cause of leader dependency.</div>
+      </div>
+      <div class="insight-card">
+        <span class="insight-number">03</span>
+        <div class="insight-headline">The organization is at its leadership ceiling.</div>
+        <div class="insight-body">The Leader Limit (2.8) matches the Overall Health Score. There is no execution gap left to close. The system and the leader must grow together. Development is not optional. It is the unlock.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CATEGORY DRILL-DOWN ==================== -->
+<section>
+  <div class="shell">
+    <div class="eyebrow">Deep Dive</div>
+    <h2 class="section-title">Category Breakdown</h2>
+    <p class="section-lede">Every scored question is tied to a specific Frontier Framework element. Each category contains subcategory scores, question level detail, qualitative patterns, and the prescribed work.</p>
+
+    <div class="category-instruction">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="2">
+        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Click the red arrow to expand each category, then click each sub-category tab for the full breakdown.</span>
+    </div>
+
+    <div class="categories">
+
+      <!-- CLARITY -->
+      <article class="category" data-category="clarity">
+        <div class="category-summary">
+          <div>
+            <div class="category-number">01 / Category</div>
+            <div class="category-name">Clarity</div>
+          </div>
+          <div class="category-score-mini">Purpose 3.6 · Direction 2.7 · Expectations 2.5</div>
+          <div class="category-score">2.9</div>
+          <div class="category-toggle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8"><path d="M4 6L8 10L12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="category-body">
+          <div class="category-body-inner">
+            <div class="category-summary-text">
+              Meridian Group has a purpose the team connects with. The breakdown happens the moment the conversation moves from why to what and how. Direction is fragile. Decision criteria, measurable goals, and long term outcomes all score below 2.8. Expectations are the critical gap. People do not know what they own, what success looks like in their role, or how work moves across the organization.
+            </div>
+
+            <!-- Subcat tabs -->
+            <div class="subcat-tabs">
+              <button class="subcat-tab active" data-panel="clarity-purpose">Purpose <span class="subcat-tab-score">3.6</span></button>
+              <button class="subcat-tab" data-panel="clarity-direction">Direction <span class="subcat-tab-score">2.7</span></button>
+              <button class="subcat-tab" data-panel="clarity-expectations">Expectations <span class="subcat-tab-score">2.5</span></button>
+            </div>
+
+            <!-- Purpose panel -->
+            <div class="subcat-panel active" id="clarity-purpose">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Understanding</span><span class="question-score healthy">4.0</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="80"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Can Articulate</span><span class="question-score healthy">3.5</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="70"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Personal Meaning</span><span class="question-score healthy">4.1</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="82"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Who We Serve</span><span class="question-score risk">3.3</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="66"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Values Visible</span><span class="question-score risk">3.1</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="62"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">Team members can describe the mission but struggle to connect it to daily decisions. Values are known by name but rarely referenced in conversation.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direction panel -->
+            <div class="subcat-panel" id="clarity-direction">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Core Activities</span><span class="question-score risk">3.0</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="60"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Decision Criteria</span><span class="question-score critical">2.5</span></div><div class="question-bar"><div class="question-bar-fill critical" data-fill="50"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Long Term Outcomes</span><span class="question-score risk">2.8</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="56"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">12 Month Target</span><span class="question-score risk">2.6</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="52"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">90 Day Focus</span><span class="question-score risk">3.2</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="64"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Measurable Goals</span><span class="question-score critical">2.4</span></div><div class="question-bar"><div class="question-bar-fill critical" data-fill="48"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">Multiple respondents described feeling unsure whether they were working on the right things. Priorities are communicated verbally and informally. Nothing is written down or regularly revisited.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expectations panel -->
+            <div class="subcat-panel" id="clarity-expectations">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Role &amp; Responsibilities</span><span class="question-score risk">2.8</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="56"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Expected Outcomes</span><span class="question-score critical">2.5</span></div><div class="question-bar"><div class="question-bar-fill critical" data-fill="50"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Work Flow</span><span class="question-score critical">2.2</span></div><div class="question-bar"><div class="question-bar-fill critical" data-fill="44"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Key Processes</span><span class="question-score critical">2.3</span></div><div class="question-bar"><div class="question-bar-fill critical" data-fill="46"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">The most common theme across Expectations responses was a pattern of team members knowing what they do day-to-day but being unsure what they are actually responsible for.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Priorities -->
+            <div class="priorities">
+              <div class="subcat-section-title">Improvement Priorities · Clarity</div>
+              <div class="priority-list">
+                <div class="priority"><div class="priority-label">1 Page Plan</div><div class="priority-body">Annual priorities, key results, and 90 day milestones need to exist in writing and be visible to the full team. This is the single highest leverage Clarity build.</div></div>
+                <div class="priority"><div class="priority-label">Role Descriptions</div><div class="priority-body">Questions 1 and 2 in Expectations both scored below 2.6. Start with the five most critical roles. Define responsibilities, expected outcomes, and success criteria.</div></div>
+                <div class="priority"><div class="priority-label">Activity Map &amp; Key Processes</div><div class="priority-body">Work flow clarity scored 2.24. Lowest in the entire assessment. Document how the operation is structured and how work moves across it.</div></div>
+                <div class="priority"><div class="priority-label">2 Page Strategy · Core Activities</div><div class="priority-body">The team scored 2.96 on understanding what the organization does and does not do. Define the boundaries of focus and make them explicit.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- COMMUNICATION -->
+      <article class="category" data-category="communication">
+        <div class="category-summary">
+          <div>
+            <div class="category-number">02 / Category</div>
+            <div class="category-name">Communication</div>
+          </div>
+          <div class="category-score-mini">Rhythm 3.1 · Discipline 2.9</div>
+          <div class="category-score">3.0</div>
+          <div class="category-toggle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8"><path d="M4 6L8 10L12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="category-body">
+          <div class="category-body-inner">
+            <div class="category-summary-text">
+              The organization has the beginnings of a communication rhythm. The breakdown is in discipline. Conversations do not consistently review results, facilitation is absent or unclear, and meetings rarely produce documented next steps with named owners. The team is hearing about priority changes later than they should.
+            </div>
+
+            <div class="subcat-tabs">
+              <button class="subcat-tab active" data-panel="comm-rhythm">Rhythm <span class="subcat-tab-score">3.1</span></button>
+              <button class="subcat-tab" data-panel="comm-discipline">Discipline <span class="subcat-tab-score">2.9</span></button>
+            </div>
+
+            <div class="subcat-panel active" id="comm-rhythm">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Consistent Rhythm</span><span class="question-score risk">3.4</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="68"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Meeting Intent</span><span class="question-score risk">3.1</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="62"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Timely Information</span><span class="question-score risk">3.0</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="60"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Channel Infrastructure</span><span class="question-score risk">2.8</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="56"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">Respondents confirmed meetings happen regularly but described them as inconsistent in format. Several noted not knowing what a meeting would cover until they arrived.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="subcat-panel" id="comm-discipline">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Results Reviewed</span><span class="question-score risk">2.9</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="58"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Facilitator Present</span><span class="question-score risk">2.6</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="52"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Next Steps Confirmed</span><span class="question-score risk">3.0</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="60"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">The team identified a pattern of discussion without resulting change. Follow through confirmation and results review were the most commonly cited gaps. Meetings feel productive in the moment but produce little accountability afterward.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priorities">
+              <div class="subcat-section-title">Improvement Priorities · Communication</div>
+              <div class="priority-list">
+                <div class="priority"><div class="priority-label">Install a Weekly Team Check In</div><div class="priority-body">Fixed agenda, named facilitator, consistent time. This addresses the three lowest Discipline scores simultaneously.</div></div>
+                <div class="priority"><div class="priority-label">Assign a Facilitator for Every Recurring Meeting</div><div class="priority-body">The facilitator role is not assumed. It is assigned. This is the highest leverage Discipline fix available.</div></div>
+                <div class="priority"><div class="priority-label">Close Every Meeting with Confirmed Next Steps</div><div class="priority-body">Who is doing what, by when. Written down. Reviewed at the next check in.</div></div>
+                <div class="priority"><div class="priority-label">Define How Information Moves Between Meetings</div><div class="priority-body">What goes in a huddle, what gets a direct message, what gets an email. The channel infrastructure score of 2.80 reflects the absence of these standards.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CULTURE -->
+      <article class="category" data-category="culture">
+        <div class="category-summary">
+          <div>
+            <div class="category-number">03 / Category</div>
+            <div class="category-name">Culture</div>
+          </div>
+          <div class="category-score-mini">Collective 4.0 · Individual 3.6</div>
+          <div class="category-score">3.8</div>
+          <div class="category-toggle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke-width="1.8"><path d="M4 6L8 10L12 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="category-body">
+          <div class="category-body-inner">
+            <div class="category-summary-text">
+              Culture is the clear organizational strength at Meridian Group. Trust is real, conflict stays healthy, and people follow through on commitments. Individual experience is solid with one exception. Growth path clarity. Team members feel valued but do not see a defined road forward within the organization.
+            </div>
+
+            <div class="subcat-tabs">
+              <button class="subcat-tab active" data-panel="culture-collective">Collective <span class="subcat-tab-score">4.0</span></button>
+              <button class="subcat-tab" data-panel="culture-individual">Individual <span class="subcat-tab-score">3.6</span></button>
+            </div>
+
+            <div class="subcat-panel active" id="culture-collective">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Trust &amp; Vulnerability</span><span class="question-score healthy">4.3</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="86"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Healthy Conflict</span><span class="question-score healthy">3.8</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="76"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Follow Through</span><span class="question-score healthy">4.0</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="80"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Results Focus</span><span class="question-score healthy">4.1</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="82"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">The team described the culture in warm and relational terms, consistently emphasizing trust, honesty, and support. There was alignment across leadership and team responses. A positive signal that the culture is genuinely shared, not just performed.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="subcat-panel" id="culture-individual">
+              <div class="subcat-grid">
+                <div>
+                  <div class="subcat-section-title">Question Breakdown</div>
+                  <div class="question-list">
+                    <div class="question-row"><div class="question-top"><span class="question-label">Valued &amp; Contributing</span><span class="question-score healthy">4.0</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="80"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Quality Feedback</span><span class="question-score risk">3.3</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="66"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Strengths Used</span><span class="question-score healthy">3.8</span></div><div class="question-bar"><div class="question-bar-fill healthy" data-fill="76"></div></div></div>
+                    <div class="question-row"><div class="question-top"><span class="question-label">Growth Path</span><span class="question-score risk">3.1</span></div><div class="question-bar"><div class="question-bar-fill risk" data-fill="62"></div></div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="subcat-section-title">Qualitative Pattern</div>
+                  <div class="qual-block">Feedback quality and growth path were the two most common qualitative concerns. Team members feel seen in the present but uncertain about the future. Several noted wanting more structured feedback, not more praise.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priorities">
+              <div class="subcat-section-title">Maintenance Priorities · Culture</div>
+              <p style="font-size: 14px; color: var(--charcoal-soft); margin-bottom: 20px; line-height: 1.6; font-family: var(--serif); max-width: 720px;">Culture is healthy. The priority here is protection, not repair. As the organization builds structure, the risk is that new systems feel imposed rather than owned. Involve the team in the process.</p>
+              <div class="priority-list">
+                <div class="priority"><div class="priority-label">Document &amp; Reinforce Core Values</div><div class="priority-body">Culture scores are high but without documented values, culture becomes personality dependent. It changes when people leave.</div></div>
+                <div class="priority"><div class="priority-label">Address Growth Path Clarity</div><div class="priority-body">Individual growth path scored 3.10. The lowest culture score. Role Descriptions and a regular 1:1 cadence will address this directly.</div></div>
+                <div class="priority"><div class="priority-label">Run the Culture Survey Every Six Months</div><div class="priority-body">This baseline is healthy. The risk is drift. The Culture Survey is the signal that catches it before it compounds.</div></div>
+                <div class="priority"><div class="priority-label">Communicate the Why Behind Every System</div><div class="priority-body">Teams that understand why the structure is being installed adopt it. Teams that do not, resist it.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LEADER LIMIT DEEP DIVE ==================== -->
+<section class="leader-section">
+  <div class="shell">
+    <div class="eyebrow">Leader Limit</div>
+    <h2 class="section-title">The Ceiling is the Leader</h2>
+    <p class="section-lede">The Leader Limit is the average of seven questions, one embedded in each subcategory, measuring how the team perceives leadership. It is calculated from team responses only. The organization cannot sustainably perform above this number.</p>
+
+    <div class="leader-grid">
+      <div class="leader-summary">
+        <div class="leader-score-big">2.8</div>
+        <div class="leader-score-label">Developing Leader</div>
+        <div class="leader-summary-text">
+          At 2.8, leadership effectiveness is inconsistent across subcategories. Functional in some areas, unreliable in others. The gap between where leadership perceives itself and where the team experiences it is the most urgent development signal in this report. Executive coaching runs in parallel with the build. Not after it.
+        </div>
+        <div class="leader-qual">The most consistent theme across open responses was the absence of structured leadership presence in the work. Team members described a leader who is trusted personally but unpredictable operationally. Present for big decisions, absent from the rhythms that keep work clear and accountable.</div>
+      </div>
+
+      <div class="leader-questions">
+        <div class="leader-q"><div class="leader-q-label"><strong>Purpose</strong>Communicates Why We Exist</div><div class="leader-q-bar"><div class="leader-q-bar-fill good" data-fill="62"></div></div><div class="leader-q-score">3.1</div></div>
+        <div class="leader-q"><div class="leader-q-label"><strong>Direction</strong>Provides Clear Direction</div><div class="leader-q-bar"><div class="leader-q-bar-fill" data-fill="52"></div></div><div class="leader-q-score">2.6</div></div>
+        <div class="leader-q"><div class="leader-q-label"><strong>Expectations</strong>Sets &amp; Holds Clear Expectations</div><div class="leader-q-bar"><div class="leader-q-bar-fill" data-fill="50"></div></div><div class="leader-q-score">2.5</div></div>
+        <div class="leader-q"><div class="leader-q-label"><strong>Rhythm</strong>Manages Proactive Meeting System</div><div class="leader-q-bar"><div class="leader-q-bar-fill good" data-fill="64"></div></div><div class="leader-q-score">3.2</div></div>
+        <div class="leader-q"><div class="leader-q-label"><strong>Discipline</strong>Facilitates Accountable Conversations</div><div class="leader-q-bar"><div class="leader-q-bar-fill" data-fill="54"></div></div><div class="leader-q-score">2.7</div></div>
+        <div class="leader-q"><div class="leader-q-label"><strong>Collective</strong>Builds Trust &amp; Shared Accountability</div><div class="leader-q-bar"><div class="leader-q-bar-fill" data-fill="60"></div></div><div class="leader-q-score">3.0</div></div>
+        <div class="leader-q"><div class="leader-q-label"><strong>Individual</strong>Invests in Individual Growth</div><div class="leader-q-bar"><div class="leader-q-bar-fill" data-fill="58"></div></div><div class="leader-q-score">2.9</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== QUALITATIVE THEMES ==================== -->
+<section>
+  <div class="shell">
+    <div class="eyebrow">What People Said</div>
+    <h2 class="section-title">Key Qualitative Insights</h2>
+    <p class="section-lede">Patterns pulled from open response data. These are the words the team used when no one was scoring them.</p>
+
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-quote">The team knows what they do, not what they own.</div>
+        <div class="theme-body">Across Expectations, respondents described their work accurately but could not identify their accountabilities or how success was defined. The work exists. The ownership does not.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-quote">Direction feels like a moving target.</div>
+        <div class="theme-body">Multiple respondents noted priorities shifting without notice. Several described feeling unsure whether they were working on the right things at any given time.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-quote">Trust is real but untested.</div>
+        <div class="theme-body">Culture responses were warm and consistent. Several individuals noted they had not experienced real conflict or high stakes disagreement. Leaving the depth of trust unverified.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-quote">Meetings happen but do not produce.</div>
+        <div class="theme-body">Respondents acknowledged a meeting rhythm exists. Common themes: conversations drift, no one is clearly in charge, and follow through is assumed rather than confirmed.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-quote">People feel valued but not developed.</div>
+        <div class="theme-body">Individual responses showed high belonging scores alongside low growth path scores. The team feels seen but does not see a future. A retention risk that will surface over time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NEXT STEPS ==================== -->
+<section>
+  <div class="shell">
+    <div class="eyebrow">The Prescription</div>
+    <h2 class="section-title">Top Five Next Steps</h2>
+    <p class="steps-intro">Sequenced for leverage, not comfort. Each one produces visible traction before the next begins.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <strong>Establish your annual priorities and make them visible to the team.</strong>
+          <p>Agree on what this organization is trying to accomplish this year. In writing, with measurable targets. The team cannot execute toward a target they cannot see.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <strong>Define what each person on your team owns and what winning looks like in their role.</strong>
+          <p>Start with the five most critical roles. Document responsibilities and expected outcomes. This one step reduces the volume of decisions that route back to you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <strong>Build a scoreboard your team reviews every month.</strong>
+          <p>Identify the 12 to 15 numbers that tell you whether the organization is healthy. Anchor every checkpoint conversation to those numbers. Not opinions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <strong>Install a weekly team check in with a set agenda and a named facilitator.</strong>
+          <p>One structured, facilitated conversation per week is the fastest way to build communication discipline. Start before anything else is built.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <strong>Begin working with a leadership coach alongside the build.</strong>
+          <p>The Leader Limit is the ceiling. No amount of system building will raise it. Development must happen in parallel. Not after.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DEVELOPMENT PLAN ==================== -->
+<section>
+  <div class="shell">
+    <div class="eyebrow">The Plan</div>
+    <h2 class="section-title">Proposed Development Plan</h2>
+    <p class="section-lede">Sequenced to address the most critical constraints first, install the structural foundation second, and build toward a fully running system.</p>
+
+    <div class="plan-intro-box">
+      <div class="plan-intro-label">Primary Constraint</div>
+      <div class="plan-intro-text">
+        Direction and Expectations are the floor. The Leader Limit score confirms the ceiling is low. The plan prioritizes the tools that address direction and expectations first, pairs them with an execution rhythm that makes accountability visible, and develops the leader in parallel. Neither the system build nor the leadership development can wait for the other.
+      </div>
+    </div>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-number">Phase 01</div>
+        <div class="phase-title">Foundation Build</div>
+        <div class="phase-dates">Weeks 1 – 8</div>
+        <ul class="phase-list">
+          <li>Complete the Health Assessment debrief. Align on the picture, commit to the priorities</li>
+          <li>Build the 2 Page Strategy. Vision, Core Activities, Core Values, Target Market, Elevator Pitch</li>
+          <li>Build the 1 Page Plan. Annual objective, key results, 90 day milestones</li>
+          <li>Build the Execution Scorecard. 12 to 15 Work Score metrics</li>
+          <li>Launch the Weekly Huddle. Fixed agenda, named facilitator, starts immediately</li>
+          <li>Begin leadership coaching alongside the build</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-number">Phase 02</div>
+        <div class="phase-title">Complete the Build</div>
+        <div class="phase-dates">Weeks 9 – 16</div>
+        <ul class="phase-list">
+          <li>Write Role Descriptions for all key roles. Up to 10 total</li>
+          <li>Document the Activity Map and up to 3 Key Processes</li>
+          <li>Launch the Monthly Score Review. Scorecard anchors every checkpoint conversation</li>
+          <li>Run the first Quarterly Planning Session. 90 day milestones with named owners</li>
+          <li>Conduct Signal Training. Equip the team to run 1:1 Role Reviews and Culture Survey</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="phase-number">Phase 03</div>
+        <div class="phase-title">Maintain &amp; Adapt</div>
+        <div class="phase-dates">Month 5+</div>
+        <ul class="phase-list">
+          <li>All three signals running. Scorecard monthly, 1:1 Role Reviews quarterly, Culture Survey every six months</li>
+          <li>Full Rhythm. Weekly Huddles, Monthly Score Reviews, Quarterly Planning Sessions</li>
+          <li>6 month health reassessment. Compare against baseline, identify the next constraint, adapt the plan</li>
+          <li>The system is now self correcting. The team monitors health and leadership responds to what the data says</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="engagement-box">
+      <div class="engagement-label">Recommended Engagement</div>
+      <div class="engagement-title">Accelerator Build</div>
+      <div class="engagement-body">Complete artifact development across all Frontier Framework elements, Signal Training, first Quarterly Planning Session, one month of Weekly Huddles, and 4 hours of executive coaching.</div>
+      <div class="engagement-pricing">Followed by Full Rhythm · 90 day commitment</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== END ==================== -->
+
+<script>
+  // ========== Score reveal on scroll ==========
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.score-value').forEach(el => revealObs.observe(el));
+
+  // ========== Fill bars on scroll ==========
+  const fillObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target.dataset.fill;
+        requestAnimationFrame(() => {
+          entry.target.style.width = fill + '%';
+        });
+        fillObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('[data-fill]').forEach(el => fillObs.observe(el));
+
+  // ========== Category accordion ==========
+  document.querySelectorAll('.category-summary').forEach(summary => {
+    summary.addEventListener('click', () => {
+      const category = summary.parentElement;
+      const isOpen = category.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.category').forEach(c => c.classList.remove('open'));
+
+      // Open this one if it wasn't already
+      if (!isOpen) {
+        category.classList.add('open');
+
+        // Re-trigger bar fill for visible question bars in this category
+        setTimeout(() => {
+          category.querySelectorAll('[data-fill]').forEach(bar => {
+            const fill = bar.dataset.fill;
+            bar.style.width = '0%';
+            requestAnimationFrame(() => {
+              setTimeout(() => { bar.style.width = fill + '%'; }, 50);
+            });
+          });
+        }, 200);
+      }
+    });
+  });
+
+  // ========== Subcategory tabs ==========
+  document.querySelectorAll('.subcat-tab').forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const panelId = tab.dataset.panel;
+      const category = tab.closest('.category');
+
+      // Switch active tab
+      category.querySelectorAll('.subcat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Switch active panel
+      category.querySelectorAll('.subcat-panel').forEach(p => p.classList.remove('active'));
+      const panel = document.getElementById(panelId);
+      panel.classList.add('active');
+
+      // Re-fill bars in this panel
+      panel.querySelectorAll('[data-fill]').forEach(bar => {
+        const fill = bar.dataset.fill;
+        bar.style.width = '0%';
+        requestAnimationFrame(() => {
+          setTimeout(() => { bar.style.width = fill + '%'; }, 50);
+        });
+      });
+    });
+  });
+
+  // ========== Prevent summary click from firing when clicking toggle ==========
+  document.querySelectorAll('.category-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      // Let the summary handle it
+    });
+  });
+</script>
+
+</body>
+</html>
