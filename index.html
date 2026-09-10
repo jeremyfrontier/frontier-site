@@ -43,7 +43,7 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;color:var(--coral);margin:0 0 18px;}
 .prose{max-width:64ch;}
-.whogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,400px);
+.whogrid{display:grid;grid-template-columns:minmax(290px,400px) minmax(0,1fr);
   gap:clamp(36px,6vw,80px);align-items:start;}
 .portrait{margin:0;border-radius:24px;overflow:hidden;background:#E6DAD5;}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
@@ -70,7 +70,7 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 
 /* ── Hero ──────────────────────────────────────────────── */
 .hero{padding-block:clamp(48px,7vw,92px) clamp(52px,8vw,96px);}
-.herogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);
+.herogrid{display:grid;grid-template-columns:minmax(280px,420px) minmax(0,1fr);
   gap:clamp(30px,5vw,72px);align-items:center;}
 .heroshot{margin:0;position:relative;}
 .heroshot::before{content:"";position:absolute;left:4%;right:4%;bottom:0;top:9%;
@@ -227,18 +227,20 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 
   <!-- HERO -->
   <section class="hero wrap">
-    <div class="herogrid">
-    <div>
+    <div class="herohead">
     <p class="kicker">Jeremy Rivers &middot; Operations and team leadership &middot; McKinney, Texas</p>
     <h1>I help overwhelmed leaders build ops and teams that run on a
       <span class="mark">system<svg viewBox="0 0 220 12" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path d="M3 8.4C48 3.6 122 2.4 217 6.2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>,
       not on them.</h1>
-    <p class="support">The system is simple: a clear plan, clear roles, and a checkpoint rhythm that runs weekly to yearly and holds everyone accountable. It gets the entire team on the same page, executing with confidence day-to-day in the right direction.</p>
-    <a class="btn" href="#connect">Connect</a>
     </div>
+    <div class="herogrid">
     <figure class="heroshot">
       <img src="assets/img/jeremy-portrait.png" alt="Jeremy Rivers" width="744" height="768">
     </figure>
+    <div class="herobody">
+    <p class="support">The system is simple: a clear plan, clear roles, and a checkpoint rhythm that runs weekly to yearly and holds everyone accountable. It gets the entire team on the same page, executing with confidence day-to-day in the right direction.</p>
+    <a class="btn" href="#connect">Connect</a>
+    </div>
     </div>
   </section>
 
@@ -265,14 +267,14 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
         <h2>I build the thing operations run on.</h2>
       </div>
       <div class="whogrid">
+      <figure class="portrait">
+        <img src="assets/img/jeremy-speaking.jpg" alt="Jeremy Rivers facilitating a session" width="900" height="1125">
+      </figure>
       <div class="prose">
         <p>Twenty years ago I watched a mission I believed in nearly come apart. Not from a lack of passion. From a lack of a system. Good people, real purpose, and nothing holding it together. I lived the fallout, and I swore I would never do it again.</p>
         <p>Then I got the opportunity and responsibility to build a team and operation from the ground up, determined to do it differently. Over eight years as Founding COO of a nonprofit, we grew it from 2 people to 50 across 10 departments, sent 11,000 leaders to the Holy Land, and held it together through a pandemic and a war. We kept what worked and cut what didn’t until we had an operation that ran on more than my presence.</p>
         <p>That system is what I install now. First through Frontier Group, the practice I built to pass it on, and most recently rebuilding a two location business from a single Gmail account into a full operating system. I don’t just run operations. I build the thing operations run on.</p>
       </div>
-      <figure class="portrait">
-        <img src="assets/img/jeremy-speaking.jpg" alt="Jeremy Rivers facilitating a session" width="900" height="1125">
-      </figure>
       </div>
     </div>
   </section>
