@@ -154,6 +154,9 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 .book .title{font-style:italic;}
 .book p{color:var(--ink-soft);max-width:60ch;margin:0;}
 .book .artifact{margin-top:28px;}
+.bookgrid{display:grid;grid-template-columns:minmax(190px,260px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;}
+.bookcover{margin:0;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(44,44,44,.20);}
+.bookcover img{width:100%;display:block;aspect-ratio:2/3;object-fit:cover;}
 
 /* ── Testimonials ──────────────────────────────────────── */
 .quotes{columns:2;column-gap:26px;}
@@ -202,6 +205,8 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
   .whogrid{grid-template-columns:1fr;}
   .portrait{max-width:340px;margin-inline:auto;}
   .fw-layer{grid-template-columns:1fr;gap:12px;}
+  .bookgrid{grid-template-columns:1fr;gap:28px;}
+  .bookcover{max-width:240px;margin-inline:auto;}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
@@ -341,11 +346,18 @@ h1,h2,h3{font-family:var(--serif);font-variation-settings:var(--display);
 <section class="book band">
   <div class="wrap narrow">
     <p class="eyebrow">The book</p>
-    <h2>I’m writing <span class="title">Uncommon Momentum</span>, on the only skill that unlocks the potential in small teams.</h2>
+    <div class="bookgrid">
+    <figure class="bookcover">
+      <img src="assets/img/uncommon-work-cover.png" alt="Uncommon Work by Jeremy Rivers, book cover" width="1024" height="1536">
+    </figure>
+    <div class="bookbody">
+    <h2>I’m writing <span class="title">Uncommon Work</span>, on the only skill that unlocks the potential in small teams.</h2>
     <p>You can follow the thinking now on my newsletter, Take Account.</p>
     <a class="artifact" href="https://takeaccount.substack.com" target="_blank" rel="noopener noreferrer">Read Take Account
       <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+    </div>
+    </div>
   </div>
 </section>
 
