@@ -7,7 +7,6 @@
 <meta name="description" content="A three minute read on your organization's clarity, accountability, and culture, plus how much still runs through you.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,600&display=swap">
 <link rel="icon" href="../assets/img/favicon-64.png">
-<script src="../assets/js/emailjs-browser-4.4.1.min.js"></script>
 <style>
 @font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
@@ -121,9 +120,7 @@ p{margin:0 0 16px}.muted{color:var(--muted)}.small{font-size:14px}
 var SEASON_LINE = 'Before you plan 2027, know where you actually stand.';
 var BOOKING_LINK = 'https://calendar.app.google/ApJbwKz4WxqyrWHK9';
 var CONTACT_EMAIL = 'jeremy@thefrontiergroup.co';
-var EJS_PUBLIC_KEY = 'IECsCc7xMblLvD15V';
-var EJS_SERVICE_ID = 'service_vbr0yh5';
-var EJS_TEMPLATE_JEREMY = 'template_7g9fuxb';
+var LEAD_ENDPOINT = '__ENDPOINT__'; /* Apps Script web app: logs to the Leads sheet and emails Jeremy */
 /* --------------------------------------------------- */
 
 var Q = [
@@ -260,7 +257,6 @@ function finish(){
   notify(r,ob,db,running,missing,fh);
 }
 function notify(r,ob,db,running,missing,fh){
-  try{ emailjs.init({publicKey:EJS_PUBLIC_KEY}); }catch(err){ return; }
   var detail=['Name: '+respondent.name,'Email: '+respondent.email,'Organization: '+respondent.org,'Type: '+respondent.type,'Team size: '+respondent.size,'Role: '+respondent.role,'',
    'Overall: '+r.overall.toFixed(1)+' ('+ob.label+')',
    'Clarity: '+r.clarity.toFixed(1)+' | Accountability: '+r.accountability.toFixed(1)+' | Culture: '+r.culture.toFixed(1),
@@ -269,12 +265,15 @@ function notify(r,ob,db,running,missing,fh){
    'Leader Dependency: '+r.dependency.toFixed(1)+' ('+db.label+')',
    'Huddles running: '+running+' of 10. Missing: '+(missing.join(', ')||'none'),
    'First huddle recommended: '+fh.h].join('\n');
-  emailjs.send(EJS_SERVICE_ID,EJS_TEMPLATE_JEREMY,{
-    to_name:'Jeremy',to_email:CONTACT_EMAIL,resp_email:respondent.email,
-    overall_score:r.overall.toFixed(1),overall_band:ob.label,
-    clarity:r.clarity.toFixed(1),communication:r.accountability.toFixed(1),accountability:r.accountability.toFixed(1),culture:r.culture.toFixed(1),
-    dependency:r.dependency.toFixed(1),existence_count:running+' of 10',detail:detail
-  }).catch(function(err){console.warn('Notification failed',err)});
+  var payload={name:respondent.name,email:respondent.email,org:respondent.org,type:respondent.type,size:respondent.size,role:respondent.role,
+    overall:r.overall.toFixed(1),overallBand:ob.label,clarity:r.clarity.toFixed(1),accountability:r.accountability.toFixed(1),culture:r.culture.toFixed(1),
+    dependency:r.dependency.toFixed(1),dependencyBand:db.label,purpose:r.sub.purpose,direction:r.sub.direction,expectations:r.sub.expectations,
+    rhythm:r.sub.rhythm,discipline:r.sub.discipline,collective:r.sub.collective,individual:r.sub.individual,
+    running:running+' of 10',missing:missing.join(', '),firstHuddle:fh.h,detail:detail};
+  try{
+    fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+      .catch(function(err){console.warn('Lead notification failed',err)});
+  }catch(err){console.warn('Lead notification failed',err)}
 }
 $('seasonLine').textContent=SEASON_LINE;
 </script>
