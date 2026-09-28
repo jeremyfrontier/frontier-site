@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baseline Snapshot | Frontier Group</title>
+<meta name="description" content="A three minute read on your organization's clarity, accountability, and culture, plus how much still runs through you.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,600&display=swap">
+<link rel="icon" href="../assets/img/favicon-64.png">
+<script src="../assets/js/emailjs-browser-4.4.1.min.js"></script>
+<style>
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--bg:#F6F1EF;--surface:#FFFFFF;--dark:#2C2C2C;--accent:#EC5B59;--accent-lt:#FEF0EF;--muted:#6A625E;--border:#E4DBD7;
+--green:#2D7A4F;--lime:#5A8A2A;--amber:#C07A1A;--red:#B83232;--display:"Newsreader",Georgia,serif;--body:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--dark);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:24px 16px 64px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.top img{height:34px;width:auto}
+.step{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bar{height:4px;background:var(--border);border-radius:4px;margin-bottom:28px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px 24px}
+@media(min-width:560px){.card{padding:40px 40px}}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+h1,h2{font-family:var(--display);font-weight:700;line-height:1.25;margin:0 0 16px}
+h1{font-size:30px}h2{font-size:23px}
+p{margin:0 0 16px}.muted{color:var(--muted)}.small{font-size:14px}
+.screen{display:none}.screen.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;border:0;border-radius:10px;background:var(--accent);color:#fff;font:600 17px var(--body);padding:15px 26px;cursor:pointer;text-decoration:none;text-align:center}
+.btn:focus-visible,.scale button:focus-visible,.back:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--dark);outline-offset:2px}
+.btn:hover{filter:brightness(.95)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--dark);border:1px solid var(--border)}
+.btn.block{display:block;width:100%}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.q{font-family:var(--display);font-size:21px;line-height:1.4;margin:0 0 26px}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scale button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:14px 4px 10px;font:600 20px var(--body);color:var(--dark);cursor:pointer}
+.scale button span{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:4px;line-height:1.2}
+@media(hover:hover){.scale button:hover{border-color:var(--accent)}}.scale button.sel{background:var(--accent);border-color:var(--accent);color:#fff}
+.scale button.sel span{color:#fff}
+.checks label{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.checks input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:none}
+.field{margin-bottom:16px}.field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.field input,.field select{width:100%;font:16px var(--body);padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--dark)}
+.back{background:none;border:0;color:var(--muted);font:500 15px var(--body);cursor:pointer;padding:0;margin-top:20px}
+.score-hero{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.score-hero b{font-family:var(--display);font-size:52px;line-height:1}
+.pill{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 11px;border-radius:99px;color:#fff}
+.meter{margin:14px 0}.meter .lab{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:6px}
+.meter .lab em{font-style:normal;font-weight:500;color:var(--muted)}
+.track{height:10px;background:#EEE9E2;border-radius:6px;overflow:hidden}.track i{display:block;height:100%;border-radius:6px}
+.block{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.callout{background:var(--accent-lt);border-radius:12px;padding:22px 20px;margin-top:28px}
+.missing{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.foot{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+@media print{body{background:#fff}.no-print,.bar,.top .step{display:none!important}.card{border:0;padding:0}.screen{display:none!important}#results{display:block!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a href="/"><img src="../assets/img/logotype-dark.png" alt="Frontier Group home"></a><div class="step" id="stepLabel"></div></div>
+  <div class="bar"><i id="barFill"></i></div>
+
+  <div class="card">
+    <section class="screen on" id="intro">
+      <p class="eyebrow">Baseline Snapshot</p>
+      <h1>Does your organization run on clarity, or on you?</h1>
+      <p id="seasonLine"></p>
+      <p>Find out how much still runs through you, and the first fix to make.</p>
+      <ul class="missing" style="color:var(--dark);font-size:16px"><li>10 questions and a quick checklist</li><li>About 3 minutes</li><li>Results on screen right away</li></ul>
+      <p class="muted small" style="margin-top:16px">Answer for how things are today.</p>
+      <div class="row"><button class="btn" onclick="go(1)">See where I stand</button></div>
+    </section>
+
+    <section class="screen" id="qscreen">
+      <p class="eyebrow" id="qArea"></p>
+      <p class="q" id="qText"></p>
+      <div class="scale" id="scale"></div>
+      <button class="back" onclick="prevQ()">Back</button>
+    </section>
+
+    <section class="screen" id="exist">
+      <p class="eyebrow">What already exists</p>
+      <h2>Check everything your organization has in place today.</h2>
+      <p class="muted small">If you are not sure it exists, leave it unchecked.</p>
+      <div class="checks" id="checks"></div>
+      <div class="row"><button class="btn" onclick="go(3)">Continue</button></div>
+      <button class="back" onclick="go(1,true)">Back</button>
+    </section>
+
+    <section class="screen" id="contact">
+      <p class="eyebrow">Almost there</p>
+      <h2>Where should your results go?</h2>
+      <div id="cform">
+        <div class="field"><label for="fname">Your name</label><input id="fname" required autocomplete="name"></div>
+        <div class="field"><label for="femail">Email</label><input id="femail" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="forg">Organization</label><input id="forg" autocomplete="organization"></div>
+        <div class="field"><label for="ftype">Type of organization</label>
+          <select id="ftype" required><option value="">Select one</option><option>Small business</option><option>Nonprofit</option><option>Church or ministry</option><option>Other</option></select></div>
+        <div class="field"><label for="fsize">Team size</label>
+          <select id="fsize" required><option value="">Select one</option><option>1 to 7</option><option>8 to 20</option><option>21 to 40</option><option>41 or more</option></select></div>
+        <div class="field"><label for="frole">Your role</label>
+          <select id="frole" required><option value="">Select one</option><option>Owner, founder, or top leader</option><option>Leadership team</option><option>Team member</option></select></div>
+        <p id="formErr" role="alert" style="color:var(--red);font-weight:600;font-size:15px;margin:4px 0 12px;display:none"></p>
+        <button class="btn block" type="button" onclick="finish()">See my results</button>
+      </div>
+      <button class="back" onclick="go(2)">Back</button>
+    </section>
+
+    <section class="screen" id="results"></section>
+  </div>
+  <p class="foot">Frontier Group &middot; thefrontiergroup.co</p>
+</main>
+
+<script>
+/* ---------- CONFIG: edit these lines only ---------- */
+var SEASON_LINE = 'Before you plan 2027, know where you actually stand.';
+var BOOKING_LINK = 'https://calendar.app.google/ApJbwKz4WxqyrWHK9';
+var CONTACT_EMAIL = 'jeremy@thefrontiergroup.co';
+var EJS_PUBLIC_KEY = 'IECsCc7xMblLvD15V';
+var EJS_SERVICE_ID = 'service_vbr0yh5';
+var EJS_TEMPLATE_JEREMY = 'template_7g9fuxb';
+/* --------------------------------------------------- */
+
+var Q = [
+ {k:'purpose',area:'Clarity',t:'Everyone on our team could explain why this organization exists, and their answers would sound the same.'},
+ {k:'direction',area:'Clarity',t:'Our team knows where we are going and what winning looks like this year, in actual numbers.'},
+ {k:'expectations',area:'Clarity',t:'People know exactly what is expected of them and how work hands off from one person to the next.'},
+ {k:'rhythm',area:'Accountability',t:'We have a consistent rhythm of meetings that keeps us ahead of problems, not just reacting to them.'},
+ {k:'discipline',area:'Accountability',t:'Our meetings review results, confirm last time’s commitments, and end with clear owners and deadlines.'},
+ {k:'collective',area:'Culture',t:'There is real trust on our team. People say what they think and follow through on what they commit to.'},
+ {k:'individual',area:'Culture',t:'People here feel valued, get useful feedback, and get to use what they are best at.'},
+ {k:'dep1',area:'How work moves',t:'If our top leader were unavailable for two weeks, our most important work would keep moving.'},
+ {k:'dep2',area:'How work moves',t:'Decisions rarely have to wait on our top leader to move forward.'},
+ {k:'dep3',area:'How work moves',t:'Our plan and priorities live somewhere the whole team can see, not mainly in our top leader’s head.'}
+];
+var LABELS = ['Strongly disagree','Disagree','Neutral','Agree','Strongly agree'];
+var HUDDLES = [
+ ['A written vision, purpose, and set of core values','2 Page Strategy'],
+ ['A written annual plan with clear, measurable goals','1 Page Plan'],
+ ['A chart showing who owns which functions of the organization','Activity Map'],
+ ['Written role descriptions for each role','Role Descriptions'],
+ ['Documented steps and standards for our most critical work','Key Processes'],
+ ['An annual planning retreat or offsite','Annual Retreat'],
+ ['A 90 day plan with clear owners','90 Day Roadmap'],
+ ['A monthly review of our key numbers','Monthly Review'],
+ ['A weekly team meeting with a set agenda','Team Huddle'],
+ ['Regular 1:1 meetings between each person and their leader','1:1']
+];
+var FIRST = {
+ team:{h:'The Team Huddle',w:'One protected hour a week where the team tracks results, reacts together, and commits to next steps. It is the first place work starts moving without routing through you, and every other huddle gets installed through it.'},
+ purpose:{h:'The 2 Page Strategy',w:'Put why you exist, where you are going, and how you behave on two pages your whole team can repeat. Alignment starts with the same words in every head.'},
+ direction:{h:'The 90 Day Roadmap',w:'Turn this year into one quarter of clear objectives and owners, so everyone knows what winning looks like right now, not someday.'},
+ expectations:{h:'Role Descriptions',w:'Give every seat clear outcomes and standards, so people stop guessing and stop bringing every question back to you.'},
+ rhythm:{h:'The Team Huddle',w:'A weekly rhythm that catches problems while they are small. Consistency first, then everything else has a place to live.'},
+ discipline:{h:'The Team Huddle, run with Track, React, Commit',w:'Start every meeting with results and last week’s commitments, and end it with owners and deadlines. That single change is where accountability becomes normal.'},
+ collective:{h:'The Team Huddle',w:'Trust grows where commitments are visible and followed up on every week. The huddle makes follow through a habit instead of a hope.'},
+ individual:{h:'The 1:1',w:'A regular conversation where feedback runs both directions. It is where people feel known, and where growth gets a plan.'},
+ dependency:{h:'The Activity Map',w:'Map who owns each function of the organization, so decisions have a home other than your desk. It is the fastest way to stop being the bottleneck.'}
+};
+var ans = new Array(Q.length).fill(null), qi = 0, checked = new Set(), respondent = {};
+
+function $(id){return document.getElementById(id)}
+function show(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on')});$(id).classList.add('on');window.scrollTo(0,0)}
+function progress(p,label){$('barFill').style.width=p+'%';$('stepLabel').textContent=label||''}
+
+function go(n,fromEnd){
+  if(n===1){ if(fromEnd) qi=Q.length-1; renderQ(); show('qscreen'); }
+  if(n===2){ renderChecks(); show('exist'); progress(80,'Checklist'); }
+  if(n===3){ show('contact'); progress(92,'Your results'); }
+}
+function renderQ(){
+  var q=Q[qi]; $('qArea').textContent=q.area; $('qText').textContent=q.t;
+  var sc=$('scale'); sc.innerHTML='';
+  for(var v=1;v<=5;v++){ (function(v){
+    var b=document.createElement('button'); b.type='button';
+    b.innerHTML=v+'<span>'+LABELS[v-1]+'</span>'; b.setAttribute('aria-label',v+', '+LABELS[v-1]);
+    if(ans[qi]===v) b.className='sel';
+    b.onclick=function(){ ans[qi]=v; b.className='sel'; setTimeout(nextQ,180); };
+    sc.appendChild(b); })(v); }
+  progress(Math.round((qi/Q.length)*75),'Question '+(qi+1)+' of '+Q.length);
+}
+function nextQ(){ if(qi<Q.length-1){qi++;renderQ();} else go(2); }
+function prevQ(){ if(qi>0){qi--;renderQ();} else {show('intro');progress(0,'');} }
+function renderChecks(){
+  var c=$('checks'); if(c.childNodes.length) return;
+  HUDDLES.forEach(function(h,i){
+    var l=document.createElement('label');
+    l.innerHTML='<input type="checkbox" value="'+i+'"><span>'+h[0]+'</span>';
+    l.querySelector('input').onchange=function(e){ e.target.checked?checked.add(i):checked.delete(i); };
+    c.appendChild(l);
+  });
+}
+function avg(a){return a.reduce(function(s,x){return s+x},0)/a.length}
+function score(){
+  var v={}; Q.forEach(function(q,i){v[q.k]=ans[i]});
+  var r={sub:{purpose:v.purpose,direction:v.direction,expectations:v.expectations,rhythm:v.rhythm,discipline:v.discipline,collective:v.collective,individual:v.individual}};
+  r.clarity=avg([v.purpose,v.direction,v.expectations]);
+  r.accountability=avg([v.rhythm,v.discipline]);
+  r.culture=avg([v.collective,v.individual]);
+  r.overall=Math.min(r.clarity,r.accountability,r.culture);
+  r.dependency=avg([v.dep1,v.dep2,v.dep3]);
+  return r;
+}
+function band(s,type){
+  var T={overall:['Organizationally Healthy','Stable and Functional','At Risk','Critical','Broken'],
+   clarity:['Concrete and Aligned','Clear and Functional','Vague and Inconsistent','Confused','Broken'],
+   accountability:['Disciplined and Proactive','Consistent and Adequate','Inconsistent','Unstructured and Reactive','Broken'],
+   culture:['Thriving','Healthy and Stable','Showing Strain','Struggling','Broken'],
+   dependency:['Distributed','Manageable','High Dependency','Critical Dependency','Single Point of Failure']}[type];
+  var i=s>=4.5?0:s>=3.5?1:s>=2.5?2:s>=1.5?3:4;
+  return {label:T[i],color:['var(--green)','var(--lime)','var(--amber)','var(--red)','var(--red)'][i]};
+}
+function firstHuddle(r){
+  if(!checked.has(8)) return FIRST.team;
+  var pool=Object.assign({},r.sub,{dependency:r.dependency});
+  var low=Object.keys(pool).reduce(function(a,b){return pool[b]<pool[a]?b:a});
+  return FIRST[low];
+}
+function meter(name,s,type){
+  var b=band(s,type);
+  return '<div class="meter"><div class="lab"><span>'+name+' <em>'+b.label+'</em></span><span>'+s.toFixed(1)+'</span></div>'+
+   '<div class="track"><i style="width:'+(s/5*100)+'%;background:'+b.color+'"></i></div></div>';
+}
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function finish(){
+  var need=[['fname','your name'],['femail','your email'],['ftype','your type of organization'],['fsize','your team size'],['frole','your role']];
+  var miss=need.filter(function(f){return !$(f[0]).value.trim()}).map(function(f){return f[1]});
+  var err=$('formErr');
+  if(miss.length){ err.textContent='Please add '+miss.join(', ')+'.'; err.style.display='block'; $(need.filter(function(f){return !$(f[0]).value.trim()})[0][0]).focus(); return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('femail').value.trim())){ err.textContent='Please check your email address.'; err.style.display='block'; $('femail').focus(); return; }
+  err.style.display='none';
+  respondent={name:$('fname').value.trim(),email:$('femail').value.trim(),org:$('forg').value.trim(),type:$('ftype').value,size:$('fsize').value,role:$('frole').value};
+  var r=score(), ob=band(r.overall,'overall'), db=band(r.dependency,'dependency'), fh=firstHuddle(r);
+  var running=checked.size, missing=HUDDLES.filter(function(h,i){return !checked.has(i)}).map(function(h){return h[1]});
+  var first=esc(respondent.name.split(' ')[0]);
+  $('results').innerHTML=
+   '<p class="eyebrow">Your Baseline Snapshot'+(respondent.org?' &middot; '+esc(respondent.org):'')+'</p>'+
+   '<h2>'+(first?first+', here':'Here')+' is where you stand.</h2>'+
+   '<div class="score-hero"><b>'+r.overall.toFixed(1)+'</b><span class="pill" style="background:'+ob.color+'">'+ob.label+'</span></div>'+
+   '<p class="muted small">Your overall score is your lowest area, not your average.</p>'+
+   meter('Clarity',r.clarity,'clarity')+meter('Accountability',r.accountability,'accountability')+meter('Culture',r.culture,'culture')+
+   '<div class="block"><p class="eyebrow">How much runs through the top leader</p>'+
+   '<div class="score-hero"><b>'+r.dependency.toFixed(1)+'</b><span class="pill" style="background:'+db.color+'">'+db.label+'</span></div>'+
+   '<p>'+(r.dependency<3.5?'Most decisions and approvals still route through one person. That usually means you grew faster than your systems did.':'Work keeps moving without routing through one person.')+'</p></div>'+
+   '<div class="block"><p class="eyebrow">Huddles running</p><h2 style="margin-bottom:6px">'+running+' of 10</h2>'+
+   (missing.length?'<p class="muted small" style="margin:0">Not yet in place: '+missing.join(', ')+'.</p>':'<p>All 10 are in place. Next question: is each one reaching the whole team?</p>')+'</div>'+
+   '<div class="callout"><p class="eyebrow">Your first huddle to install</p><h2>'+fh.h+'</h2><p>'+fh.w+'</p></div>'+
+   '<div class="block no-print"><h2>Get a clear next step in 30 minutes.</h2>'+
+   '<p>In a free debrief, we look at what your scores mean and where to start. You get a straight read, whether or not we ever work together.</p>'+
+   '<blockquote style="margin:0 0 8px;padding:16px 18px;border-left:3px solid var(--accent);background:var(--bg);border-radius:8px"><p style="margin:0 0 6px;font-family:var(--display);font-size:16px">"He listens intently, diagnoses challenges with precision, and delivers actionable insights that inspire confidence."</p><cite style="font-style:normal;font-size:13px;color:var(--muted)">Luke B., Ph.D., Nonprofit Executive</cite></blockquote>'+
+   '<div class="row"><a class="btn" href="'+BOOKING_LINK+'" target="_blank" rel="noopener">Book my free 30 minute debrief</a>'+
+   '<button class="btn ghost" onclick="window.print()">Save my results as a PDF</button></div>'+
+   '<p class="muted small" style="margin-top:18px">This Snapshot is one view. The full Baseline asks your leadership and your team separately. Questions? <a href="mailto:'+CONTACT_EMAIL+'">'+CONTACT_EMAIL+'</a></p></div>';
+  show('results'); progress(100,'Results');
+  notify(r,ob,db,running,missing,fh);
+}
+function notify(r,ob,db,running,missing,fh){
+  try{ emailjs.init({publicKey:EJS_PUBLIC_KEY}); }catch(err){ return; }
+  var detail=['Name: '+respondent.name,'Email: '+respondent.email,'Organization: '+respondent.org,'Type: '+respondent.type,'Team size: '+respondent.size,'Role: '+respondent.role,'',
+   'Overall: '+r.overall.toFixed(1)+' ('+ob.label+')',
+   'Clarity: '+r.clarity.toFixed(1)+' | Accountability: '+r.accountability.toFixed(1)+' | Culture: '+r.culture.toFixed(1),
+   'Purpose '+r.sub.purpose+' | Direction '+r.sub.direction+' | Expectations '+r.sub.expectations,
+   'Rhythm '+r.sub.rhythm+' | Discipline '+r.sub.discipline,'Collective '+r.sub.collective+' | Individual '+r.sub.individual,
+   'Leader Dependency: '+r.dependency.toFixed(1)+' ('+db.label+')',
+   'Huddles running: '+running+' of 10. Missing: '+(missing.join(', ')||'none'),
+   'First huddle recommended: '+fh.h].join('\n');
+  emailjs.send(EJS_SERVICE_ID,EJS_TEMPLATE_JEREMY,{
+    to_name:'Jeremy',to_email:CONTACT_EMAIL,resp_email:respondent.email,
+    overall_score:r.overall.toFixed(1),overall_band:ob.label,
+    clarity:r.clarity.toFixed(1),communication:r.accountability.toFixed(1),accountability:r.accountability.toFixed(1),culture:r.culture.toFixed(1),
+    dependency:r.dependency.toFixed(1),existence_count:running+' of 10',detail:detail
+  }).catch(function(err){console.warn('Notification failed',err)});
+}
+$('seasonLine').textContent=SEASON_LINE;
+</script>
+</body>
+</html>

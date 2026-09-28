@@ -60,3 +60,9 @@ LinkedIn, Substack (both instances), the mailto, the session guide PDF and the B
 
 ## D12. Credibility tiles and framework colour, second pass (2026-09-09)
 Tile numerals went 15px/600 to 38px/700 and tile body 16.5px to 19px. Framework diagram picked up more colour: layer names now carry their accent, the left rule went 3px to 5px, and both section captions get a three segment Cobalt, Forest and Berry rule.
+
+## D12. Baseline Snapshot at /baseline/, with a lead gate (2026-09-28)
+**Rules touched:** Hard Rules (no email opt in) and BUILD-RULES (no third party requests at runtime).
+**Decision (Jeremy, 2026-09-28):** the homepage stays hiring manager first and ungated (D2 stands). The Snapshot is a separate sales page at `/baseline/`, sent directly in outreach, and it is gated on purpose: it is the lead capture for Frontier Group's planning season offer.
+**Runtime requests:** the EmailJS library is vendored at `assets/js/emailjs-browser-4.4.1.min.js` (no CDN). The page makes one third party call, to `api.emailjs.com` on submit, which is the lead notification itself. Headlines use Newsreader from Google Fonts, matching the homepage.
+**Source of truth for the instrument:** Jeremy OS `OUTPUTS/Baseline v2 (2026-09-28)/Baseline v2 Spec.md`.
