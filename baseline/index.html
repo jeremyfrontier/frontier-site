@@ -262,14 +262,15 @@ function notify(r,ob,db,running,missing,fh){
    'Clarity: '+r.clarity.toFixed(1)+' | Accountability: '+r.accountability.toFixed(1)+' | Culture: '+r.culture.toFixed(1),
    'Purpose '+r.sub.purpose+' | Direction '+r.sub.direction+' | Expectations '+r.sub.expectations,
    'Rhythm '+r.sub.rhythm+' | Discipline '+r.sub.discipline,'Collective '+r.sub.collective+' | Individual '+r.sub.individual,
-   'Leader Dependency: '+r.dependency.toFixed(1)+' ('+db.label+')',
+   'Leader Dependency: '+r.dependency.toFixed(1)+' ('+db.label+'). Two weeks without leader '+ans[7]+' | Decisions not waiting '+ans[8]+' | Plan visible '+ans[9],
    'Huddles running: '+running+' of 10. Missing: '+(missing.join(', ')||'none'),
    'First huddle recommended: '+fh.h].join('\n');
   var payload={name:respondent.name,email:respondent.email,org:respondent.org,type:respondent.type,size:respondent.size,role:respondent.role,
     overall:r.overall.toFixed(1),overallBand:ob.label,clarity:r.clarity.toFixed(1),accountability:r.accountability.toFixed(1),culture:r.culture.toFixed(1),
     dependency:r.dependency.toFixed(1),dependencyBand:db.label,purpose:r.sub.purpose,direction:r.sub.direction,expectations:r.sub.expectations,
     rhythm:r.sub.rhythm,discipline:r.sub.discipline,collective:r.sub.collective,individual:r.sub.individual,
-    running:running+' of 10',missing:missing.join(', '),firstHuddle:fh.h,detail:detail};
+    running:running+' of 10',missing:missing.join(', '),firstHuddle:fh.h,firstHuddleWhy:fh.w,
+    dep1:ans[7],dep2:ans[8],dep3:ans[9],detail:detail};
   try{
     fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
       .catch(function(err){console.warn('Lead notification failed',err)});
