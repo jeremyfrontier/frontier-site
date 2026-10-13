@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work Review Builder | Frontier Group</title>
+<meta name="description" content="Build the Work Review your team will actually use next year. Pick the metrics that matter, set a monthly target for each, and download it free.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,600&display=swap">
+<link rel="icon" href="../assets/img/favicon-64.png">
+<style>
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--bg:#F6F1EF;--surface:#FFFFFF;--dark:#2C2C2C;--accent:#EC5B59;--accent-lt:#FEF0EF;--muted:#6A625E;--border:#E4DBD7;
+--green:#2D7A4F;--red:#B83232;--display:"Newsreader",Georgia,serif;--body:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--dark);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:24px 16px 64px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.top img{height:34px;width:auto}
+.step{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bar{height:4px;background:var(--border);border-radius:4px;margin-bottom:28px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px 24px}
+@media(min-width:560px){.card{padding:40px 40px}}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.25;margin:0 0 16px}
+h1{font-size:30px}h2{font-size:23px}h3{font-size:19px;margin:0 0 4px}
+p{margin:0 0 16px}.muted{color:var(--muted)}.small{font-size:14px}
+.screen{display:none}.screen.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;border:0;border-radius:10px;background:var(--accent);color:#fff;font:600 17px/1.2 var(--body);padding:14px 26px;cursor:pointer;text-decoration:none;text-align:center}
+.btn:focus-visible,.addown:focus-visible,.slot .x:focus-visible,.chip:focus-visible,.back:focus-visible,.add:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #F7B9B8;outline-offset:2px}
+.btn:hover{filter:brightness(.95)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--dark);border:1px solid var(--border)}
+.btn.wide{display:flex;width:100%}
+.btn.darkbtn{background:var(--dark)}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.field{margin-bottom:16px}.field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)!important}
+.field input,.field select,.field textarea{width:100%;font:16px var(--body);padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--dark)}
+.field textarea{min-height:84px;resize:vertical}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.subnote{font-size:14px;color:var(--muted);margin:12px 0 0;text-align:center}
+.back{background:none;border:0;color:var(--muted);font:500 15px var(--body);cursor:pointer;padding:0;margin-top:20px}
+.stage{padding:20px 0;border-top:1px solid var(--border)}
+.stage:first-of-type{border-top:0;padding-top:4px}
+.stage .ask{font-size:15px;color:var(--muted);margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--border);background:#fff;border-radius:99px;padding:9px 14px;font:500 15px var(--body);color:var(--dark);cursor:pointer;text-align:left}
+@media(hover:hover){.chip:hover{border-color:var(--accent)}}
+.chip[aria-pressed="true"]{background:var(--accent-lt);border-color:var(--accent);color:var(--dark);font-weight:600;box-shadow:inset 0 0 0 1px var(--accent)}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+.own{display:flex;gap:8px;margin-top:10px}
+.own input{flex:1;min-width:0;font:15px var(--body);padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--dark)}
+.err{color:var(--red);font-weight:600;font-size:15px;margin:4px 0 12px;display:none}
+.trow{padding:16px 0;border-top:1px solid var(--border)}
+.trow .name{font-weight:600;margin:0 0 2px}.trow .where{font-size:13px;color:var(--muted);margin:0 0 10px}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tgrid .full{grid-column:1/-1}
+.tgrid select,.tgrid input{width:100%;font:15px var(--body);padding:10px 10px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--dark)}
+.objective{font-family:var(--display);font-style:italic;font-size:19px;border-left:3px solid var(--accent);padding:4px 0 4px 14px;margin:0 0 20px}
+table.rv{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 4px}
+table.rv th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 4px;border-bottom:1px solid var(--border)}
+table.rv td{padding:9px 4px;border-bottom:1px solid var(--border);vertical-align:top}
+table.rv td.t{text-align:right;white-space:nowrap;font-weight:600}
+table.rv tr.band td{background:var(--accent-lt);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-bottom:0}
+.block{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.callout{background:var(--accent-lt);border-radius:12px;padding:22px 20px;margin-top:28px}
+.doors{display:grid;gap:12px;margin-top:16px}
+@media(min-width:560px){.doors{grid-template-columns:1fr 1fr}}
+.door{display:block;border:1px solid var(--border);border-radius:12px;padding:18px;text-decoration:none;color:var(--dark)}
+.door:hover{border-color:var(--accent)}.door b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
+.door span{font-size:14px;color:var(--muted)}
+.list{margin:8px 0 0;padding-left:18px;font-size:16px}
+.mine{background:var(--bg);border-radius:12px;padding:16px;margin:4px 0 8px}
+.mine-head{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin:0 0 10px}
+.mine-head span{color:var(--muted);font-weight:600;white-space:nowrap;margin-left:12px}
+.slot{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.slot .num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.slot input{flex:1;min-width:0;font:15px var(--body);padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--dark)}
+.slot .x{flex:none;border:0;background:none;font-size:22px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 6px}
+.slot.empty .num{background:var(--border)}.slot.empty span:last-child{font-size:14px;color:var(--muted)}
+.addown{border:1px dashed var(--muted);background:#fff;border-radius:10px;padding:10px 14px;font:600 14px var(--body);color:var(--dark);cursor:pointer;width:100%}
+.setband{margin:24px 0 0;padding:8px 12px;background:var(--accent-lt);border-radius:8px;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.tgrid label{display:block;font-size:12px;font-weight:600;color:var(--muted)}
+.tgrid label select,.tgrid label input{margin-top:4px}
+.seg{display:flex;gap:4px;margin-top:4px;padding:4px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.seg button{flex:1;border:1.5px solid transparent;border-radius:8px;background:transparent;font:600 14px var(--body);color:var(--muted);padding:8px 6px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-lt);border-color:var(--accent);color:var(--dark)}
+.nounset{margin:0 0 16px}
+.hot{color:var(--accent)}
+.nounown{margin-top:8px;width:100%;font:15px var(--body);padding:10px 12px;border:1px solid var(--accent);border-radius:10px;background:#fff;color:var(--dark)}
+.nounset .seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.nounset .seg button{padding:8px 2px;font-size:13px}
+.tlabel{font-size:14px;font-weight:600;margin:0}
+
+.seg button:focus-visible{outline:3px solid #F7B9B8;outline-offset:1px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:13px;color:var(--muted);margin:0 0 4px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.tag{font-size:11px;font-weight:600;color:var(--muted);white-space:nowrap}
+table.rv th.t{text-align:right}
+.kit{margin-top:20px;padding:24px 20px;border:1px solid var(--border);border-radius:14px}
+.getit{margin-top:24px;padding:22px 20px;border-radius:14px;background:var(--bg)}
+.kit .meter{height:8px;background:var(--border);border-radius:6px;overflow:hidden;margin:4px 0 14px}.kit .meter i{display:block;height:100%;background:var(--green)}
+.kgroup{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:15px;color:var(--muted)}
+.checks .ck{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.checks li.done{color:var(--dark);font-weight:600}.checks li.done .ck{background:var(--green);border-color:var(--green);color:#fff}
+.checks li em{font-style:normal;font-size:12px;font-weight:700;color:var(--green);margin-left:auto}
+.reel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:4px -4px 0;padding:4px}
+.reel::-webkit-scrollbar{display:none}
+.tcard{flex:0 0 86%;scroll-snap-align:start;background:#fff;border-radius:12px;padding:18px 18px 16px;border:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between}
+.tcard p{margin:0 0 12px;font-family:var(--display);font-size:17px;line-height:1.45}
+.tcard cite{font-style:normal;font-size:13px;font-weight:600;color:var(--muted)}
+.reelnav{display:flex;align-items:center;justify-content:space-between;margin:12px 0 18px}
+.dots{display:flex;gap:6px}.dots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:var(--border);cursor:pointer}
+.dots button[aria-current="true"]{background:var(--accent);width:22px;border-radius:5px}
+.arrows{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.arrows button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:18px;line-height:1;cursor:pointer;color:var(--dark)}
+.foot{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a href="/"><img src="../assets/img/logotype-dark.png" alt="Frontier Group home"></a><div class="step" id="stepLabel"></div></div>
+  <div class="bar"><i id="barFill"></i></div>
+
+  <div class="card">
+    <section class="screen on" id="intro">
+      <p class="eyebrow">Work Review Builder</p>
+      <h1>If You’re Not Tracking, You’re Just Playing Games With Your <span class="hot">Time</span>, <span class="hot">Money</span>, and <span class="hot">Team</span>.</h1>
+      <p id="seasonLine"></p>
+      <ul class="list"><li>Pick the 9 to 15 metrics that tell you if the year is working</li><li>Set a monthly target for each one</li><li>Download it free as a spreadsheet, in your language: business, nonprofit, or ministry</li></ul>
+      <div class="block" style="margin-top:24px">
+        <h2>First, Tell Us About You.</h2>
+        <div class="field"><label for="fname">Your Name</label><input id="fname" autocomplete="name"></div>
+        <div class="field"><label for="femail">Email</label><input id="femail" type="email" autocomplete="email"></div>
+        <div class="field"><label for="forg">Organization Name</label><input id="forg" autocomplete="organization"></div>
+        <div class="field"><label for="ftitle">How Would You Describe Your Title?</label>
+          <select id="ftitle"><option value="">Select one</option><option>Owner, founder, or top leader</option><option>Executive or senior leader</option><option>Manager or team lead</option><option>Team member</option><option>Other</option></select></div>
+        <div class="field"><label for="ftype">Type of Organization</label>
+          <select id="ftype"><option value="">Select one</option><option value="sb">Small business</option><option value="np">Nonprofit</option><option value="mn">Church or ministry</option></select>
+          <p class="hint">We use this to match the wording to your world.</p></div>
+        <div class="field"><label for="findustry">Industry</label><input id="findustry" placeholder="For example: home services, youth sports, family counseling"></div>
+        <div class="field"><label for="fsize">Size of Your Team</label>
+          <select id="fsize"><option value="">Select one</option><option>1 to 7</option><option>8 to 20</option><option>21 to 40</option><option>41 or more</option></select></div>
+        <div class="field"><label for="fgoal">What Is Your Primary Goal for Next Year?</label>
+          <textarea id="fgoal" placeholder="In your own words. For example: Grow to 950 students across two locations by December."></textarea>
+          <p class="hint">This goes at the top of your Work Review, so every number points at it.</p></div>
+        <p class="err" id="introErr" role="alert"></p>
+        <div class="row"><button class="btn wide" type="button" onclick="startBuild()">Build My Work Review</button></div>
+        <p class="subnote">Building your Work Review subscribes you to the free <em>Uncommon Work</em> newsletter, and the book comes with it. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="fn"></section>
+    <section class="screen" id="setup"></section>
+    <section class="screen" id="review"></section>
+    <section class="screen" id="done"></section>
+  </div>
+  <p class="foot">Frontier Group &middot; thefrontiergroup.co</p>
+</main>
+
+<script src="xlsx.js"></script>
+<script>
+/* ---------- CONFIG: edit these lines only ---------- */
+var SEASON_LINE = 'Build the Work Review your team will use every month next year. It takes about 10 minutes.';
+var BOOKING_LINK = 'https://calendar.app.google/ApJbwKz4WxqyrWHK9';
+var SUBSTACK_LINK = 'https://uncommonwork.substack.com';
+var SNAPSHOT_LINK = '/baseline/';
+var KIT_LINK = 'https://thefrontiergroup.co'; /* placeholder until the Kit is live on Gumroad */
+var KIT_PRICE = '$95, one time';
+var SHEET_THEME = 'ink'; /* spreadsheet colors: ink, coral, or green */
+var CONTACT_EMAIL = 'jeremy@thefrontiergroup.co';
+var LEAD_ENDPOINT = ''; /* Apps Script web app URL: logs the lead, emails Jeremy call prep, emails the respondent their file */
+/* Real testimonials, quoted word for word (trimmed only with an ellipsis). */
+var QUOTES = [
+ ['August ended up being our best and most profitable August in 3 years. ... The systems and planning rhythm we put in place have totally changed how we operate. The team’s never been more consistent or on the same page.', 'Bret S., Gym Owner'],
+ ['Our first 90 days together back in the spring were the most focused and productive I’ve ever been ... hit every single goal in 30 days.', 'Ben J., Small Business Owner'],
+ ['I just finished with the AI tools and I’m impressed and, honestly, really relieved. ... Super easy, super impactful, and it’s given me clarity in direction I never knew I needed.', 'Harrison K., Author'],
+ ['Jeremy has an incredible way of cutting through the noise and helping me focus on what truly matters. ... his coaching keeps me out of my head and moving forward with clarity and purpose.', 'Matt M., Chiropractic Business Owner'],
+ ['For me personally, his coaching helped resolve the struggle to balance results with trust &amp; empowerment. By prioritizing relationships, I saw a renewed sense of purpose and fulfillment in my leadership.', 'Tiffany W., Nonprofit Leader']
+];
+/* --------------------------------------------------- */
+
+var MIN_PICKS = 3, MAX_PICKS = 5;
+var TYPES = { sb: 'Small business', np: 'Nonprofit', mn: 'Church or ministry' };
+var NOUNS = ['clients', 'members', 'customers'];
+var DEFAULT_NOUN = { sb: 'customers', np: 'clients', mn: 'members' };
+var SINGULAR = { customers: 'customer', clients: 'client', patients: 'patient', students: 'student', participants: 'participant', families: 'family', members: 'member', attenders: 'attender' };
+var SMALL = ['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'in', 'of', 'on', 'or', 'per', 'the', 'to', 'with'];
+
+/* Menu rows: [stage, small business, nonprofit, ministry, format, year, lower]
+   format: 'n' number, '$' money (shown as a number with a dollar sign), '%' percent.
+   year: 't' adds up to a yearly total, 'a' averages. lower: true when lower is good.
+   '=' repeats the small business label; null hides it for that type. */
+var FUNCTIONS = [
+ { id: 'f1', names: { sb: 'Marketing and Sales', np: 'Development and Promotion', mn: 'Outreach and Generosity' },
+   stages: [
+    { key: 'aware', label: 'Awareness', q: 'What result indicates people know you exist?' },
+    { key: 'interest', label: 'Interest', q: 'What result indicates they are interested in what you offer?' },
+    { key: 'commit', label: 'Commit', q: 'What action do they take to receive your offer?' }],
+   menu: [
+    ['aware', 'Website visitors', '=', '=', 'n', 't'], ['aware', 'Social followers gained', '=', '=', 'n', 't'],
+    ['aware', 'Email subscribers gained', '=', '=', 'n', 't'], ['aware', 'Events or appearances held', 'Community events held', 'Outreach events held', 'n', 't'],
+    ['aware', 'Event attendance', '=', '=', 'n', 't'], ['aware', 'Referrals received', 'Partner referrals', 'First time guest visitors', 'n', 't'],
+    ['interest', 'New leads', 'New donor prospects', 'Guest visitor connection cards', 'n', 't'],
+    ['interest', 'Leads answered in 24 hours', 'Prospects followed up in 48 hours', 'Guest visitors followed up in 48 hours', '%', 'a'],
+    ['interest', 'Discovery calls held', 'Donor meetings held', 'Next step attendance (newcomer class)', 'n', 't'],
+    ['interest', 'Proposals or quotes sent', 'Asks and grant applications', 'Second visits', 'n', 't'],
+    ['interest', 'Pipeline value', 'Pledges outstanding', null, '$', 'a'], ['interest', 'Email open rate', '=', '=', '%', 'a'],
+    ['commit', 'New customers', 'New donors', 'New members', 'n', 't'], ['commit', 'Close rate', 'Ask success rate', 'Guest visitor to member rate', '%', 'a'],
+    ['commit', 'Average sale', 'Average gift', 'Average gift', '$', 'a'], ['commit', 'Sales booked', 'Dollars raised', 'Total giving', '$', 't'],
+    ['commit', 'Recurring contracts', 'Monthly donors', 'Recurring givers', 'n', 'a'], ['commit', 'Repeat or upsell sales', 'Donor upgrades', 'First time givers', 'n', 't'],
+    ['commit', 'Cost per new customer', 'Cost to raise a dollar', null, '$', 'a', true], ['commit', null, 'Grants awarded', null, 'n', 't']] },
+ { id: 'f2', names: { sb: 'Product and Service', np: 'Programs and Services', mn: 'Ministries and Programs' }, nouns: true,
+   stages: [
+    { key: 'deliver', label: 'Deliver', q: 'What result indicates how effectively you deliver what you offer?' },
+    { key: 'retain', label: 'Retain', q: 'What result indicates how well you retain your {P}?' }],
+   menu: [
+    ['deliver', 'Jobs completed on the committed date', null, null, '%', 'a'], ['deliver', 'Orders delivered', null, null, 'n', 't'],
+    ['deliver', 'Customer satisfaction rating', null, null, 'n', 'a'], ['deliver', null, 'People served', null, 'n', 't'],
+    ['deliver', null, 'Program completion rate', null, '%', 'a'], ['deliver', null, 'Participant satisfaction rating', null, 'n', 'a'],
+    ['deliver', null, null, 'Weekly attendance', 'n', 'a'], ['deliver', null, null, 'People in small groups', 'n', 'a'],
+    ['deliver', null, null, 'Volunteers serving weekly', 'n', 'a'],
+    ['retain', 'Active {P}', '=', '=', 'n', 'a'], ['retain', '{S} retention rate', '=', '=', '%', 'a'],
+    ['retain', 'Cancellations or dropouts', '=', '=', 'n', 't', true], ['retain', 'Returning {P}', '=', '=', '%', 'a'],
+    ['retain', 'Reviews or stories collected', '=', '=', 'n', 't']] },
+ { id: 'f3', names: { sb: 'Finance and Admin', np: 'Finance and Admin', mn: 'Finance and Admin' }, preselect: { sb: [0, 3], np: [1, 3], mn: [1, 3] },
+   stages: [
+    { key: 'rev', label: { sb: 'Revenue', np: 'Income', mn: 'Income' }, q: 'How much money did you bring in?' },
+    { key: 'exp', label: 'Expense', q: 'How much money did you spend?' },
+    { key: 'left', label: { sb: 'Profit', np: 'Surplus', mn: 'Surplus' }, q: 'How much money was left over?' }],
+   menu: [
+    ['rev', 'Total revenue', '=', '=', '$', 't'], ['rev', 'Total income', '=', '=', '$', 't'], ['rev', 'Total sales', null, null, '$', 't'],
+    ['exp', 'Total expense', '=', '=', '$', 't', true], ['exp', 'Total spend', '=', '=', '$', 't', true],
+    ['left', 'Net profit', 'Net surplus', 'Net surplus', '$', 't'], ['left', 'Profit margin', 'Surplus margin', 'Surplus margin', '%', 'a'],
+    ['left', 'Cash on hand', '=', '=', '$', 'a']] }
+];
+var KIT = [
+ ['Planning', ['2 Page Strategy Builder', '1 Page Plan Builder', 'Activity Map Builder', 'Role Description Builder', 'Key Process Builder']],
+ ['Reviews', ['Work Review Builder', '1:1 Review Templates', 'DIY Culture Review Survey']],
+ ['Check Points', ['Annual Retreat Builder', '90 Day Roadmap Builder', 'Monthly Review Assistant', 'Team Huddle Prep Assistant', 'Weekly Huddle Assistant']]
+];
+var DONE_TOOL = 'Work Review Builder';
+
+var state = { type: '', noun: '', list: { f1: [], f2: [], f3: [] }, who: {}, fi: 0, seq: 0 };
+
+function $(id) { return document.getElementById(id); }
+function esc(s) { return String(s === undefined || s === null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function show(id) { document.querySelectorAll('.screen').forEach(function (s) { s.classList.remove('on'); }); $(id).classList.add('on'); window.scrollTo(0, 0); }
+function progress(p, label) { $('barFill').style.width = p + '%'; $('stepLabel').textContent = label || ''; }
+function pick(v) { return typeof v === 'object' && v ? v[state.type] : v; }
+function nounP() { return state.noun || DEFAULT_NOUN[state.type]; }
+function nounS() { var p = nounP(); return SINGULAR[p] || p.replace(/s$/, ''); }
+function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+function tc(s) {
+  return String(s).split(' ').map(function (w, i) {
+    var bare = w.replace(/^\(/, '').toLowerCase();
+    if (i > 0 && SMALL.indexOf(bare) >= 0) return w.toLowerCase();
+    return w.charAt(0) === '(' ? '(' + cap(w.slice(1)) : cap(w);
+  }).join(' ');
+}
+function fill(text) { return text.replace('{P}', nounP()).replace('{S}', cap(nounS())); }
+function fnName(f) { return f.names[state.type]; }
+function menuLabel(row) {
+  var v = row[{ sb: 1, np: 2, mn: 3 }[state.type]];
+  if (v === '=') v = row[1];
+  return v === null ? null : tc(fill(v));
+}
+function newItem(fid, text, src, row) {
+  return { uid: 'm' + (++state.seq), fid: fid, src: src, text: text, fmt: row && row[4] === '%' ? '%' : 'n', money: !!(row && row[4] === '$'),
+    yearly: row ? row[5] : 't', lower: !!(row && row[6]), raw: '' };
+}
+
+/* ---------- Screen 1: who you are ---------- */
+function startBuild() {
+  var need = [['fname', 'your name'], ['femail', 'your email'], ['forg', 'your organization name'], ['ftitle', 'your title'], ['ftype', 'your type of organization'], ['fsize', 'your team size']];
+  var miss = need.filter(function (f) { return !$(f[0]).value.trim(); });
+  var err = $('introErr');
+  if (miss.length) { err.textContent = 'Please add ' + miss.map(function (f) { return f[1]; }).join(', ') + '.'; err.style.display = 'block'; $(miss[0][0]).focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('femail').value.trim())) { err.textContent = 'Please check your email address.'; err.style.display = 'block'; $('femail').focus(); return; }
+  err.style.display = 'none';
+  var type = $('ftype').value;
+  if (type !== state.type) { state.list = { f1: [], f2: [], f3: [] }; state.noun = DEFAULT_NOUN[type]; state.customNoun = false; }
+  state.type = type;
+  state.who = { name: $('fname').value.trim(), email: $('femail').value.trim(), org: $('forg').value.trim(), title: $('ftitle').value,
+    type: TYPES[type], industry: $('findustry').value.trim(), size: $('fsize').value, objective: $('fgoal').value.trim(), optin: true };
+  var f3 = FUNCTIONS[2];
+  if (!state.list.f3.length) f3.preselect[type].forEach(function (i) { state.list.f3.push(newItem('f3', menuLabel(f3.menu[i]), 'f3-' + i, f3.menu[i])); });
+  renderFn(0);
+}
+
+/* ---------- Screens 2 to 4: one per function ---------- */
+function renderFn(i) {
+  state.fi = i;
+  var f = FUNCTIONS[i];
+  var h = '<p class="eyebrow">' + (i + 1) + ' of 3 &middot; ' + esc(fnName(f)) + '</p><h2>' + esc(tc('Pick your ' + fnName(f) + ' metrics.')) + '</h2>' +
+    '<p class="muted small">Choose ' + MIN_PICKS + ' to ' + MAX_PICKS + '. Use the questions below, tap an example to add it, then reword it to fit your world.</p>' +
+    (f.nouns ? nounPicker() : '') + '<div class="mine" id="mine"></div>';
+  f.stages.forEach(function (s) { h += stageBlock(f, s); });
+  h += '<p class="err" id="fnErr" role="alert"></p><div class="row"><button class="btn wide" type="button" onclick="nextFn()">Continue</button></div>' +
+    '<button class="back" type="button" onclick="prevFn()">Back</button>';
+  $('fn').innerHTML = h;
+  renderMine();
+  show('fn'); progress(15 + i * 18, 'Step ' + (i + 2) + ' of 6');
+}
+function renderMine() {
+  var f = FUNCTIONS[state.fi], list = state.list[f.id];
+  var h = '<p class="mine-head">' + esc(tc('Your ' + fnName(f) + ' metrics')) + ' <span>' + list.length + ' of ' + MAX_PICKS + '</span></p>';
+  list.forEach(function (it, n) {
+    h += '<div class="slot"><span class="num">' + (n + 1) + '</span><input aria-label="Metric ' + (n + 1) + '" maxlength="80" placeholder="Name your metric" value="' + esc(it.text) + '" ' +
+      'oninput="editItem(\'' + it.uid + '\',this.value)"><button type="button" class="x" aria-label="Remove ' + esc(it.text || 'this metric') + '" onclick="removeItem(\'' + it.uid + '\')">&times;</button></div>';
+  });
+  for (var k = list.length; k < MIN_PICKS; k++) h += '<div class="slot empty"><span class="num">' + (k + 1) + '</span><span>Tap an example below or add your own</span></div>';
+  if (list.length < MAX_PICKS) h += '<button type="button" class="addown" onclick="addOwn()">+ Add My Own</button>';
+  $('mine').innerHTML = h;
+  document.querySelectorAll('#fn .chip[data-src]').forEach(function (c) {
+    c.setAttribute('aria-pressed', list.some(function (it) { return it.src === c.dataset.src; }));
+  });
+}
+function nounPicker() {
+  var cur = nounP(), custom = state.customNoun || NOUNS.indexOf(cur) < 0;
+  return '<div class="nounset"><p class="tlabel">What Do You Call the People You Serve?</p><div class="seg" role="group" aria-label="What do you call the people you serve">' +
+    NOUNS.map(function (n) { return '<button type="button" aria-pressed="' + (!custom && n === cur) + '" onclick="setNoun(\'' + n + '\')">' + cap(n) + '</button>'; }).join('') +
+    '<button type="button" aria-pressed="' + custom + '" onclick="useCustomNoun()">Custom</button></div>' +
+    (custom ? '<input id="nounOwn" class="nounown" aria-label="Your word for the people you serve" placeholder="Type your word, like patients or families" value="' + (NOUNS.indexOf(cur) < 0 ? esc(cur) : '') + '" onchange="setNoun(this.value, true)" onkeydown="if(event.key===\'Enter\'){this.blur()}">' : '') +
+    '<p class="hint">This only changes the wording of the examples below.</p></div>';
+}
+function useCustomNoun() { state.customNoun = true; renderFn(state.fi); var i = $('nounOwn'); if (i) i.focus(); }
+function setNoun(n, custom) {
+  n = String(n || '').trim().toLowerCase(); if (!n) return;
+  var f = FUNCTIONS[state.fi];
+  state.noun = n; state.customNoun = !!custom;
+  state.list[f.id].forEach(function (it) { if (it.src && !it.edited) it.text = menuLabel(f.menu[+it.src.split('-')[1]]); });
+  renderFn(state.fi);
+}
+function stageBlock(f, s) {
+  var h = '<div class="stage"><h3>' + esc(pick(s.label)) + '</h3><p class="ask">' + esc(fill(s.q)) + '</p><div class="chips">';
+  f.menu.forEach(function (row, idx) {
+    if (row[0] !== s.key) return;
+    var label = menuLabel(row); if (label === null) return;
+    h += '<button type="button" class="chip" data-src="' + f.id + '-' + idx + '" aria-pressed="false" onclick="toggleEx(' + idx + ')">' + esc(label) + '</button>';
+  });
+  return h + '</div></div>';
+}
+function toggleEx(idx) {
+  var f = FUNCTIONS[state.fi], list = state.list[f.id], src = f.id + '-' + idx;
+  var at = list.map(function (it) { return it.src; }).indexOf(src);
+  if (at >= 0) list.splice(at, 1);
+  else if (list.length >= MAX_PICKS) return flash('You have ' + MAX_PICKS + '. Remove one to add another.');
+  else list.push(newItem(f.id, menuLabel(f.menu[idx]), src, f.menu[idx]));
+  clearFlash(); renderMine();
+}
+function addOwn() {
+  var f = FUNCTIONS[state.fi], list = state.list[f.id];
+  if (list.length >= MAX_PICKS) return;
+  list.push(newItem(f.id, '', null, null));
+  renderMine();
+  var inputs = document.querySelectorAll('#mine input'); inputs[inputs.length - 1].focus();
+}
+function findItem(uid) { return state.list[FUNCTIONS[state.fi].id].filter(function (it) { return it.uid === uid; })[0]; }
+function editItem(uid, v) { var it = findItem(uid); it.text = v; it.edited = true; }
+function removeItem(uid) { var id = FUNCTIONS[state.fi].id; state.list[id] = state.list[id].filter(function (it) { return it.uid !== uid; }); clearFlash(); renderMine(); }
+function flash(msg) { var e = $('fnErr'); e.textContent = msg; e.style.display = 'block'; }
+function clearFlash() { var e = $('fnErr'); if (e) e.style.display = 'none'; }
+function nextFn() {
+  var id = FUNCTIONS[state.fi].id;
+  state.list[id] = state.list[id].filter(function (it) { return it.text.trim(); });
+  state.list[id].forEach(function (it) { it.text = it.text.trim().slice(0, 80); });
+  if (state.list[id].length < MIN_PICKS) { renderMine(); return flash('Add at least ' + MIN_PICKS + ' to keep going.'); }
+  if (state.fi < 2) renderFn(state.fi + 1); else renderSetup();
+}
+function prevFn() { if (state.fi > 0) renderFn(state.fi - 1); else { show('intro'); progress(0, ''); } }
+
+/* ---------- Screen 5: Work Review setup ---------- */
+function allItems() { return FUNCTIONS.reduce(function (a, f) { return a.concat(state.list[f.id]); }, []); }
+function itemByUid(uid) { return allItems().filter(function (it) { return it.uid === uid; })[0]; }
+function renderSetup() {
+  var h = '<p class="eyebrow">Your Work Review</p><h2>Set a Target for Every Metric.</h2>' +
+    '<p class="muted small">What does a good month look like? Not sure yet? Leave it blank and fill it in later.</p>' +
+    '<p class="legend"><span><i style="background:#D9EFDF"></i>Hit the target</span><span><i style="background:#F8D7D7"></i>Missed</span></p>';
+  FUNCTIONS.forEach(function (f) {
+    h += '<p class="setband">' + esc(fnName(f)) + '</p>';
+    state.list[f.id].forEach(function (it) { h += setupRow(it); });
+  });
+  h += '<p class="err" id="tErr" role="alert"></p><div class="row"><button class="btn wide" type="button" onclick="toReview()">Preview My Work Review</button></div>' +
+    '<button class="back" type="button" onclick="renderFn(2)">Back</button>';
+  $('setup').innerHTML = h;
+  show('setup'); progress(72, 'Step 5 of 6');
+}
+function seg(uid, key, cur, opts) {
+  return '<div class="seg" role="group">' + opts.map(function (o) {
+    return '<button type="button" aria-pressed="' + (cur === o[0]) + '" onclick="setField(\'' + uid + '\',\'' + key + '\',' + JSON.stringify(o[0]).replace(/"/g, '&quot;') + ')">' + o[1] + '</button>';
+  }).join('') + '</div>';
+}
+function tInput(it, key, ph, label) {
+  return '<label>' + label + '<input inputmode="decimal" placeholder="' + ph + '" value="' + esc(it[key]) + '" oninput="setText(\'' + it.uid + '\',\'' + key + '\',this.value)"></label>';
+}
+function setupRow(it) {
+  var pct = it.fmt === '%', ph = pct ? 'Like 25%' : it.money ? 'Like $40,000' : 'Like 30';
+  var target = '<div class="full">' + tInput(it, 'raw', ph, 'Monthly Target') + '</div>';
+  return '<div class="trow" id="row_' + it.uid + '"><p class="name">' + esc(it.text) + '</p><div class="tgrid">' +
+    '<label>Format' + seg(it.uid, 'fmt', it.fmt, [['n', 'Number'], ['%', 'Percent']]) + '</label>' +
+    '<label>On Target Means' + seg(it.uid, 'lower', it.lower, [[false, 'At or Above'], [true, 'At or Below']]) + '</label>' +
+    target +
+    (pct ? '' : '<label class="full">Year to Date Adds Up As' + seg(it.uid, 'yearly', it.yearly, [['t', 'Total'], ['a', 'Average']]) + '</label>') +
+    '</div></div>';
+}
+function setText(uid, key, val) { itemByUid(uid)[key] = val; }
+function setField(uid, key, val) {
+  var it = itemByUid(uid);
+  it[key] = val;
+  if (key === 'fmt' && val === '%') it.yearly = 'a';
+  var tmp = document.createElement('div'); tmp.innerHTML = setupRow(it); $('row_' + uid).replaceWith(tmp.firstChild);
+}
+function parseTarget(raw, fmt) {
+  var s = String(raw || '').replace(/[$,%\s]/g, '').toLowerCase(), mult = 1;
+  if (/k$/.test(s)) { mult = 1000; s = s.slice(0, -1); }
+  if (!s) return null;
+  var n = parseFloat(s); if (!isFinite(n)) return undefined;
+  n = n * mult;
+  return fmt === '%' ? (n > 1 || /%/.test(raw) ? n / 100 : n) : n;
+}
+function yearlyOf(it) { return it.fmt === '%' ? 'a' : it.yearly; }
+function isMoney(it) { return it.fmt !== '%' && (it.money || /\$/.test(it.raw)); }
+function fmtVal(v, it) {
+  if (it.fmt === '%') return Math.round(v * 1000) / 10 + '%';
+  return (isMoney(it) ? '$' : '') + v.toLocaleString('en-US', { maximumFractionDigits: 1 });
+}
+function targetText(it) {
+  var t = parseTarget(it.raw, it.fmt);
+  return t === null || t === undefined ? 'Set later' : fmtVal(t, it);
+}
+function checkTargets() {
+  var bad = [];
+  allItems().forEach(function (it) {
+    if (parseTarget(it.raw, it.fmt) === undefined) bad.push(it.text + ' needs a number');
+  });
+  return bad;
+}
+
+/* ---------- Screen 6: review and confirm ---------- */
+function planYear() { var d = new Date(); return d.getMonth() >= 9 ? d.getFullYear() + 1 : d.getFullYear(); }
+function toReview() {
+  var bad = checkTargets();
+  if (bad.length) { var e = $('tErr'); e.textContent = 'Please fix: ' + bad.join('; ') + '.'; e.style.display = 'block'; return; }
+  var w = state.who;
+  var h = '<p class="eyebrow">Review &middot; ' + esc(w.org) + '</p><h2>Here Is Your ' + planYear() + ' Work Review.</h2>' +
+    (w.objective ? '<p class="objective">' + esc(w.objective) + '</p>' : '') + reviewTable() +
+    '<p class="muted small" style="margin-top:12px">Green and red are built in. Type a month’s number and the sheet shows whether you hit the target.</p>' +
+    '<div class="row"><button class="btn" type="button" onclick="finish()">Looks Good, Build My Work Review</button>' +
+    '<button class="btn ghost" type="button" onclick="renderSetup()">Edit Targets</button></div>' +
+    '<button class="back" type="button" onclick="renderFn(0)">Change My Metrics</button>';
+  $('review').innerHTML = h;
+  show('review'); progress(88, 'Step 6 of 6');
+}
+function reviewTable() {
+  var rows = FUNCTIONS.map(function (f) {
+    return '<tr class="band"><td colspan="2">' + esc(fnName(f)) + '</td></tr>' + state.list[f.id].map(function (it) {
+      return '<tr><td>' + esc(it.text) + (it.lower ? ' <span class="tag">on target at or below</span>' : '') + '</td><td class="t">' + esc(targetText(it)) + '</td></tr>';
+    }).join('');
+  }).join('');
+  return '<table class="rv"><thead><tr><th>Metric</th><th class="t">Monthly Target</th></tr></thead><tbody>' + rows + '</tbody></table>';
+}
+
+/* ---------- Build, download page ---------- */
+function buildModel() {
+  return { org: state.who.org, name: state.who.name, objective: state.who.objective, year: planYear(),
+    functions: FUNCTIONS.map(function (f) {
+      return { name: fnName(f), metrics: state.list[f.id].map(function (it) {
+        return { label: it.text, fmt: it.fmt, money: isMoney(it), yearly: yearlyOf(it), lower: !!it.lower,
+          target: parseTarget(it.raw, it.fmt), targetText: targetText(it), custom: !it.src || !!it.edited };
+      }) };
+    }),
+    notes: ['How to use it: fill in each metric once a month, then review it together on the same day every month.',
+      'Green means you hit the target. Red means you missed.',
+      'Type percentages with the % sign, like 25%. Year to Date adds up or averages each metric the way you chose.'
+    ],
+    theme: SHEET_THEME,
+    links: [['Book a free 30 minute debrief with Jeremy', BOOKING_LINK], ['Get the Uncommon Kit: the rest of the tools behind your Work Review', KIT_LINK],
+      ['Read Uncommon Work, the book behind the Work Review', SUBSTACK_LINK], ['Take the free Baseline Snapshot', 'https://thefrontiergroup.co/baseline/']] };
+}
+function finish() {
+  var model = buildModel(), file = WorkReviewXlsx.build(model);
+  state.file = { blob: file.blob, b64: file.base64, name: (model.org || 'My').replace(/[^\w ]+/g, '').trim() + ' Work Review ' + model.year + '.xlsx' };
+  renderDone(model);
+  notify(model, file.base64, state.file.name);
+}
+function kitList() {
+  var total = KIT.reduce(function (n, g) { return n + g[1].length; }, 0);
+  var h = '<div class="kit"><p class="eyebrow">The Uncommon toolkit</p><h2>You Just Finished 1 of ' + total + '.</h2>' +
+    '<p>The Work Review is one of the tools behind <em>Uncommon Work</em>. The rest are in the Uncommon Kit: AI builders, assistants, and templates that turn your team’s raw thinking into finished drafts in minutes.</p>' +
+    '<div class="meter"><i style="width:' + Math.round(100 / total) + '%"></i></div>';
+  KIT.forEach(function (g) {
+    h += '<p class="kgroup">' + esc(g[0]) + '</p><ul class="checks">' + g[1].map(function (t) {
+      return t === DONE_TOOL ? '<li class="done"><span class="ck" aria-hidden="true">&#10003;</span>' + esc(t) + ' <em>Done</em></li>'
+        : '<li><span class="ck" aria-hidden="true"></span>' + esc(t) + '</li>';
+    }).join('') + '</ul>';
+  });
+  return h + '<div class="row"><a class="btn darkbtn" href="' + KIT_LINK + '" target="_blank" rel="noopener">Get the Full Uncommon Kit</a></div>' +
+    '<p class="muted small" style="margin-top:10px">' + esc(KIT_PRICE) + '.</p></div>';
+}
+function quoteReel() {
+  var cards = QUOTES.map(function (q, i) {
+    return '<figure class="tcard" id="q' + i + '" style="margin:0"><p>“' + q[0] + '”</p><cite>' + esc(q[1]) + '</cite></figure>';
+  }).join('');
+  var dots = QUOTES.map(function (q, i) { return '<button type="button" aria-label="Show quote ' + (i + 1) + '" onclick="goQuote(' + i + ')"' + (i ? '' : ' aria-current="true"') + '></button>'; }).join('');
+  return '<div class="reel" id="reel" onscroll="syncDots()">' + cards + '</div>' +
+    '<div class="reelnav"><div class="dots" id="dots">' + dots + '</div><div class="arrows"><span id="qcount">1 of ' + QUOTES.length + '</span>' +
+    '<button type="button" aria-label="Previous quote" onclick="stepQuote(-1)">&lsaquo;</button><button type="button" aria-label="Next quote" onclick="stepQuote(1)">&rsaquo;</button></div></div>';
+}
+var qi = 0;
+function goQuote(i) { qi = Math.max(0, Math.min(QUOTES.length - 1, i)); var r = $('reel'); r.scrollTo({ left: $('q' + qi).offsetLeft - r.offsetLeft - 4, behavior: 'smooth' }); }
+function stepQuote(d) { goQuote(qi + d); }
+function syncDots() {
+  var r = $('reel'), w = r.firstChild.offsetWidth + 12;
+  qi = Math.round(r.scrollLeft / w);
+  document.querySelectorAll('#dots button').forEach(function (b, i) { b.setAttribute('aria-current', i === qi); });
+  $('qcount').textContent = (qi + 1) + ' of ' + QUOTES.length;
+}
+function renderDone(model) {
+  var first = esc(state.who.name.split(' ')[0]);
+  $('done').innerHTML =
+    '<p class="eyebrow">Your Work Review &middot; ' + esc(model.org) + '</p>' +
+    '<h2>' + (first ? first + ', Your ' : 'Your ') + model.year + ' Work Review Is Ready.</h2>' +
+    kitList() +
+    '<div class="getit"><h3>Download Your Work Review</h3><p class="muted small" style="margin:4px 0 14px">An Excel file that also opens in Google Sheets and Numbers. A copy is on its way to your inbox.</p>' +
+    '<button class="btn wide" type="button" onclick="download()">Download My Work Review</button><p id="dlnote" class="muted small" hidden style="margin:10px 0 0"></p></div>' +
+    '<div class="callout"><p class="eyebrow">Want help with it?</p><h2>Get a Second Set of Eyes on Your Metrics.</h2>' +
+    '<p>In a free 30 minute debrief, we walk through your Work Review together and pick the few metrics to start with. You get a straight read, whether or not we ever work together.</p>' +
+    quoteReel() +
+    '<a class="btn" href="' + BOOKING_LINK + '" target="_blank" rel="noopener">Book My Free 30 Minute Debrief</a></div>' +
+    '<div class="doors">' +
+    '<a class="door" href="' + SUBSTACK_LINK + '" target="_blank" rel="noopener"><b>Your Free Book</b><span><em>Uncommon Work</em>, the book behind the Work Review, comes with your subscription.</span></a>' +
+    '<a class="door" href="' + SNAPSHOT_LINK + '"><b>Take the Baseline Snapshot</b><span>A three minute read on how much still runs through you.</span></a></div>' +
+    '<p class="muted small" style="margin-top:20px">Questions? <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a></p>';
+  show('done'); progress(100, 'Done');
+}
+function download() {
+  var a = document.createElement('a'), url = URL.createObjectURL(state.file.blob);
+  a.href = url; a.download = state.file.name; document.body.appendChild(a); a.click();
+  setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 1000);
+}
+function notify(model, b64, fname) {
+  if (!LEAD_ENDPOINT) { console.warn('LEAD_ENDPOINT not set; lead not sent'); return; }
+  var metrics = [];
+  model.functions.forEach(function (f) { f.metrics.forEach(function (m) {
+    metrics.push({ fn: f.name, label: m.label, format: m.fmt === '%' ? 'Percent' : 'Number', yearly: m.yearly === 'a' ? 'Average' : 'Total', lower: m.lower,
+      target: m.targetText, targetSet: m.targetText !== 'Set later', custom: m.custom });
+  }); });
+  var w = state.who;
+  var payload = { name: w.name, email: w.email, org: w.org, title: w.title, type: w.type, industry: w.industry, size: w.size, objective: w.objective,
+    optin: 'Yes', noun: nounP(), year: model.year, metrics: metrics, fileName: fname, file: b64 };
+  try {
+    fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
+      .catch(function (err) { console.warn('Lead notification failed', err); });
+  } catch (err) { console.warn('Lead notification failed', err); }
+}
+$('seasonLine').textContent = SEASON_LINE;
+</script>
+</body>
+</html>
