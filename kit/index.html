@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Uncommon Kit | Frontier Group</title>
+<meta name="description" content="Every builder, session guide, and tracker from Uncommon Work, to get your team running on weekly huddles in 90 days. $95, one time.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,600&display=swap">
+<link rel="icon" href="../assets/img/favicon-64.png">
+<style>
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--bg:#F6F1EF;--surface:#FFFFFF;--dark:#2C2C2C;--accent:#EC5B59;--accent-lt:#FEF0EF;--muted:#6A625E;--border:#E4DBD7;--display:"Newsreader",Georgia,serif;--body:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--dark);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.narrow{max-width:720px}
+header{padding:22px 0}header .wrap{display:flex;justify-content:space-between;align-items:center}
+header img{height:36px;width:auto}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.22;margin:0 0 18px}
+h1{font-size:clamp(32px,5.4vw,50px)}h2{font-size:clamp(26px,3.6vw,34px)}h3{font-size:21px;margin-bottom:10px}
+p{margin:0 0 18px}.muted{color:var(--muted)}.small{font-size:15px}
+section{padding:64px 0}section.alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.btn{display:inline-block;border:0;border-radius:10px;background:var(--accent);color:#fff;font:600 17px var(--body);padding:15px 26px;text-decoration:none;text-align:center}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--dark);outline-offset:3px}
+.btn:hover{filter:brightness(.95)}.btn.ghost{background:transparent;color:var(--dark);border:1px solid #CFC9BF}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:26px}
+.hero{padding:40px 0 72px}.hero p.lead{font-size:21px;max-width:640px}
+.hero-grid{display:grid;gap:36px;align-items:center}
+.cover{width:100%;max-width:300px;margin:0 auto;border-radius:14px;border:1px solid var(--border)}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.4fr 1fr}.cover{max-width:420px}}
+.pains{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.pains li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px 14px 44px;position:relative}
+.pains li:before{content:"";position:absolute;left:18px;top:24px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.map{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:12px;margin-top:28px}
+.inside{display:grid;gap:16px;margin-top:30px}
+@media(min-width:860px){.inside{grid-template-columns:1.3fr 1fr 1fr}}
+.item{background:var(--bg);border-radius:14px;padding:22px}
+.item h3{font-size:24px}.item p{font-size:16.5px;margin:0}
+.steps{display:grid;gap:16px;margin-top:30px}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px}
+.step b{display:block;font-family:var(--display);font-size:30px;color:var(--accent);line-height:1;margin-bottom:10px}
+.step h3{font-size:24px}.step p{font-size:16.5px;margin:0}
+.box{background:var(--bg);border-radius:14px;padding:24px}
+.box ul{padding-left:20px;margin:10px 0 0}.box li{margin-bottom:6px;font-size:16.5px}
+.buy{background:var(--surface);border:2px solid var(--accent);border-radius:18px;padding:34px 28px;text-align:center}
+.price{font-family:var(--display);font-size:52px;font-weight:700;line-height:1;margin:6px 0 6px}
+.price small{font-family:var(--body);font-size:16px;font-weight:500;color:var(--muted)}
+blockquote{margin:28px 0 0;padding:2px 0 2px 20px;border-left:3px solid var(--accent);max-width:600px}
+blockquote p{font-family:var(--display);font-style:italic;font-size:20px;line-height:1.45;margin:0 0 8px}
+blockquote cite{display:block;font-style:normal;font-size:14px;font-weight:600;color:var(--muted)}
+.faq{display:grid;gap:14px;margin-top:26px}.faq .box{background:var(--surface);border:1px solid var(--border)}.faq h3{font-size:24px}.faq p{font-size:16.5px}
+footer{padding:36px 0 56px;font-size:14px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="/"><img src="../assets/img/logotype-dark.png" alt="Frontier Group home"></a><a class="btn ghost" href="https://buy.stripe.com/9B66oI2qZ2prfCK59r7ss02" style="padding:10px 18px;font-size:15px">Get the Kit</a></div></header>
+
+<main>
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">For executive directors who carry every decision</p>
+        <h1>Get your team running on weekly huddles in 90 days.</h1>
+        <p class="lead">Your plan moves out of your head and onto pages your team owns. Every tool from <em>Uncommon Work</em> is built and ready.</p>
+        <!-- Stripe Payment Link. Every buy button on this page uses the same URL. -->
+        <div class="row"><a class="btn" href="https://buy.stripe.com/9B66oI2qZ2prfCK59r7ss02">Get the Kit</a><span class="muted small">$95, one time. 30 day money back guarantee.</span></div>
+        <blockquote><p>"Our first 90 days together were the most focused and productive I've ever been."</p><cite>Ben J., event planning firm owner, on his first 90 days with Jeremy</cite></blockquote>
+      </div>
+      <img class="cover" src="../assets/img/uncommon-kit-cover.png" alt="Uncommon Kit by Jeremy Rivers. Install the Huddle Operating System. The companion toolkit to Uncommon Work." width="800" height="800">
+    </div>
+  </section>
+</div>
+
+<section class="alt"><div class="wrap narrow">
+  <p class="eyebrow">Sound familiar?</p>
+  <h2>Every decision still waits on your desk.</h2>
+  <ul class="pains">
+    <li>Staff wait for your call before they move.</li>
+    <li>The plan lives in your head, so the team guesses.</li>
+    <li>The goals you set in January are gone by March.</li>
+  </ul>
+  <p style="margin-top:26px">I call this the Mission Capacity Gap. Your mission has outgrown the way your organization works.</p>
+</div></section>
+
+<section><div class="wrap narrow">
+  <p class="eyebrow">The Huddle Operating System</p>
+  <h2>Ten huddles move the work off your desk.</h2>
+  <p>Five planning huddles give your team a clear plan. Five check point huddles keep everyone on it, every week.</p>
+  <div class="map"><img src="../assets/img/huddle-os-map.png" alt="The Huddle Operating System. The Driver owns the rhythm. Every huddle runs Track, React, Commit. Five Planning Huddles produce clarity: 2 Page Strategy, 1 Page Plan, Activity Map, Role Descriptions, Key Processes. Five Check Point Huddles produce accountability: Annual Retreat yearly, 90 Day Roadmap quarterly, Monthly Review monthly, Team Huddle weekly, the 1:1 weekly. The Work, Culture, and 1:1 Reviews feed every Track step." width="1200" height="1151" loading="lazy"></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="narrow"><p class="eyebrow">What's inside</p><h2>Run each huddle without building anything from scratch.</h2></div>
+  <div class="inside">
+    <div class="item"><h3>A first draft in minutes</h3><p>Paste your team's notes into any AI chat with a builder prompt. You get a draft to react to, plus a finished example of what good looks like.</p>
+      <blockquote style="margin-top:18px"><p>"...your process made it simple and shockingly effective. Best use of AI I've seen yet."</p><cite>Harrison K., author, after building his system with Jeremy's AI builders</cite></blockquote></div>
+    <div class="item"><h3>The right questions, in order</h3><p>Printable session guides walk you and your team through each planning huddle.</p></div>
+    <div class="item"><h3>Always know your next step</h3><p>The Jump Start Tracker shows your progress through all 90 days. It opens in Excel, Google Sheets, or Numbers.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="narrow"><p class="eyebrow">Your 90 Day Jump Start</p><h2>Start with 15 minutes this Friday.</h2></div>
+  <div class="steps">
+    <div class="step"><b>1</b><h3>Build the habit</h3><p>Run Week Prep on your own for 4 weeks. About 15 minutes each.</p></div>
+    <div class="step"><b>2</b><h3>Get your first wins</h3><p>Weeks 1 to 4. Set your first 90 Day Roadmap and start a weekly Team Huddle.</p></div>
+    <div class="step"><b>3</b><h3>Install the system</h3><p>Weeks 5 to 12. Build your plan and roles, then hold your first Monthly Review.</p></div>
+  </div>
+  <blockquote><p>"The systems and planning rhythm we put in place completely changed how we operate. The team's aligned, consistent, and I'm getting fewer calls."</p><cite>Bret S., President and CEO, Eagle's Wings Athletics</cite></blockquote>
+</div></section>
+
+<section class="alt"><div class="wrap narrow">
+  <p class="eyebrow">Your guide</p>
+  <h2>I built this system as a COO, from the inside.</h2>
+  <p>I joined a mission organization as its second hire and helped grow it to 50 staff. <em>Uncommon Work</em> is how I ran it. The Kit holds every tool from the book.</p>
+  <blockquote><p>"He has the intuitive ability to take complexity and turn it into systems that are sustainable, scalable, efficient, and built with people in mind."</p><cite>Gabriela Mu&ntilde;oz, Executive Business Partner, worked with Jeremy for almost five years</cite></blockquote>
+</div></section>
+
+<section><div class="wrap narrow">
+  <p class="eyebrow">Before you buy</p>
+  <h2>Three common questions</h2>
+  <div class="faq">
+    <div class="box"><h3>"I'm not good with AI."</h3><p style="margin:0">You copy a prompt into any AI chat and paste your notes. Type <em>walk me through it</em> and the builder asks you the questions instead.</p></div>
+    <div class="box"><h3>"I don't have time for this."</h3><p style="margin:0">Your first step is 15 minutes on Friday, on your own. Each step after that is one huddle.</p></div>
+    <div class="box"><h3>"Do I need the book?"</h3><p style="margin:0">The Kit follows the book huddle by huddle. <a href="https://uncommonwork.substack.com" target="_blank" rel="noopener noreferrer">Get the book free</a> when you subscribe to the Uncommon Work newsletter.</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="buy"><div class="wrap narrow">
+  <div class="buy">
+    <p class="eyebrow">The Uncommon Kit</p>
+    <div class="price">$95 <small>one time</small></div>
+    <p>Every builder, session guide, example, and the tracker from <em>Uncommon Work</em>, in one Notion page you can open any time.</p>
+    <div class="row" style="justify-content:center"><a class="btn" href="https://buy.stripe.com/9B66oI2qZ2prfCK59r7ss02">Get the Kit</a></div>
+    <p class="muted small" style="margin:16px 0 0">Secure checkout with Stripe. Your Kit link opens as soon as you pay. No Notion account needed.<br>30 day money back guarantee. Not a fit? Email me within 30 days for a full refund.</p>
+  </div>
+  <p class="muted small" style="margin-top:26px;text-align:center">Questions? <a href="mailto:jeremy@thefrontiergroup.co">jeremy@thefrontiergroup.co</a></p>
+</div></section>
+
+</main>
+<footer>&copy; 2026 Frontier Coaching, LLC &middot; thefrontiergroup.co</footer>
+</body>
+</html>
