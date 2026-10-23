@@ -28,4 +28,4 @@ See `docs/DECISIONS.md`. The load bearing ones: Fields is desktop licensed so th
 - LinkedIn: linkedin.com/in/jeremyfrontier
 
 ## Drive bridge
-`[Jeremy OS]/Frontier Group/Website Migration/`
+`jeremy-os/Frontier Group/Website Migration/`

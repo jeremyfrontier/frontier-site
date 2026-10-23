@@ -58,16 +58,16 @@ A complete planning and execution system, from long range strategy down to the w
 My method for building strategy: driven by inquiry, modeled through proven frameworks, and committed into action. It produces finished, usable strategy in a fraction of the time a typical brainstorm takes. I do not just have ideas, I systematize them.
 > Proof artifact: a facilitator kit SAMPLE/excerpt (one or two pages), NOT a full kit. Full kits are paid IP. This sample is NOT in the captured assets (login-gated) - Jeremy must supply it or it ships as a placeholder in v1.
 
-### THE BOOK - COMING SOON
-I'm writing Uncommon Momentum, on the only skill that unlocks the potential in small teams. You can follow the thinking now on my newsletter, Take Account.
-(Note: "Uncommon Momentum" is a for-this-page working title, not the locked book title. Substack: takeaccount.substack.com)
+### THE BOOK
+I wrote Uncommon Work, on how to create a culture of ownership and accountability. It's free when you subscribe to my newsletter.
+Link: Get the book free (uncommonwork.substack.com). Updated 2026-10-23 (Jeremy): book shipped, newsletter renamed from Take Account.
 
 ### PROOF / TESTIMONIAL WALL
 Use ALL testimonials captured from the old site, not a curated few. At least these six from the Session A capture (Website Migration/Kajabi Asset Capture): Ashley P., Mattanah D., Luke B. Ph.D., Ben J., Tiffany W., Harrison K. Sweep the full capture for any others on the about/work pages so none are dropped.
 
 ### CONNECT
 I'm open to the right operator role, and available for select consulting.
-Links: LinkedIn (linkedin.com/in/jeremyfrontier) - Take Account on Substack (takeaccount.substack.com) - Email (jeremy@thefrontiergroup.co)
+Links: LinkedIn (linkedin.com/in/jeremyfrontier) - Uncommon Work on Substack (uncommonwork.substack.com) - Email (jeremy@thefrontiergroup.co)
 
 ## 4. Brand system (from Brand Assets/Frontier Group Brand Guide 0326.pdf)
 - **Colors:** Sand #F6F1EF (light ground), Charcoal #2C2C2C (text), Coral #EC5B59 (highlight - buttons + callouts). Extended accent palette available: Violet E6B9FF, Sea B8E3DD, Sky A4CAFF, Cobalt 3D39E7, Forest 074A0C, Avocado 617200, Moss 658776, Lichen C4D8A3, Sun F6D57F, Peach FF8E65, Clay D1A394, Berry 791D1F.

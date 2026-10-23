@@ -37,6 +37,6 @@ Run the 10 step protocol in `AGENTS.md` when the session's one outcome is done. 
 ## The Drive bridge
 Code lives here. A thin context folder lives on Drive at:
 
-`[Jeremy OS]/Frontier Group/Website Migration/`
+`jeremy-os/Frontier Group/Website Migration/`
 
 Skippy mirrors this repo's `CURRENT-HANDOFF.md` into that folder's notes on next contact. This repo never writes to Drive.
