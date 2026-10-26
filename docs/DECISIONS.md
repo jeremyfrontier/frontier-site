@@ -106,3 +106,5 @@ Jeremy flagged the card as out of date (three layers, Quarterly Planning, Weekly
 ## D20. Pain and outcome copy pass, testimonial order, TRC arrows removed (2026-10-26)
 The hero supporting paragraph, Who I am, and the three What I built paragraphs rewritten to lead with pain and land on outcome, no fluff (Jeremy's final wording, drawn from the book's intro and TRC chapter; mirrored into BRIEF §3). Testimonials now open with Luke B. then Ben J. The arrows between the Track, React, Commit boxes are removed.
 
+## D21. Baseline graphic simplified (2026-10-26)
+The three category boxes are equal width; the huddles running readout is removed, leaving the Leader Dependency Index; Critical on the score scale is Coral, here and in the sample report (Jeremy: Coral is the critical color).

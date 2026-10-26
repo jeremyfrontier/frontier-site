@@ -139,7 +139,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
 
 /* ── Frontier Baseline graphic ─────────────────────────── */
 .bl{margin-top:30px;display:grid;gap:14px;}
-.bl-cats{display:grid;grid-template-columns:3fr 2fr 2fr;gap:12px;}
+.bl-cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
 .bl-cat{border-radius:12px;padding:16px 18px;}
 .bl-cat strong{display:block;font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-0.01em;margin-bottom:10px;}
 .bl-cat ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
@@ -147,20 +147,17 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
 .k-clarity{background:var(--ink);color:var(--sand);} .k-clarity li{background:rgba(246,241,239,.14);}
 .k-acct{background:var(--coral);color:var(--ink);} .k-acct li{background:rgba(44,44,44,.12);}
 .k-culture{background:#E6DCD7;color:var(--ink);} .k-culture li{background:rgba(44,44,44,.08);}
-.bl-reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.bl-reads{display:grid;grid-template-columns:1fr;gap:12px;}
 .bl-read{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:14px 18px;display:grid;gap:8px;}
 .bl-lbl{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
 .bl-sub{font-size:13px;color:var(--ink-soft);}
 .ldi{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
 .ldi i{height:8px;border-radius:4px;background:var(--ink);}
 .ldi i:nth-child(1){opacity:.18}.ldi i:nth-child(2){opacity:.34}.ldi i:nth-child(3){opacity:.52}.ldi i:nth-child(4){opacity:.72}
-.dots{display:flex;gap:6px;flex-wrap:wrap;}
-.dots i{width:14px;height:14px;border-radius:50%;}
-.dots i:nth-child(-n+5){background:var(--ink);} .dots i:nth-child(n+6){background:var(--coral);}
 .bl-scale{display:grid;grid-template-columns:repeat(3,1fr);border-radius:10px;overflow:hidden;font-size:12.5px;font-weight:700;color:var(--ink);}
 .bl-scale .z{padding:9px 12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;}
 .bl-scale b{font-weight:500;opacity:.8;}
-.crit{background:var(--clay);} .risk{background:var(--sun);} .ok{background:var(--lichen);}
+.crit{background:var(--coral);} .risk{background:var(--sun);} .ok{background:var(--lichen);}
 
 /* ── TRC Method loop ───────────────────────────────────── */
 .trc{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:none;}
@@ -346,11 +343,6 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
               <span class="bl-lbl">Leader Dependency Index</span>
               <div class="ldi" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
               <span class="bl-sub">How much still runs through the leader</span>
-            </div>
-            <div class="bl-read">
-              <span class="bl-lbl">Huddles running</span>
-              <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <span class="bl-sub">Out of the 10 in the system</span>
             </div>
           </div>
           <div class="bl-scale" aria-label="Score scale">
