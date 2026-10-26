@@ -25,7 +25,9 @@
 
 **Run the copy gate before every commit.** `npm run check` (or `bash tools/check-copy.sh`) fails the build on any hyphen or em dash in visible page copy outside the approved allowlist.
 
-**Fonts must be license clean.** Only OFL or equivalent webfonts ship in `assets/fonts/`. Fields stays desktop only and appears on the page as logo artwork, never as live text.
+**Fonts.** Headlines are Fields (`assets/fonts/fields-600.otf`, `fields-800.otf`), body is DM Sans. Fields ships under Jeremy's desktop license by his decision (2026-10-26, D16), risk accepted; any other font must be OFL or equivalent. Libre Baskerville is the fallback only.
+
+**Design system.** Colors, type, spacing and shapes come from the Frontier Group Design System (Sand, Charcoal, Coral first; extended colors only in Brand Guide p.8 pairings). Coral is the accent, not a fill for everything. Motion is sparing: ease out, 160 to 420ms, no bounce, and the page reads fully with motion off.
 
 **No third party requests at runtime.** Everything the page needs is in this repo. No CDN, no Google Fonts link, no analytics, no embeds.
 

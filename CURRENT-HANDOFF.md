@@ -7,3 +7,5 @@
 **2026-10-21.** Uncommon Kit sales page live at `/kit/` with a Stripe Payment Link, and `/kit/thanks/` (noindex) delivering the view only Notion Kit (D15). Not linked from the homepage. Open: Jeremy's live test purchase and refund; Stripe Tax registration after the CPA call; the hub shows the Jump Start Tracker attached three times.
 
 **2026-10-23.** Homepage book section and Connect now point to uncommonwork.substack.com (takeaccount.substack.com was 404), new v1.0 cover, "I wrote" copy; Work Review Builder KIT_LINK points to /kit/. Open: /work still shows the $2,500 Founding Pilot (unlinked; rewrite is Launch Checklist step 7).
+
+**2026-10-26.** Brand refresh live (D16): Frontier Group Design System, Fields headlines (license risk accepted by Jeremy), brand shapes, primary palette framework, subtle motion; copy unchanged. Open: Fields webfont license if Jeremy wants to close the risk; /kit, /work, /baseline still on the old styling.

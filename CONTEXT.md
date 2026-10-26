@@ -29,7 +29,7 @@ Employee, not boss. Surface decisions in the moment. Propose OS canon changes; n
 4. **No forms, no email capture, no pricing, ever.** Artifacts open in one click.
 5. **Copy in `docs/BRIEF.md` §3 is locked.** Jeremy edits it; the build does not rewrite it.
 6. **Single scrolling page.** One `index.html`, styles inline, assets local. No build step, no framework, no CMS, no tracking.
-7. **Fields is licensed for desktop only.** Do not ship it as a webfont. See `docs/DECISIONS.md`.
+7. **Fields is the headline font, live on the page.** Jeremy's decision (2026-10-26), knowing the license is desktop only. See `docs/DECISIONS.md` D16.
 
 ## End sesh (git)
 Run the 10 step protocol in `AGENTS.md` when the session's one outcome is done. Steps 1 to 5 consolidate learning into `BUILD-RULES.md` and `MEMORY.md`, then 6 to 10 summarize, commit, push, and write the handoff into `CURRENT-HANDOFF.md`.
