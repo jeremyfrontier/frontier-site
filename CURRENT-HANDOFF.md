@@ -8,4 +8,4 @@
 
 **2026-10-23.** Homepage book section and Connect now point to uncommonwork.substack.com (takeaccount.substack.com was 404), new v1.0 cover, "I wrote" copy; Work Review Builder KIT_LINK points to /kit/. Open: /work still shows the $2,500 Founding Pilot (unlinked; rewrite is Launch Checklist step 7).
 
-**2026-10-26.** Brand refresh live (D16): Frontier Group Design System, Fields headlines (license risk accepted by Jeremy), brand shapes, primary palette framework, subtle motion; copy unchanged. Open: Fields webfont license if Jeremy wants to close the risk; /kit, /work, /baseline still on the old styling.
+**2026-10-26.** Brand refresh live (D16): Frontier Group Design System, Fields headlines (license risk accepted by Jeremy), brand shapes, primary palette framework, subtle motion; copy unchanged. Open: Fields webfont license if Jeremy wants to close the risk; /kit, /work, /baseline still on the old styling. Framework card now the Huddle Operating System 5 and 5 (D17). Baseline card on v2 with a graphic, TRC Method replaces RDM (D18). Sample report rebranded to Magnolia Landscaping on the design system (D19).

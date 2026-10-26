@@ -122,28 +122,57 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
 .artifact:hover{gap:14px;}
 .artifact svg{width:15px;height:15px;flex:none;}
 
-/* ── Framework diagram (brand pairings: Cobalt on Sky, Forest on Lichen, Berry on Clay) */
-.fw{margin-top:34px;border-top:1px solid var(--rule);padding-top:32px;}
-.fw-cap{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-soft);margin:0 0 18px;display:flex;align-items:center;gap:12px;}
-.fw-cap::after{content:"";flex:1;height:4px;border-radius:2px;
-  background:linear-gradient(90deg,var(--ink) 0 33.3%,var(--coral) 33.3% 66.6%,#B8ACA6 66.6% 100%);}
-.fw-comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:26px;}
-.fw-comp div{border-radius:12px;padding:18px 20px;background:var(--accent);}
-.fw-comp strong{display:block;font-family:var(--serif);font-weight:600;font-size:21px;margin-bottom:3px;color:var(--on-accent);}
-.fw-comp span{font-size:13.5px;color:var(--on-accent);opacity:.88;}
-/* Primary palette variants: Charcoal, Coral, deep Sand. --rail is the layer line (deep Sand needs a darker rail to show). */
-.c1{--accent:var(--ink);--on-accent:var(--sand);--rail:var(--ink);}
-.c2{--accent:var(--coral);--on-accent:var(--ink);--rail:var(--coral);}
-.c3{--accent:#E6DCD7;--on-accent:var(--ink);--rail:#B8ACA6;}
-.fw-layer{display:grid;grid-template-columns:minmax(150px,190px) 1fr;gap:18px;align-items:start;
-  padding:18px 0 18px 20px;border-top:1px solid var(--rule);border-left:5px solid var(--rail);}
-.fw-layer:first-of-type{border-top:none;}
-.fw-layer h4{margin:0;font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);}
-.fw-layer h4 span{display:block;font-family:var(--sans);font-size:12px;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:5px;}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none;}
-.chips li{background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:7px 15px;font-size:14px;color:var(--ink);}
+/* ── Huddle Operating System: 5 and 5, like the book (Charcoal = clarity, Coral = accountability) */
+.hos{margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.fam{border-radius:14px;overflow:hidden;background:var(--surface);border:1px solid var(--rule);}
+.fam header{padding:18px 22px;display:flex;flex-direction:column;gap:2px;}
+.fam header span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.82;}
+.fam header strong{font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.6vw,30px);line-height:1.1;letter-spacing:-0.015em;}
+.fam-clarity header{background:var(--ink);color:var(--sand);}
+.fam-acct header{background:var(--coral);color:var(--ink);}
+.fam ol{list-style:none;margin:0;padding:6px 22px 10px;}
+.fam li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px;color:var(--ink);display:flex;align-items:center;gap:12px;}
+.fam li:last-child{border-bottom:0;}
+.fam li::before{content:"";width:8px;height:8px;border-radius:50%;flex:none;}
+.fam-clarity li::before{background:var(--ink);}
+.fam-acct li::before{background:var(--coral);}
+
+/* ── Frontier Baseline graphic ─────────────────────────── */
+.bl{margin-top:30px;display:grid;gap:14px;}
+.bl-cats{display:grid;grid-template-columns:3fr 2fr 2fr;gap:12px;}
+.bl-cat{border-radius:12px;padding:16px 18px;}
+.bl-cat strong{display:block;font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-0.01em;margin-bottom:10px;}
+.bl-cat ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
+.bl-cat li{font-size:13px;font-weight:500;padding:4px 10px;border-radius:999px;}
+.k-clarity{background:var(--ink);color:var(--sand);} .k-clarity li{background:rgba(246,241,239,.14);}
+.k-acct{background:var(--coral);color:var(--ink);} .k-acct li{background:rgba(44,44,44,.12);}
+.k-culture{background:#E6DCD7;color:var(--ink);} .k-culture li{background:rgba(44,44,44,.08);}
+.bl-reads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.bl-read{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:14px 18px;display:grid;gap:8px;}
+.bl-lbl{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+.bl-sub{font-size:13px;color:var(--ink-soft);}
+.ldi{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;}
+.ldi i{height:8px;border-radius:4px;background:var(--ink);}
+.ldi i:nth-child(1){opacity:.18}.ldi i:nth-child(2){opacity:.34}.ldi i:nth-child(3){opacity:.52}.ldi i:nth-child(4){opacity:.72}
+.dots{display:flex;gap:6px;flex-wrap:wrap;}
+.dots i{width:14px;height:14px;border-radius:50%;}
+.dots i:nth-child(-n+5){background:var(--ink);} .dots i:nth-child(n+6){background:var(--coral);}
+.bl-scale{display:grid;grid-template-columns:repeat(3,1fr);border-radius:10px;overflow:hidden;font-size:12.5px;font-weight:700;color:var(--ink);}
+.bl-scale .z{padding:9px 12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+.bl-scale b{font-weight:500;opacity:.8;}
+.crit{background:var(--clay);} .risk{background:var(--sun);} .ok{background:var(--lichen);}
+
+/* ── TRC Method loop ───────────────────────────────────── */
+.trc{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:none;}
+.trc li{position:relative;border-radius:12px;padding:18px 20px;}
+.trc .step{display:block;font-family:var(--serif);font-weight:800;font-size:26px;letter-spacing:-0.015em;margin-bottom:8px;}
+.trc li p{margin:0;font-size:14.5px;line-height:1.5;color:inherit;opacity:.9;max-width:none;}
+.t-track{background:var(--ink);color:var(--sand);}
+.t-react{background:var(--coral);color:var(--ink);}
+.t-commit{background:#E6DCD7;color:var(--ink);}
+.trc li:not(:last-child)::after{content:"";position:absolute;right:-11px;top:28px;width:10px;height:10px;border-top:2px solid var(--ink-soft);border-right:2px solid var(--ink-soft);transform:rotate(45deg);z-index:1;}
+.trc-loop{display:flex;align-items:center;gap:8px;margin:12px 0 0;font-size:13.5px;color:var(--ink-soft);}
+.trc-loop svg{width:18px;height:18px;flex:none;}
 
 /* ── Book (deep Sand: the cover's own palette, Coral stays the one accent) */
 .book{background:#E6DCD7;position:relative;overflow:hidden;}
@@ -208,7 +237,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
   .whogrid{grid-template-columns:1fr;}
   .portrait{max-width:340px;margin-inline:auto;}
   .portrait .shape{right:-10px;}
-  .fw-layer{grid-template-columns:1fr;gap:12px;}
+  .hos{grid-template-columns:1fr;}
+  .bl-cats,.bl-reads,.trc{grid-template-columns:1fr;}
+  .trc li:not(:last-child)::after{right:auto;left:28px;top:auto;bottom:-11px;transform:rotate(135deg);}
   .bookgrid{grid-template-columns:1fr;gap:28px;}
   .bookcover{max-width:240px;margin-inline:auto;}
 }
@@ -303,9 +334,32 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
       <article class="card reveal">
         <img class="shape corner" src="assets/img/shapes/pentagon-sun.png" alt="" aria-hidden="true">
         <p class="label">The diagnostic</p>
-        <h3>Baseline</h3>
-        <p>A full organizational health assessment I designed from scratch. It scores a team across clarity, communication, and culture, names the real constraint, and hands the leader a prioritized plan. I built the instrument, not just the opinion.</p>
-        <a class="artifact" href="assets/artifacts/baseline-sample-report.html" target="_blank" rel="noopener noreferrer">See it
+        <h3>Frontier Baseline</h3>
+        <p>A full organizational health assessment I designed from scratch. It scores a team across clarity, accountability, and culture, shows how much of the work still runs through the leader, and counts which of the 10 huddles are actually running. Then it names the real constraint and hands the leader a prioritized plan. I built the instrument, not just the opinion.</p>
+
+        <div class="bl" aria-label="What Frontier Baseline measures">
+          <div class="bl-cats">
+            <div class="bl-cat k-clarity"><strong>Clarity</strong><ul><li>Purpose</li><li>Direction</li><li>Expectations</li></ul></div>
+            <div class="bl-cat k-acct"><strong>Accountability</strong><ul><li>Rhythm</li><li>Discipline</li></ul></div>
+            <div class="bl-cat k-culture"><strong>Culture</strong><ul><li>Collective</li><li>Individual</li></ul></div>
+          </div>
+          <div class="bl-reads">
+            <div class="bl-read">
+              <span class="bl-lbl">Leader Dependency Index</span>
+              <div class="ldi" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="bl-sub">How much still runs through the leader</span>
+            </div>
+            <div class="bl-read">
+              <span class="bl-lbl">Huddles running</span>
+              <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="bl-sub">Out of the 10 in the system</span>
+            </div>
+          </div>
+          <div class="bl-scale" aria-label="Score scale">
+            <span class="z crit">Critical<b>below 2.5</b></span><span class="z risk">At risk<b>2.5 to 3.4</b></span><span class="z ok">Healthy<b>3.5 to 5.0</b></span>
+          </div>
+        </div>
+        <a class="artifact" href="assets/artifacts/baseline-sample-report.html" target="_blank" rel="noopener noreferrer">See a sample report
           <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </article>
@@ -313,41 +367,42 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
       <article class="card reveal">
         <img class="shape corner arrow" src="assets/img/arrow-coral.png" alt="" aria-hidden="true">
         <p class="label">The operating system</p>
-        <h3>The Frontier Framework</h3>
-        <p>A complete planning and execution system, from long range strategy down to the weekly huddle. Built on EOS, made my own, with OKRs and story woven in. I install it so the organization runs on structure, not on the leader.</p>
+        <h3>The Huddle Operating System</h3>
+        <p>Ten huddles that carry strategy from the long view down to this week. Five build clarity. Five keep the team accountable. Built on EOS, made my own, with OKRs and story woven in. I install it so the organization runs on structure, not on the leader.</p>
 
-        <div class="fw">
-          <p class="fw-cap">Three competencies it builds</p>
-          <div class="fw-comp">
-            <div class="c1"><strong>Clarity</strong><span>Purpose. Direction. Expectations.</span></div>
-            <div class="c2"><strong>Communication</strong><span>Rhythm. Discipline.</span></div>
-            <div class="c3"><strong>Culture</strong><span>Collective. Individual.</span></div>
-          </div>
-          <p class="fw-cap">Three layers it installs</p>
-          <div class="fw-layer c1">
-            <h4><span>Layer 01</span>Planning</h4>
-            <ul class="chips"><li>2 Page Strategy</li><li>1 Page Plan</li><li>The Playbook</li></ul>
-          </div>
-          <div class="fw-layer c2">
-            <h4><span>Layer 02</span>Structure</h4>
-            <ul class="chips"><li>Activity Map</li><li>Role Descriptions</li><li>Key Processes</li></ul>
-          </div>
-          <div class="fw-layer c3">
-            <h4><span>Layer 03</span>Execution Checkpoints</h4>
-            <ul class="chips"><li>Annual Retreat</li><li>Quarterly Planning</li><li>Monthly Score Review</li><li>Weekly Huddle</li></ul>
-          </div>
+        <div class="hos">
+          <section class="fam fam-clarity" aria-label="Clarity: 5 Planning Huddles">
+            <header><span>5 Planning Huddles</span><strong>Clarity</strong></header>
+            <ol>
+              <li>2 Page Strategy</li><li>1 Page Plan</li><li>Activity Map</li><li>Role Descriptions</li><li>Key Processes</li>
+            </ol>
+          </section>
+          <section class="fam fam-acct" aria-label="Accountability: 5 Check Point Huddles">
+            <header><span>5 Check Point Huddles</span><strong>Accountability</strong></header>
+            <ol>
+              <li>Annual Retreat</li><li>90 Day Roadmap</li><li>Monthly Review</li><li>Team Huddle</li><li>1:1</li>
+            </ol>
+          </section>
         </div>
       </article>
 
       <article class="card reveal">
         <img class="shape corner" src="assets/img/shapes/sparkle-clay.png" alt="" aria-hidden="true">
-        <p class="label">The engine</p>
-        <h3>The Reaction Draft Method</h3>
-        <p>My method for building strategy. It runs on inquiry, models the thinking through proven frameworks, and commits it into action. It produces finished, usable strategy in a fraction of the time a normal brainstorm takes. I do not just have ideas, I systematize them.</p>
-        <a class="artifact" href="assets/artifacts/2-page-strategy-session-guide.pdf" target="_blank" rel="noopener noreferrer">See it
+        <p class="label">The method</p>
+        <h3>The TRC Method</h3>
+        <p>How every huddle thinks. It puts reacting where it belongs, after the facts and inside a framework, never at random on a blank whiteboard. The result is focused thinking and decisions that actually get done.</p>
+
+        <ol class="trc" aria-label="Track, React, Commit">
+          <li class="t-track"><span class="step">Track</span><p>Bring what is true into the room before anyone reacts. Results, and answers to the right questions.</p></li>
+          <li class="t-react"><span class="step">React</span><p>Put a draft in front of the room, inside a proven framework. Push back, sharpen it, make it yours.</p></li>
+          <li class="t-commit"><span class="step">Commit</span><p>Decide the next best steps. Every one gets an owner and a date, confirmed out loud.</p></li>
+        </ol>
+        <p class="trc-loop" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Then the next huddle tracks what you committed to.</p>
+
+        <a class="artifact" href="assets/artifacts/2-page-strategy-session-guide.pdf" target="_blank" rel="noopener noreferrer">See a session guide
           <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p style="margin-top:14px;font-size:14px;color:var(--ink-soft)">The 2 Page Strategy Strategic Session Guide, one of the guides I facilitate from.</p>
+        <p style="margin-top:14px;font-size:14px;color:var(--ink-soft)">The 2 Page Strategy Session Guide, one of the guides I facilitate from.</p>
       </article>
 
     </div>

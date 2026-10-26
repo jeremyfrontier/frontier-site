@@ -46,16 +46,19 @@ That system is what I install now. First through Frontier Group, the practice I 
 ### WHAT I'VE BUILT
 **Section header:** Things I've built to get that work done.
 
-**Baseline - the diagnostic**
-A full organizational health assessment I designed from scratch. It scores a team across clarity, communication, and culture, names the real constraint, and hands the leader a prioritized plan. I built the instrument, not just the opinion.
+**Frontier Baseline - the diagnostic** *(rewritten by Jeremy's direction 2026-10-26, D18)*
+A full organizational health assessment I designed from scratch. It scores a team across clarity, accountability, and culture, shows how much of the work still runs through the leader, and counts which of the 10 huddles are actually running. Then it names the real constraint and hands the leader a prioritized plan. I built the instrument, not just the opinion.
+> Graphic: the v2 instrument (Clarity: Purpose, Direction, Expectations; Accountability: Rhythm, Discipline; Culture: Collective, Individual), the Leader Dependency Index, huddles running out of 10, and the score scale. Link label: "See a sample report".
 > Proof artifact: link the LIVE lite Baseline assessment (captured HTML in Website Migration/). Label it "See it." No email gate.
 
-**The Frontier Framework - the operating system**
-A complete planning and execution system, from long range strategy down to the weekly huddle. EOS based, but my own, with OKRs and story built in. It is what I install so an organization runs on structure instead of on the leader.
+**The Huddle Operating System - the operating system** *(rewritten by Jeremy's direction 2026-10-26, D17)*
+Ten huddles that carry strategy from the long view down to this week. Five build clarity. Five keep the team accountable. Built on EOS, made my own, with OKRs and story woven in. I install it so the organization runs on structure, not on the leader.
+> Shown as a 5 and 5 view, like the book. **Clarity, 5 Planning Huddles:** 2 Page Strategy, 1 Page Plan, Activity Map, Role Descriptions, Key Processes. **Accountability, 5 Check Point Huddles:** Annual Retreat, 90 Day Roadmap, Monthly Review, Team Huddle, 1:1. Source: the book's Book Rules.
 > Proof artifact: embed the framework diagram image (locate in Brand Assets/Graphis or the Kajabi image manifest; confirm the right one with Jeremy).
 
-**The Reaction Draft Method - the engine**
-My method for building strategy: driven by inquiry, modeled through proven frameworks, and committed into action. It produces finished, usable strategy in a fraction of the time a typical brainstorm takes. I do not just have ideas, I systematize them.
+**The TRC Method - the method** *(replaces the Reaction Draft Method, Jeremy's direction 2026-10-26, D18)*
+How every huddle thinks. It puts reacting where it belongs, after the facts and inside a framework, never at random on a blank whiteboard. The result is focused thinking and decisions that actually get done.
+> Track: Bring what is true into the room before anyone reacts. Results, and answers to the right questions. React: Put a draft in front of the room, inside a proven framework. Push back, sharpen it, make it yours. Commit: Decide the next best steps. Every one gets an owner and a date, confirmed out loud. Loop line: "Then the next huddle tracks what you committed to." Source: the book's TRC chapter. Link label: "See a session guide".
 > Proof artifact: a facilitator kit SAMPLE/excerpt (one or two pages), NOT a full kit. Full kits are paid IP. This sample is NOT in the captured assets (login-gated) - Jeremy must supply it or it ships as a placeholder in v1.
 
 ### THE BOOK

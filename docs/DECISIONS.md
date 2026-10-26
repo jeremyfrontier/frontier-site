@@ -93,3 +93,13 @@ Tile numerals went 15px/600 to 38px/700 and tile body 16.5px to 19px. Framework 
 **Visual only, copy untouched.** The one visible change is the credibility tile numerals (01 to 05), replaced by brand shapes; they were decoration, not a sequence. Horizontal wordmark in header and footer. Hero: Sea field with Sun and Cobalt shapes. Framework diagram in primary palette variants (Charcoal, Coral, deep Sand). Book band deep Sand. Coral compass arrow on the Framework card. Eyebrows Charcoal, buttons 10px radius, no hover lift or glow, true Charcoal bands.
 **Motion (sparing):** underline draws on once at load, hero shapes settle, section heads and cards rise in on first view, cards lift 4px on hover, header hairline on scroll. All off under reduced motion; content is visible without the script.
 
+## D17. Framework card becomes the Huddle Operating System, 5 and 5 (2026-10-26)
+Jeremy flagged the card as out of date (three layers, Quarterly Planning, Weekly Huddle). It now matches the book's system: 10 huddles in two families, Clarity (5 Planning Huddles) and Accountability (5 Check Point Huddles), shown side by side in Charcoal and Coral. The three competency tiles (Clarity, Communication, Culture) are retired. New card copy drafted by Skippy at Jeremy's direction and mirrored into BRIEF §3.
+
+## D18. Baseline and the method card brought up to the book (2026-10-26)
+**Frontier Baseline:** copy follows Baseline v2 (Communication became Accountability; Leader Dependency Index; 10 huddle existence check) and the card gains a graphic of the instrument plus the score scale. Status colors follow the Brand Standard (Clay, Sun, Lichen).
+**The TRC Method** replaces the Reaction Draft Method, per the book's brand architecture (the method inside the Huddle Operating System). Track, React, Commit shown as three steps with a loop line. Clarity list: Playbook replaced by Activity Map (matches Baseline v2 huddle 3).
+
+## D19. Sample Baseline report rebranded to Magnolia Landscaping (2026-10-26)
+`assets/artifacts/baseline-sample-report.html`: the fictional client is now **Magnolia Landscaping**, consistent with the book (was Meridian Group). Restyled on the design system: Fields and DM Sans served locally (Google Fonts removed), Sand wordmark in the masthead, brand shapes in place of the decorative glows, status colors per the Brand Standard (Lichen/Forest healthy, Sun/amber at risk, Clay/Berry critical; Coral no longer means critical). Category relabeled Communication to Accountability per Baseline v2; scores and narrative otherwise unchanged. Its motion (bars filling, fades, accordions) kept as is.
+
