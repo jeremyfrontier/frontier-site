@@ -47,17 +47,17 @@ That system is what I install now. First through Frontier Group, the practice I 
 **Section header:** Things I've built to get that work done.
 
 **Frontier Baseline - the diagnostic** *(rewritten by Jeremy's direction 2026-10-26, D18)*
-A full organizational health assessment I designed from scratch. It scores a team across clarity, accountability, and culture, shows how much of the work still runs through the leader, and counts which of the 10 huddles are actually running. Then it names the real constraint and hands the leader a prioritized plan. I built the instrument, not just the opinion.
+Leaders guess at what is broken on their team. Baseline measures it across the 3 competencies every healthy operation runs on, clarity, accountability, and culture. You see what is working, what is not, and exactly what to fix first.
 > Graphic: the v2 instrument (Clarity: Purpose, Direction, Expectations; Accountability: Rhythm, Discipline; Culture: Collective, Individual), the Leader Dependency Index, huddles running out of 10, and the score scale. Link label: "See a sample report".
 > Proof artifact: link the LIVE lite Baseline assessment (captured HTML in Website Migration/). Label it "See it." No email gate.
 
 **The Huddle Operating System - the operating system** *(rewritten by Jeremy's direction 2026-10-26, D17)*
-Ten huddles that carry strategy from the long view down to this week. Five build clarity. Five keep the team accountable. Built on EOS, made my own, with OKRs and story woven in. I install it so the organization runs on structure, not on the leader.
+You don’t need more meetings, you need better ones. Ten huddles carry strategy from the long view down to this week, five that build clarity and five that keep the team accountable. Your team moves in the exact direction you want to go, and the business stops depending on you for everything.
 > Shown as a 5 and 5 view, like the book. **Clarity, 5 Planning Huddles:** 2 Page Strategy, 1 Page Plan, Activity Map, Role Descriptions, Key Processes. **Accountability, 5 Check Point Huddles:** Annual Retreat, 90 Day Roadmap, Monthly Review, Team Huddle, 1:1. Source: the book's Book Rules.
 > Proof artifact: embed the framework diagram image (locate in Brand Assets/Graphis or the Kajabi image manifest; confirm the right one with Jeremy).
 
 **The TRC Method - the method** *(replaces the Reaction Draft Method, Jeremy's direction 2026-10-26, D18)*
-How every huddle thinks. It puts reacting where it belongs, after the facts and inside a framework, never at random on a blank whiteboard. The result is focused thinking and decisions that actually get done.
+No more blank whiteboards and random agendas. Every huddle starts with the facts, reacts to a draft, and closes with an owner and a date on every next step. Less debate over whose reality is right, faster decisions, and work that actually gets done.
 > Track: Bring what is true into the room before anyone reacts. Results, and answers to the right questions. React: Put a draft in front of the room, inside a proven framework. Push back, sharpen it, make it yours. Commit: Decide the next best steps. Every one gets an owner and a date, confirmed out loud. Loop line: "Then the next huddle tracks what you committed to." Source: the book's TRC chapter. Link label: "See a session guide".
 > Proof artifact: a facilitator kit SAMPLE/excerpt (one or two pages), NOT a full kit. Full kits are paid IP. This sample is NOT in the captured assets (login-gated) - Jeremy must supply it or it ships as a placeholder in v1.
 
@@ -92,3 +92,11 @@ A live, single scroll, on-brand page at a working URL, all locked copy in place,
 1. Facilitator kit sample page - Jeremy to supply (login-gated, not captured).
 2. Framework diagram - confirm the correct image with Jeremy.
 3. Domain registrar access for the repoint - Jeremy.
+
+### Who I am (rewritten by Jeremy, 2026-10-26, D20; supersedes the Who I am copy above)
+Every decision waits on you. Every fire finds you. The team is talented and things get done every day, but nothing moves without you, and that is a system problem.
+
+I learned it the expensive way. Twenty years ago I watched a mission I loved nearly come apart for lack of a system, and I spent the next decade building one until the operation ran without me in every room.
+
+A system is required to get the team on the same page, taking ownership, moving in one direction, without you needing to be involved for it to get done. Not more effort or the next best trend. A system.
+
