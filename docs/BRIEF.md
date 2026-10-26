@@ -98,5 +98,8 @@ Every decision waits on you. Every fire finds you. The team is talented and thin
 
 I learned it the expensive way. Twenty years ago I watched a mission I loved nearly come apart for lack of a system, and I spent the next decade building one until the operation ran without me in every room.
 
+That system is what I install now. Strategy carried all the way down to the weekly huddle, every person clear on what they own, and a leader who finally gets to lead instead of rescue.
+
+### Hero supporting paragraph (Jeremy, 2026-10-26, D20; replaces "The system is simple...")
 A system is required to get the team on the same page, taking ownership, moving in one direction, without you needing to be involved for it to get done. Not more effort or the next best trend. A system.
 
