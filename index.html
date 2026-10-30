@@ -139,6 +139,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
 
 /* ── Frontier Baseline graphic ─────────────────────────── */
 .bl{margin-top:30px;display:grid;gap:14px;}
+.bl-stats{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;margin:0;padding:0;background:var(--line,rgba(44,44,44,.12));border:1px solid var(--line,rgba(44,44,44,.12));border-radius:10px;overflow:hidden;}
+.bl-stats li{background:var(--cream,#FFFDFB);padding:12px 8px;text-align:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+.bl-stats b{display:block;font-family:'Fields',Georgia,serif;font-size:28px;line-height:1.1;letter-spacing:0;text-transform:none;color:var(--ink);}
+@media(max-width:520px){.bl-stats{grid-template-columns:repeat(3,minmax(0,1fr));}}
 .bl-cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
 .bl-cat{border-radius:12px;padding:16px 18px;}
 .bl-cat strong{display:block;font-family:var(--serif);font-weight:800;font-size:20px;letter-spacing:-0.01em;margin-bottom:10px;}
@@ -333,10 +337,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
         <p>Leaders guess at what is broken on their team. Baseline measures it across the 3 competencies every healthy operation runs on, clarity, accountability, and culture. You see what is working, what is not, and exactly what to fix first.</p>
 
         <div class="bl" aria-label="What Frontier Baseline measures">
+          <ul class="bl-stats" aria-label="Frontier Baseline at a glance">
+            <li><b>86</b>questions</li><li><b>3</b>competencies</li><li><b>7</b>disciplines</li><li><b>10</b>health markers</li><li><b>25</b>minutes</li>
+          </ul>
           <div class="bl-cats">
             <div class="bl-cat k-clarity"><strong>Clarity</strong><ul><li>Purpose</li><li>Direction</li><li>Expectations</li></ul></div>
             <div class="bl-cat k-acct"><strong>Accountability</strong><ul><li>Rhythm</li><li>Discipline</li></ul></div>
-            <div class="bl-cat k-culture"><strong>Culture</strong><ul><li>Collective</li><li>Individual</li></ul></div>
+            <div class="bl-cat k-culture"><strong>Culture</strong><ul><li>Collectively</li><li>Individually</li></ul></div>
           </div>
           <div class="bl-reads">
             <div class="bl-read">
