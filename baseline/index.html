@@ -3,280 +3,566 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Baseline Snapshot | Frontier Group</title>
-<meta name="description" content="A three minute read on your organization's clarity, accountability, and culture, plus how much still runs through you.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,600&display=swap">
-<link rel="icon" href="../assets/img/favicon-64.png">
+<title>Baseline Assessment | Jeremy Rivers</title>
+<meta name="description" content="Know for certain where your operation and team stand. Start with the free Snapshot, your own read in 11 questions.">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Baseline Assessment | Jeremy Rivers">
+<meta property="og:description" content="Know for certain where your operation and team stand. Start with the free Snapshot.">
+<meta property="og:image" content="../assets/img/icon-dark.png">
 <style>
-@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
-@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
-:root{--bg:#F6F1EF;--surface:#FFFFFF;--dark:#2C2C2C;--accent:#EC5B59;--accent-lt:#FEF0EF;--muted:#6A625E;--border:#E4DBD7;
---green:#2D7A4F;--lime:#5A8A2A;--amber:#C07A1A;--red:#B83232;--display:"Newsreader",Georgia,serif;--body:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-*{box-sizing:border-box}html,body{margin:0}
-body{background:var(--bg);color:var(--dark);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:680px;margin:0 auto;padding:24px 16px 64px}
-.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-.top img{height:34px;width:auto}
-.step{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.bar{height:4px;background:var(--border);border-radius:4px;margin-bottom:28px;overflow:hidden}
-.bar>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px 24px}
-@media(min-width:560px){.card{padding:40px 40px}}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
-h1,h2{font-family:var(--display);font-weight:700;line-height:1.25;margin:0 0 16px}
-h1{font-size:30px}h2{font-size:23px}
-p{margin:0 0 16px}.muted{color:var(--muted)}.small{font-size:14px}
-.screen{display:none}.screen.on{display:block;animation:in .25s ease}
-@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.btn{display:inline-block;border:0;border-radius:10px;background:var(--accent);color:#fff;font:600 17px var(--body);padding:15px 26px;cursor:pointer;text-decoration:none;text-align:center}
-.btn:focus-visible,.scale button:focus-visible,.back:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--dark);outline-offset:2px}
-.btn:hover{filter:brightness(.95)}.btn:disabled{opacity:.45;cursor:not-allowed}
-.btn.ghost{background:transparent;color:var(--dark);border:1px solid var(--border)}
-.btn.block{display:block;width:100%}
-.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.q{font-family:var(--display);font-size:21px;line-height:1.4;margin:0 0 26px}
-.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.scale button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:14px 4px 10px;font:600 20px var(--body);color:var(--dark);cursor:pointer}
-.scale button span{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:4px;line-height:1.2}
-@media(hover:hover){.scale button:hover{border-color:var(--accent)}}.scale button.sel{background:var(--accent);border-color:var(--accent);color:#fff}
-.scale button.sel span{color:#fff}
-.checks label{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer}
-.checks input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:none}
-.field{margin-bottom:16px}.field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
-.field input,.field select{width:100%;font:16px var(--body);padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--dark)}
-.back{background:none;border:0;color:var(--muted);font:500 15px var(--body);cursor:pointer;padding:0;margin-top:20px}
-.score-hero{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
-.score-hero b{font-family:var(--display);font-size:52px;line-height:1}
-.pill{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 11px;border-radius:99px;color:#fff}
-.meter{margin:14px 0}.meter .lab{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:6px}
-.meter .lab em{font-style:normal;font-weight:500;color:var(--muted)}
-.track{height:10px;background:#EEE9E2;border-radius:6px;overflow:hidden}.track i{display:block;height:100%;border-radius:6px}
-.block{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
-.callout{background:var(--accent-lt);border-radius:12px;padding:22px 20px;margin-top:28px}
-.missing{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
-.foot{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
-@media print{body{background:#fff}.no-print,.bar,.top .step{display:none!important}.card{border:0;padding:0}.screen{display:none!important}#results{display:block!important}}
+@font-face{font-family:'Fields';src:url('../assets/fonts/fields-600.otf') format('opentype');font-weight:500 650;font-display:swap;}
+@font-face{font-family:'Fields';src:url('../assets/fonts/fields-800.otf') format('opentype');font-weight:651 900;font-display:swap;}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap;}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap;}
+@font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-700.woff2') format('woff2');font-weight:700;font-display:swap;}
+:root{
+  --sand:#F6F1EF; --surface:#FFFDFB; --ink:#2C2C2C; --ink-soft:#3A3A3A;
+  --coral:#EC5B59; --coral-hover:#D94B49; --rule:rgba(44,44,44,.12); --rule-strong:rgba(44,44,44,.24);
+  --sea:#B8E3DD; --lichen:#C4D8A3; --sun:#F6D57F; --cobalt:#3D39E7; --taupe:#E6DCD7;
+  --serif:'Fields','Libre Baskerville',Georgia,serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --pad:clamp(16px,5vw,72px); --ease:cubic-bezier(.2,.8,.2,1);
+  /* Type scale: one source. Caps 12, small 14, body 17, lead 20, h3 24 to 28, h2 32 to 44, h1 42 to 72. */
+  --fs-caps:12px; --fs-sm:14px; --fs-body:17px; --fs-lead:20px;
+  --fs-h3:clamp(22px,2.4vw,28px); --fs-h2:clamp(32px,3.8vw,44px); --fs-h1:clamp(42px,6.2vw,72px); --fs-num:56px;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--sans);font-size:var(--fs-body);line-height:1.6;font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:4px;}
+.wrap{max-width:880px;margin:0 auto;padding-inline:var(--pad);}
+h1,h2{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:0;text-wrap:balance;}
+p,li,blockquote{text-wrap:pretty;}
+.caps,.eyebrow,.lnum,.hero .sig,.ch span,.app .step,.res-head span{font-size:var(--fs-caps);font-weight:700;letter-spacing:.16em;text-transform:uppercase;line-height:1.4;}
+h3{font-family:var(--sans);font-weight:700;font-size:var(--fs-h3);line-height:1.2;letter-spacing:-0.015em;margin:0;text-wrap:balance;}
+.eyebrow{color:var(--ink-soft);margin:0 0 14px;}
+p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm);line-height:1.5;}
+.shape{pointer-events:none;user-select:none;}
+
+.site-head{border-bottom:1px solid var(--rule);}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;}
+.site-head img{height:20px;width:auto;}
+
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--coral);color:#fff;text-decoration:none;font:700 17px/1.2 var(--sans);letter-spacing:.005em;padding:17px 30px;border-radius:10px;transition:background .16s var(--ease);text-align:center;}
+.btn:hover{background:var(--coral-hover);}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule-strong);}
+.btn.ghost:hover{background:var(--surface);}
+.cta{display:grid;gap:10px;justify-items:start;margin-top:30px;}
+.cta .under{font-size:var(--fs-sm);color:var(--ink-soft);margin:0;}
+
+/* Landing */
+.hero{padding-block:clamp(48px,7vw,96px) clamp(48px,6vw,88px);background:var(--ink);color:var(--sand);}
+.hero .lockup{width:clamp(200px,24vw,260px);margin:0 0 clamp(28px,4vw,40px);}
+.hero h1{font-weight:800;font-size:var(--fs-h1);line-height:1.02;letter-spacing:-0.025em;max-width:14ch;margin-bottom:24px;}
+.hero .support{font-size:var(--fs-lead);line-height:1.5;color:var(--sand);max-width:52ch;margin:0;}
+.hero .sig{color:var(--sand);margin:24px 0 0;}
+.hero .under{color:rgba(246,241,239,.85);}
+.sec{padding-block:clamp(40px,6vw,72px);border-top:1px solid var(--rule);}
+.hero + .sec{border-top:0;}
+.sec{border-top:0;}
+.sec.dark{background:var(--ink);color:var(--sand);}
+.sec.dark .eyebrow,.sec.dark .soft,.sec.dark .faq p{color:rgba(246,241,239,.88);}
+.sec.dark .layer{color:var(--ink);}
+.sec.dark .layer .soft{color:var(--ink-soft);}
+.sec.dark .callout{background:transparent;border:0;border-left:4px solid var(--coral);border-radius:0;color:var(--sand);padding:4px 0 4px clamp(18px,3vw,28px);}
+.sec.dark .example{color:var(--sand);}
+.sec.dark .example:hover{color:#fff;}
+
+.sec h2{font-size:var(--fs-h2);margin-bottom:18px;}
+.sec h2 + .prose,.sec h2 + p{font-size:var(--fs-lead);line-height:1.5;}
+.prose{max-width:62ch;}
+.source{font-size:var(--fs-sm);color:var(--ink-soft);margin-top:-6px;}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+.points li{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:18px 20px;}
+.points b{display:block;font-weight:700;font-size:19px;margin-bottom:4px;}
+.points span{color:var(--ink-soft);}
+.layers{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px;}
+.layer{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:clamp(20px,3vw,32px);}
+.lnum{color:var(--coral-hover);margin:0 0 8px;}
+.example{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:700;font-size:var(--fs-body);color:var(--ink);text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:2px;}
+.example svg{width:16px;height:16px;color:var(--coral);}
+.example:hover{color:var(--coral-hover);}
+.layer h3{margin-bottom:10px;}
+.layer p{max-width:60ch;margin:0;}
+.drivers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
+.drivers>div{border-top:6px solid var(--ink);background:var(--sand);border-radius:10px;padding:14px 16px;}
+.drivers .d-acct{border-top-color:var(--coral);} .drivers .d-culture{border-top-color:var(--taupe);}
+.drivers strong{display:block;font-weight:700;font-size:var(--fs-body);margin-bottom:4px;}
+.drivers span{font-size:var(--fs-sm);line-height:1.5;display:block;}
+.mlist{margin:14px 0 0;padding:0 0 0 18px;columns:2;column-gap:28px;font-size:var(--fs-sm);line-height:1.5;color:var(--ink-soft);}
+.mlist li{margin-bottom:4px;break-inside:avoid;}
+@media(max-width:640px){.mlist{columns:1;}.drivers{grid-template-columns:1fr;gap:10px;}}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:16px;}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;}
+.steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--sand);display:grid;place-items:center;font:700 17px var(--sans);}
+.steps b{display:block;}
+.steps span{color:var(--ink-soft);}
+.callout{background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--ink);border-radius:16px;padding:clamp(24px,4vw,40px);}
+.callout .line{font-weight:700;font-size:var(--fs-lead);line-height:1.35;margin:0 0 12px;}
+.who{display:grid;grid-template-columns:240px 1fr;gap:clamp(20px,4vw,40px);align-items:start;}
+.who img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;width:240px;}
+.pull{margin:22px 0 0;padding-left:18px;border-left:3px solid var(--coral);}
+.pull blockquote{margin:0 0 10px;font-size:var(--fs-lead);font-weight:500;line-height:1.45;letter-spacing:-0.005em;hanging-punctuation:first;}
+.pull cite{font-style:normal;font-size:var(--fs-sm);font-weight:500;color:var(--ink-soft);}
+.faq{display:grid;gap:20px;}
+.faq h3{font-size:var(--fs-lead);letter-spacing:-0.01em;margin-bottom:6px;}
+.faq p{margin:0;color:var(--ink-soft);}
+.closing h2{font-weight:800;margin-bottom:14px;}
+.foot{border-top:1px solid var(--rule);padding-block:28px;font-size:var(--fs-sm);color:var(--ink-soft);}
+@media(max-width:640px){.who{grid-template-columns:1fr;}.who img{width:100%;max-width:320px;}.cats{grid-template-columns:1fr;}.btn{width:100%;}.cta{justify-items:stretch;}}
+
+.ctable{margin:28px 0 0;border:1px solid rgba(246,241,239,.22);border-radius:14px;overflow:hidden;}
+.cr{display:grid;grid-template-columns:1.1fr 1fr 1.2fr;}
+.cr+.cr{border-top:1px solid rgba(246,241,239,.16);}
+.cr span{padding:16px 18px;font-size:var(--fs-body);line-height:1.5;}
+.cr span:first-child{font-weight:700;}
+.cr span:last-child{background:rgba(246,241,239,.07);font-weight:700;}
+.ch span{padding-block:14px;}
+.ch span:last-child{color:var(--sand);border-bottom:3px solid var(--coral);}
+.why2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;}
+.why2 p{margin:0;}
+.why2 b{display:block;font-size:var(--fs-lead);letter-spacing:-0.01em;margin-bottom:6px;}
+.fine{margin:28px 0 0;font-size:var(--fs-sm);line-height:1.55;color:rgba(246,241,239,.8);max-width:72ch;}
+@media(max-width:640px){.cr{grid-template-columns:1fr 1fr;}.cr span:first-child{grid-column:1/-1;padding-bottom:0;}.ch span:first-child{display:none;}.why2{grid-template-columns:1fr;}}
+
+/* Snapshot app */
+.app{margin-top:28px;max-width:680px;scroll-margin-top:24px;}
+.app .step{color:var(--ink-soft);margin:0 0 8px;}
+html{scroll-behavior:smooth;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+.bar{height:4px;background:var(--rule);border-radius:4px;margin-bottom:24px;overflow:hidden;}
+.bar>i{display:block;height:100%;width:0;background:var(--coral);transition:width .3s var(--ease);}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:28px 20px;}
+@media(min-width:560px){.card{padding:40px;}}
+.card h2{font-size:clamp(28px,3vw,34px);margin-bottom:12px;}
+.card h3{margin-bottom:10px;}
+.screen{display:none;}.screen.on{display:block;}
+@media(prefers-reduced-motion:no-preference){.screen.on{animation:in .24s var(--ease);}@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:var(--fs-sm);font-weight:700;margin-bottom:6px;}
+.field .help{font-weight:400;color:var(--ink-soft);}
+.field input,.field select{width:100%;font:16px var(--sans);padding:12px 14px;border:1px solid var(--rule-strong);border-radius:10px;background:#fff;color:var(--ink);}
+.err{display:none;color:#B83232;font-size:var(--fs-sm);margin:0 0 14px;}
+.q{font-weight:500;font-size:clamp(20px,2.2vw,24px);line-height:1.4;letter-spacing:-0.01em;margin:0 0 24px;}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.scale button{border:1px solid var(--rule-strong);background:#fff;border-radius:10px;padding:14px 2px 10px;font:700 20px/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--ink);cursor:pointer;}
+.scale button span{display:block;font-size:12px;font-weight:500;color:var(--ink-soft);margin-top:4px;line-height:1.2;}
+@media(hover:hover){.scale button:hover{border-color:var(--coral);}}
+.scale button.sel{background:var(--coral);border-color:var(--coral);color:#fff;}.scale button.sel span{color:#fff;}
+.prac{border-bottom:1px solid var(--rule);padding:14px 0;}
+.prac p{margin:0 0 10px;font-weight:500;}
+.yn{display:flex;gap:8px;flex-wrap:wrap;}
+.yn button{font:500 15px var(--sans);padding:8px 16px;border-radius:999px;border:1px solid var(--rule-strong);background:#fff;color:var(--ink);cursor:pointer;}
+.yn button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--sand);}
+.back{background:none;border:0;color:var(--ink-soft);font:500 var(--fs-sm) var(--sans);cursor:pointer;padding:0;margin-top:20px;}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+.hero-score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:4px;}
+.hero-score b{font-weight:700;font-size:var(--fs-num);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.stat{font-size:clamp(28px,3vw,34px);font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin:0 0 6px;}
+.res-head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin:0 0 22px;}
+.res-head img{width:143px;}
+.res-head span{padding-bottom:4px;}
+.pill{display:inline-block;font-size:var(--fs-caps);font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:99px;color:var(--ink);}
+.crit{background:var(--coral);} .risk{background:var(--sun);} .ok{background:var(--lichen);}
+.meter{margin:14px 0;}
+.meter .lab{display:flex;justify-content:space-between;font-weight:700;font-size:var(--fs-body);font-variant-numeric:tabular-nums;margin-bottom:6px;gap:10px;}
+.meter .lab em{font-style:normal;font-weight:500;color:var(--ink-soft);}
+.track{height:10px;background:var(--taupe);border-radius:6px;overflow:hidden;}.track i{display:block;height:100%;border-radius:6px;}
+.block{margin-top:26px;padding-top:22px;border-top:1px solid var(--rule);}
+.fix{background:var(--sand);border-left:4px solid var(--ink);border-radius:12px;padding:22px 20px;margin-top:26px;}
+.fix h3{margin-bottom:8px;}
+@media print{body{background:#fff}#landing>section:not(.closing),.closing h2,.closing>.wrap>p,.site-head,.bar,.no-print,.foot{display:none!important}.card{border:0;padding:0}.closing{border:0;padding:0}}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <div class="top"><a href="/"><img src="../assets/img/logotype-dark.png" alt="Frontier Group home"></a><div class="step" id="stepLabel"></div></div>
-  <div class="bar"><i id="barFill"></i></div>
-
-  <div class="card">
-    <section class="screen on" id="intro">
-      <p class="eyebrow">Baseline Snapshot</p>
-      <h1>Does your organization run on clarity, or on you?</h1>
-      <p id="seasonLine"></p>
-      <p>Find out how much still runs through you, and the first fix to make.</p>
-      <ul class="missing" style="color:var(--dark);font-size:16px"><li>10 questions and a quick checklist</li><li>About 3 minutes</li><li>Results on screen right away</li></ul>
-      <p class="muted small" style="margin-top:16px">Answer for how things are today.</p>
-      <div class="row"><button class="btn" onclick="go(1)">See where I stand</button></div>
-    </section>
-
-    <section class="screen" id="qscreen">
-      <p class="eyebrow" id="qArea"></p>
-      <p class="q" id="qText"></p>
-      <div class="scale" id="scale"></div>
-      <button class="back" onclick="prevQ()">Back</button>
-    </section>
-
-    <section class="screen" id="exist">
-      <p class="eyebrow">What already exists</p>
-      <h2>Check everything your organization has in place today.</h2>
-      <p class="muted small">If you are not sure it exists, leave it unchecked.</p>
-      <div class="checks" id="checks"></div>
-      <div class="row"><button class="btn" onclick="go(3)">Continue</button></div>
-      <button class="back" onclick="go(1,true)">Back</button>
-    </section>
-
-    <section class="screen" id="contact">
-      <p class="eyebrow">Almost there</p>
-      <h2>Where should your results go?</h2>
-      <div id="cform">
-        <div class="field"><label for="fname">Your name</label><input id="fname" required autocomplete="name"></div>
-        <div class="field"><label for="femail">Email</label><input id="femail" type="email" required autocomplete="email"></div>
-        <div class="field"><label for="forg">Organization</label><input id="forg" autocomplete="organization"></div>
-        <div class="field"><label for="ftype">Type of organization</label>
-          <select id="ftype" required><option value="">Select one</option><option>Small business</option><option>Nonprofit</option><option>Church or ministry</option><option>Other</option></select></div>
-        <div class="field"><label for="fsize">Team size</label>
-          <select id="fsize" required><option value="">Select one</option><option>1 to 7</option><option>8 to 20</option><option>21 to 40</option><option>41 or more</option></select></div>
-        <div class="field"><label for="frole">Your role</label>
-          <select id="frole" required><option value="">Select one</option><option>Owner, founder, or top leader</option><option>Leadership team</option><option>Team member</option></select></div>
-        <p id="formErr" role="alert" style="color:var(--red);font-weight:600;font-size:15px;margin:4px 0 12px;display:none"></p>
-        <button class="btn block" type="button" onclick="finish()">See my results</button>
-      </div>
-      <button class="back" onclick="go(2)">Back</button>
-    </section>
-
-    <section class="screen" id="results"></section>
+<header class="site-head">
+  <div class="wrap">
+    <a href="../" aria-label="Jeremy Rivers, home"><img src="../assets/img/wordmark-charcoal.png" alt="Frontier Group" width="640" height="100"></a>
   </div>
-  <p class="foot">Frontier Group &middot; thefrontiergroup.co</p>
+</header>
+
+<main id="landing">
+  <section class="hero">
+    <div class="wrap">
+      <img class="lockup" src="../assets/img/baseline-lockup-on-charcoal.svg" alt="Baseline Assessment" width="286" height="111">
+      <h1>Know for certain where your operation and team stand.</h1>
+      <p class="support">You make your biggest calls on a picture of your organization you’ve never actually checked. The Baseline Assessment checks it with your whole team, then hands you a 90 day plan.</p>
+      <p class="sig">10 markers. 3 drivers. 1 plan.</p>
+      <div class="cta">
+        <a class="btn" href="#start">See where I stand in 4 minutes</a>
+        <p class="under">Your own read first. Bring your team in when you’re ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap"><div class="prose">
+      <p class="eyebrow">Why it matters</p>
+      <h2>Most leaders are sure their team knows the plan.</h2>
+      <p>In a study of 11,000 managers, only a third could name their organization’s top three priorities.</p>
+      <p class="source">Sull and Homkes, Harvard Business Review, 2015.</p>
+      <p>When the plan rests on assumptions, the gaps become the assumptions your team makes, and the misfires land back on your desk. And from inside the operation, no leader can see it clearly on their own.</p>
+      <p>Your team and your mission were entrusted to you. Knowing where they really stand is part of stewarding them well.</p>
+      <figure class="pull">
+        <blockquote>“It gave me clarity in direction I didn’t even know I needed.”</blockquote>
+        <cite>Harrison K., Author</cite>
+      </figure>
+    </div></div>
+  </section>
+
+  <section class="sec dark">
+    <div class="wrap">
+      <p class="eyebrow">What it is</p>
+      <h2>10 markers. 3 drivers. 1 plan.</h2>
+      <p class="soft prose">Most assessments stop at a score. The Baseline goes three layers down, so you leave with a plan, not just a number.</p>
+      <ol class="layers">
+        <li class="layer">
+          <div>
+            <p class="lnum">Step 1 · Where you stand</p>
+            <h3>The 10 markers</h3>
+            <p>Ten health markers that the leading organizational health research has in common, and where you stand on each.</p>
+            <ul class="mlist" aria-label="The ten health markers">
+              <li>Shared Direction</li><li>Purpose and Meaning</li><li>Role Clarity and Decision Rights</li><li>Execution and Accountability</li><li>Communication and Coordination</li><li>Trust and Psychological Safety</li><li>Teamwork and Shared Results</li><li>Recognition and Growth</li><li>Leadership</li><li>Adaptability and External Orientation</li>
+            </ul>
+          </div>
+        </li>
+        <li class="layer">
+          <div>
+            <p class="lnum">Step 2 · Why you’re there</p>
+            <h3>The 3 drivers</h3>
+            <p>The 86 questions aren’t a long list. Each question sits inside one of the three competencies that drive healthy organizations. So the markers show where you stand, and the drivers show precisely what’s causing it.</p>
+            <div class="drivers">
+              <div class="d-clarity"><strong>Clarity</strong><span>Does everyone know why we exist, where we’re going, and what’s expected of them?</span></div>
+              <div class="d-acct"><strong>Accountability</strong><span>Do we meet on a steady rhythm, and do those conversations keep us on track?</span></div>
+              <div class="d-culture"><strong>Culture</strong><span>Is there real trust, and does each person feel heard, valued, and supported?</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="layer">
+          <div>
+            <p class="lnum">Step 3 · What to do next</p>
+            <h3>The 1 plan</h3>
+            <p>One plan, built from your results. The two or three most strategic moves to improve your health in the next 90 days, and a check back at 90 days to see what moved.</p>
+          </div>
+        </li>
+      </ol>
+      <a class="example" href="../assets/artifacts/baseline-sample-report.html" target="_blank" rel="noopener">See an example report
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Two weeks of your team’s time.</h2>
+      <ol class="steps">
+        <li><div><b>Your team answers in 20 to 25 minutes.</b><span>On their own, over a two week window.</span></div></li>
+        <li><div><b>I analyze every answer and review every finding myself.</b><span>Before anything reaches you.</span></div></li>
+        <li><div><b>You get the report, the plan, and a walkthrough.</b><span>Live, or recorded if that’s easier.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec dark">
+    <div class="wrap">
+      <p class="eyebrow">Psychological safety</p>
+      <h2>A confidential design.</h2>
+      <div class="prose">
+        <p>All direct answers are received and reviewed confidentially, then analyzed for the common themes and ideas across the group. It’s the safest path to honest feedback, and honest feedback is what gives you the best results and the best plan moving forward.</p>
+      </div>
+      <div class="ctable" role="table" aria-label="A typical survey compared with the Baseline">
+        <div class="cr ch" role="row"><span role="columnheader"></span><span role="columnheader">A typical survey</span><span role="columnheader">The Baseline</span></div>
+        <div class="cr" role="row"><span role="rowheader">Anonymous or confidential</span><span role="cell">Anonymous, which lowers the bar for effort and candor, and leaves critical answers with no one to address them</span><span role="cell">Confidential, which raises the bar for effort and candor, and means critical answers get addressed. Individual answers stay with an independent professional, held in confidence</span></div>
+        <div class="cr" role="row"><span role="rowheader">A careless or throwaway answer</span><span role="cell">Quietly skews the average, and no one notices</span><span role="cell">Gets screened out, so the read stays accurate</span></div>
+        <div class="cr" role="row"><span role="rowheader">Someone struggling in a particular way</span><span role="cell">Stays invisible, with a real concern and nowhere to take it</span><span role="cell">Can be reached confidentially, one on one, and helped through the hard thing</span></div>
+        <div class="cr" role="row"><span role="rowheader">What you process</span><span role="cell">A pile of raw comments to sort through, and the emotional weight of reading them</span><span role="cell">Measured scores, themes, and insights, plus the gaps that point to the root issues</span></div>
+      </div>
+      <div class="why2">
+        <p><b>For the team first.</b> A structurally safe way to tell the truth, without fear of retaliation. It’s never a performance review, no one’s words reach leadership, and anyone who is struggling can get real help.</p>
+        <p><b>For the leader, the payoff.</b> An honest read you can trust and act on, because what you see is what your team actually thinks.</p>
+      </div>
+      <p class="fine">Two things every respondent is told up front. If an answer shows harm to a person, abuse, or illegal activity, the law may require action. And on a very small team, combined scores can sometimes hint at how someone answered.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap who">
+      <img src="../assets/img/jeremy-speaking.jpg" alt="Jeremy Rivers facilitating a session" width="900" height="1125">
+      <div class="prose">
+        <p class="eyebrow">Who’s behind it</p>
+        <p>I joined a faith based nonprofit as the second hire. The founding team was three, and we grew to 50. The Baseline comes from what we learned the hard way about what keeps a growing team healthy.</p>
+        <figure class="pull">
+          <blockquote>“He sees what most people miss and brings his catalytic questions, insights, and ideas to bear in moments when an organization needs it most.”</blockquote>
+          <cite>Mattanah DeWitt, Director of Strategic Communications</cite>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark">
+    <div class="wrap">
+      <p class="eyebrow">Before you start</p>
+      <div class="faq">
+        <div><h3>What’s the Snapshot?</h3><p>A free taste of the Baseline, a short version you take on your own, before you bring your team in. You see your results on screen right away and get a copy by email.</p></div>
+        <div><h3>Is this a sales pitch?</h3><p>No. Your Snapshot results are yours whether or not we ever talk. If you’d like help reading them, you can book a time with me at the end.</p></div>
+        <div><h3>My team is small. Does this still fit?</h3><p>Yes. It’s built for small teams where most decisions still find their way to the leader.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec closing" id="start">
+    <div class="wrap">
+      <h2>Start with your own read.</h2>
+      <p class="soft" style="max-width:56ch">Take the free Snapshot in about 4 minutes. If what you see is worth a closer look, we’ll talk about bringing your team in.</p>
+      <figure class="pull" style="max-width:56ch;margin:0 0 8px">
+        <blockquote>“Our first 90 days together were the most focused and productive I’ve ever been. We landed an $80K client and hit every goal in 30 days.”</blockquote>
+        <cite>Ben J., Event planning firm owner</cite>
+      </figure>
+<div id="app" class="app" aria-label="Snapshot">
+      <p class="step no-print" id="stepLabel" aria-live="polite">Step 1 of 3</p>
+      <div class="bar no-print" aria-hidden="true"><i id="barFill"></i></div>
+      <div class="card">
+        <section class="screen" id="s-about">
+          <h2>Tell me about your work.</h2>
+          <div class="field"><label for="fsector">Which best describes it?</label><select id="fsector"><option value="">Select one</option><option value="Nonprofit">I’m with a nonprofit</option><option value="Church or ministry">I’m with a church or ministry</option><option value="Business">I’m in business</option></select></div>
+          <p class="soft small">These help me read your results in your world.</p>
+          <div class="field"><label for="fname">Your name</label><input id="fname" autocomplete="name"></div>
+          <div class="field"><label for="femail">Email <span class="help">(your results go here too)</span></label><input id="femail" type="email" autocomplete="email"></div>
+          <div class="field"><label for="forg">Organization <span class="help">(optional)</span></label><input id="forg" autocomplete="organization"></div>
+          <div class="field"><label for="frole">Your role</label><select id="frole"><option value="">Pick your work first</option></select></div>
+          <div class="field"><label for="fsize">Team size</label><select id="fsize"><option value="">Select one</option><option>1 to 7</option><option>8 to 20</option><option>21 to 40</option><option>41 or more</option></select></div>
+          <p class="err" id="aboutErr" role="alert"></p>
+          <button class="btn" type="button" id="aboutGo">Start my Snapshot</button>
+        </section>
+    
+        <section class="screen" id="s-q">
+          <p class="eyebrow" id="qArea"></p>
+          <p class="q" id="qText"></p>
+          <div class="scale" id="scale" role="group" aria-label="Your answer"></div>
+          <button class="back" type="button" id="qBack">Back</button>
+        </section>
+    
+        <section class="screen" id="s-prac">
+          <h2>What’s in place today?</h2>
+          <p class="soft small">Answer what you know to be true. “Not sure” is a useful answer.</p>
+          <div id="pracList"></div>
+          <p class="err" id="pracErr" role="alert"></p>
+          <div class="row"><button class="btn" type="button" id="pracGo">See my results</button></div>
+          <button class="back" type="button" id="pracBack">Back</button>
+        </section>
+    
+        <section class="screen" id="s-results"></section>
+      </div>
+    </div>
+    </div>
+  </section>
 </main>
+
+
+<footer class="foot"><div class="wrap">Jeremy Rivers · thefrontiergroup.co</div></footer>
 
 <script>
 /* ---------- CONFIG: edit these lines only ---------- */
-var SEASON_LINE = 'Before you plan 2027, know where you actually stand.';
 var BOOKING_LINK = 'https://calendar.app.google/ApJbwKz4WxqyrWHK9';
 var CONTACT_EMAIL = 'jeremy@thefrontiergroup.co';
-var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyAyzXYfo_FjpYObtnrvh0VXlZlXmx1JIKirx3p67v6aijhmY1oGmAJ3QRya3wjMrY7tw/exec'; /* Apps Script web app: logs to the Leads sheet and emails Jeremy */
+var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyAyzXYfo_FjpYObtnrvh0VXlZlXmx1JIKirx3p67v6aijhmY1oGmAJ3QRya3wjMrY7tw/exec'; /* Apps Script web app: Leads sheet row plus both emails */
 /* --------------------------------------------------- */
-
+/* Snapshot items adapted from Baseline DNA v0.5 (DNA ids in comments), worded for the team as a whole.
+   dep keys keep their v2 meanings so the Leads sheet columns stay stable:
+   dep1 = two weeks away, dep2 = decisions not waiting, dep3 = plan visible. */
 var Q = [
- {k:'purpose',area:'Clarity',t:'Everyone on our team could explain why this organization exists, and their answers would sound the same.'},
- {k:'direction',area:'Clarity',t:'Our team knows where we are going and what winning looks like this year, in actual numbers.'},
- {k:'expectations',area:'Clarity',t:'People know exactly what is expected of them and how work hands off from one person to the next.'},
- {k:'rhythm',area:'Accountability',t:'We have a consistent rhythm of meetings that keeps us ahead of problems, not just reacting to them.'},
- {k:'discipline',area:'Accountability',t:'Our meetings review results, confirm last time’s commitments, and end with clear owners and deadlines.'},
- {k:'collective',area:'Culture',t:'There is real trust on our team. People say what they think and follow through on what they commit to.'},
- {k:'individual',area:'Culture',t:'People here feel valued, get useful feedback, and get to use what they are best at.'},
- {k:'dep1',area:'How work moves',t:'If our top leader were unavailable for two weeks, our most important work would keep moving.'},
- {k:'dep2',area:'How work moves',t:'Decisions rarely have to wait on our top leader to move forward.'},
- {k:'dep3',area:'How work moves',t:'Our plan and priorities live somewhere the whole team can see, not mainly in our top leader’s head.'}
+  {k:'outcome',area:'Outcomes',s:'agree',t:'Our team has the capacity to deliver what we have committed to.'},                       /* 2.1 */
+  {k:'purpose',area:'Clarity',s:'agree',t:'Our purpose guides the decisions we make as an organization.'},                          /* 3.3 */
+  {k:'direction',area:'Clarity',s:'agree',t:'Our team knows exactly what success looks like for us over the next 12 months.'},      /* 4.3 */
+  {k:'expectations',area:'Clarity',s:'agree',t:'Everyone on our team knows the results their role is expected to deliver.'},        /* 5.3 */
+  {k:'rhythm',area:'Accountability',s:'freq',t:'Our team meetings happen when they are scheduled.'},                                  /* 6.3 */
+  {k:'discipline',area:'Accountability',s:'freq',t:'When we meet, we confirm the status of our previous action items.'},              /* 7.5 */
+  {k:'collectively',area:'Culture',s:'agree',t:'People on our team are honest with each other, even when it’s uncomfortable.'},     /* 8.2 */
+  {k:'individually',area:'Culture',s:'agree',t:'People here get feedback that is specific, timely, and helps them grow.'},          /* 9.5 */
+  {k:'dep3',area:'How work moves',s:'agree',t:'Our plan and priorities live somewhere the whole team can see, not mainly in our top leader’s head.'}, /* 4.11 */
+  {k:'dep2',area:'How work moves',s:'agree',t:'Decisions rarely have to wait on our top leader to move forward.'},                 /* 5.10 */
+  {k:'dep1',area:'How work moves',s:'agree',t:'If our top leader were unavailable for two weeks, our most important work would keep moving.'} /* 5.12 */
 ];
-var LABELS = ['Strongly disagree','Disagree','Neutral','Agree','Strongly agree'];
-var HUDDLES = [
- ['A written vision, purpose, and set of core values','2 Page Strategy'],
- ['A written annual plan with clear, measurable goals','1 Page Plan'],
- ['A chart showing who owns which functions of the organization','Activity Map'],
- ['Written role descriptions for each role','Role Descriptions'],
- ['Documented steps and standards for our most critical work','Key Processes'],
- ['An annual planning retreat or offsite','Annual Retreat'],
- ['A 90 day plan with clear owners','90 Day Roadmap'],
- ['A monthly review of our key numbers','Monthly Review'],
- ['A weekly team meeting with a set agenda','Team Huddle'],
- ['Regular 1:1 meetings between each person and their leader','1:1']
+var SCALES = {agree:['Strongly disagree','Disagree','Neutral','Agree','Strongly agree'], freq:['Never','Rarely','Sometimes','Often','Always']};
+/* Core practices: DNA E1 to E10 in plain wording, no Frontier names on screen. */
+var PRACTICES = [
+  'A written foundation: why we exist, who we serve, how we serve them, and our core values',
+  'A written annual plan with measurable goals for the year',
+  'A map of the core functions of our organization and who owns each one',
+  'Written descriptions of each role: responsibilities and the results expected',
+  'Documented steps and standards for our most important work',
+  'An annual planning retreat to review the year and set the next plan',
+  'A 90 day plan with clear goals, owners, and deadlines',
+  'A monthly meeting to review our key numbers and decide what to do about them',
+  'A weekly team meeting with a set agenda',
+  'Regular 1:1 meetings between each person and their supervisor'
 ];
-var FIRST = {
- team:{h:'The Team Huddle',w:'One protected hour a week where the team tracks results, reacts together, and commits to next steps. It is the first place work starts moving without routing through you, and every other huddle gets installed through it.'},
- purpose:{h:'The 2 Page Strategy',w:'Put why you exist, where you are going, and how you behave on two pages your whole team can repeat. Alignment starts with the same words in every head.'},
- direction:{h:'The 90 Day Roadmap',w:'Turn this year into one quarter of clear objectives and owners, so everyone knows what winning looks like right now, not someday.'},
- expectations:{h:'Role Descriptions',w:'Give every seat clear outcomes and standards, so people stop guessing and stop bringing every question back to you.'},
- rhythm:{h:'The Team Huddle',w:'A weekly rhythm that catches problems while they are small. Consistency first, then everything else has a place to live.'},
- discipline:{h:'The Team Huddle, run with Track, React, Commit',w:'Start every meeting with results and last week’s commitments, and end it with owners and deadlines. That single change is where accountability becomes normal.'},
- collective:{h:'The Team Huddle',w:'Trust grows where commitments are visible and followed up on every week. The huddle makes follow through a habit instead of a hope.'},
- individual:{h:'The 1:1',w:'A regular conversation where feedback runs both directions. It is where people feel known, and where growth gets a plan.'},
- dependency:{h:'The Activity Map',w:'Map who owns each function of the organization, so decisions have a home other than your desk. It is the fastest way to stop being the bottleneck.'}
+var SHORT = ['A written foundation','An annual plan','A map of who owns what','Role descriptions','Documented processes','An annual retreat','A 90 day plan','A monthly numbers review','A weekly team meeting','Regular 1:1s'];
+var WEEKLY = 8; /* index of the weekly team meeting in PRACTICES */
+var ROLES = {
+  'Nonprofit':['Executive director','Other senior leader','Team member'],
+  'Church or ministry':['Senior pastor or ministry leader','Other senior leader','Staff or team member'],
+  'Business':['Owner or CEO','Other senior leader','Team member']
 };
-var ans = new Array(Q.length).fill(null), qi = 0, checked = new Set(), respondent = {};
+var LEADER_ROLES = ['Executive director','Senior pastor or ministry leader','Owner or CEO'];
+var LOOM_MIN_TEAM = 8;
+var FIX = {
+  weekly:{h:'A weekly team meeting with a set agenda',w:'One protected hour a week where the team looks at results, reacts together, and commits to next steps. It’s the first place work starts moving without routing through you.'},
+  purpose:{h:'Put your foundation on paper',w:'Why you exist, where you’re going, and how you behave, on two pages your whole team can repeat. Alignment starts with the same words in every head.'},
+  direction:{h:'A 90 day plan',w:'Turn this year into one quarter of clear goals and owners, so everyone knows what winning looks like right now.'},
+  expectations:{h:'Clear role descriptions',w:'Give every seat clear results and standards, so people stop guessing and stop bringing every question back to you.'},
+  rhythm:{h:'Protect the meeting rhythm',w:'Meetings that happen when they’re scheduled are where problems get caught while they’re small. Consistency comes first.'},
+  discipline:{h:'Open every meeting with last week’s commitments',w:'Start with results and what was promised, and end with owners and deadlines. That single change is where accountability becomes normal.'},
+  collectively:{h:'Make commitments visible',w:'Trust grows where commitments are seen and followed up on every week, so honesty has somewhere safe to land.'},
+  individually:{h:'Regular 1:1s',w:'A standing conversation where feedback runs both directions. It’s where people feel known, and where growth gets a plan.'},
+  dependency:{h:'Map who owns what',w:'Name who owns each function of the organization, so decisions have a home other than your desk.'}
+};
 
-function $(id){return document.getElementById(id)}
-function show(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on')});$(id).classList.add('on');window.scrollTo(0,0)}
-function progress(p,label){$('barFill').style.width=p+'%';$('stepLabel').textContent=label||''}
+var st = {sector:'', ans:new Array(Q.length).fill(null), qi:0, prac:new Array(PRACTICES.length).fill(null), who:{}};
+function $(id){return document.getElementById(id);}
+function show(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on');});$(id).classList.add('on');$('app').scrollIntoView({block:'start'});}
+function progress(p,label){$('barFill').style.width=p+'%';$('stepLabel').textContent=label||'';}
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
-function go(n,fromEnd){
-  if(n===1){ if(fromEnd) qi=Q.length-1; renderQ(); show('qscreen'); }
-  if(n===2){ renderChecks(); show('exist'); progress(80,'Checklist'); }
-  if(n===3){ show('contact'); progress(92,'Your results'); }
-}
+$('s-about').classList.add('on'); progress(5,'Step 1 of 3');
+
+$('fsector').onchange=function(){
+  st.sector=$('fsector').value;
+  var sel=$('frole'); sel.innerHTML='<option value="">'+(st.sector?'Select one':'Pick your work first')+'</option>';
+  (ROLES[st.sector]||[]).forEach(function(r){var o=document.createElement('option');o.textContent=r;sel.appendChild(o);});
+};
+$('aboutGo').onclick=function(){
+  var err=$('aboutErr'), miss=[];
+  if(!st.sector) miss.push('your kind of work');
+  if(!$('fname').value.trim()) miss.push('your name');
+  if(!$('femail').value.trim()) miss.push('your email');
+  if(!$('frole').value) miss.push('your role');
+  if(!$('fsize').value) miss.push('your team size');
+  if(miss.length){err.textContent='Please add '+miss.join(', ')+'.';err.style.display='block';return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('femail').value.trim())){err.textContent='Please check your email address.';err.style.display='block';$('femail').focus();return;}
+  err.style.display='none';
+  st.who={name:$('fname').value.trim(),email:$('femail').value.trim(),org:$('forg').value.trim(),role:$('frole').value,size:$('fsize').value};
+  st.qi=0; renderQ(); show('s-q');
+};
+
 function renderQ(){
-  var q=Q[qi]; $('qArea').textContent=q.area; $('qText').textContent=q.t;
+  var q=Q[st.qi], labels=SCALES[q.s]; $('qArea').textContent=q.area; $('qText').textContent=q.t;
   var sc=$('scale'); sc.innerHTML='';
-  for(var v=1;v<=5;v++){ (function(v){
-    var b=document.createElement('button'); b.type='button';
-    b.innerHTML=v+'<span>'+LABELS[v-1]+'</span>'; b.setAttribute('aria-label',v+', '+LABELS[v-1]);
-    if(ans[qi]===v) b.className='sel';
-    b.onclick=function(){ ans[qi]=v; b.className='sel'; setTimeout(nextQ,180); };
-    sc.appendChild(b); })(v); }
-  progress(Math.round((qi/Q.length)*75),'Question '+(qi+1)+' of '+Q.length);
+  labels.forEach(function(lab,i){
+    var v=i+1, b=document.createElement('button'); b.type='button';
+    b.innerHTML=v+'<span>'+lab+'</span>'; b.setAttribute('aria-label',v+', '+lab);
+    if(st.ans[st.qi]===v) b.className='sel';
+    b.onclick=function(){st.ans[st.qi]=v;b.className='sel';setTimeout(nextQ,180);};
+    sc.appendChild(b);
+  });
+  progress(10+Math.round((st.qi/Q.length)*65),'Step 2 of 3 · '+(st.qi+1)+' of '+Q.length);
 }
-function nextQ(){ if(qi<Q.length-1){qi++;renderQ();} else go(2); }
-function prevQ(){ if(qi>0){qi--;renderQ();} else {show('intro');progress(0,'');} }
-function renderChecks(){
-  var c=$('checks'); if(c.childNodes.length) return;
-  HUDDLES.forEach(function(h,i){
-    var l=document.createElement('label');
-    l.innerHTML='<input type="checkbox" value="'+i+'"><span>'+h[0]+'</span>';
-    l.querySelector('input').onchange=function(e){ e.target.checked?checked.add(i):checked.delete(i); };
-    c.appendChild(l);
+function nextQ(){if(st.qi<Q.length-1){st.qi++;renderQ();}else{renderPrac();show('s-prac');progress(80,'Step 3 of 3');}}
+$('qBack').onclick=function(){if(st.qi>0){st.qi--;renderQ();}else{show('s-about');progress(5,'Step 1 of 3');}};
+
+function renderPrac(){
+  var box=$('pracList'); if(box.childNodes.length) return;
+  PRACTICES.forEach(function(p,i){
+    var d=document.createElement('div'); d.className='prac';
+    d.innerHTML='<p>'+esc(p)+'</p><div class="yn" role="group" aria-label="'+esc(SHORT[i])+'"></div>';
+    var g=d.querySelector('.yn');
+    ['Yes','No','Not sure'].forEach(function(lab){
+      var b=document.createElement('button'); b.type='button'; b.textContent=lab; b.setAttribute('aria-pressed','false');
+      b.onclick=function(){st.prac[i]=lab;g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});};
+      g.appendChild(b);
+    });
+    box.appendChild(d);
   });
 }
-function avg(a){return a.reduce(function(s,x){return s+x},0)/a.length}
+$('pracBack').onclick=function(){st.qi=Q.length-1;renderQ();show('s-q');};
+$('pracGo').onclick=function(){
+  var left=st.prac.filter(function(x){return x===null;}).length, err=$('pracErr');
+  if(left){err.textContent='Please answer the '+left+' remaining item'+(left>1?'s':'')+'. “Not sure” counts.';err.style.display='block';return;}
+  err.style.display='none'; finish();
+};
+
+function avg(a){return a.reduce(function(s,x){return s+x;},0)/a.length;}
 function score(){
-  var v={}; Q.forEach(function(q,i){v[q.k]=ans[i]});
-  var r={sub:{purpose:v.purpose,direction:v.direction,expectations:v.expectations,rhythm:v.rhythm,discipline:v.discipline,collective:v.collective,individual:v.individual}};
+  var v={}; Q.forEach(function(q,i){v[q.k]=st.ans[i];});
+  var r={v:v};
   r.clarity=avg([v.purpose,v.direction,v.expectations]);
   r.accountability=avg([v.rhythm,v.discipline]);
-  r.culture=avg([v.collective,v.individual]);
+  r.culture=avg([v.collectively,v.individually]);
   r.overall=Math.min(r.clarity,r.accountability,r.culture);
   r.dependency=avg([v.dep1,v.dep2,v.dep3]);
+  r.outcome=v.outcome;
+  r.inPlace=st.prac.filter(function(x){return x==='Yes';}).length;
+  r.missing=SHORT.filter(function(s,i){return st.prac[i]!=='Yes';});
   return r;
 }
 function band(s,type){
   var T={overall:['Organizationally Healthy','Stable and Functional','At Risk','Critical','Broken'],
-   clarity:['Concrete and Aligned','Clear and Functional','Vague and Inconsistent','Confused','Broken'],
-   accountability:['Disciplined and Proactive','Consistent and Adequate','Inconsistent','Unstructured and Reactive','Broken'],
-   culture:['Thriving','Healthy and Stable','Showing Strain','Struggling','Broken'],
-   dependency:['Distributed','Manageable','High Dependency','Critical Dependency','Single Point of Failure']}[type];
+    clarity:['Concrete and Aligned','Clear and Functional','Vague and Inconsistent','Confused','Broken'],
+    accountability:['Disciplined and Proactive','Consistent and Adequate','Inconsistent','Unstructured and Reactive','Broken'],
+    culture:['Thriving','Healthy and Stable','Showing Strain','Struggling','Broken'],
+    dependency:['Distributed','Manageable','High Dependency','Critical Dependency','Single Point of Failure']}[type];
   var i=s>=4.5?0:s>=3.5?1:s>=2.5?2:s>=1.5?3:4;
-  return {label:T[i],color:['var(--green)','var(--lime)','var(--amber)','var(--red)','var(--red)'][i]};
+  return {label:T[i],cls:s>=3.5?'ok':s>=2.5?'risk':'crit'};
 }
-function firstHuddle(r){
-  if(!checked.has(8)) return FIRST.team;
-  var pool=Object.assign({},r.sub,{dependency:r.dependency});
-  var low=Object.keys(pool).reduce(function(a,b){return pool[b]<pool[a]?b:a});
-  return FIRST[low];
+function firstFix(r){
+  if(st.prac[WEEKLY]!=='Yes') return {key:'weekly',f:FIX.weekly};
+  var pool={purpose:r.v.purpose,direction:r.v.direction,expectations:r.v.expectations,rhythm:r.v.rhythm,discipline:r.v.discipline,collectively:r.v.collectively,individually:r.v.individually,dependency:r.dependency};
+  var low=Object.keys(pool).reduce(function(a,b){return pool[b]<pool[a]?b:a;});
+  return {key:low,f:FIX[low]};
 }
 function meter(name,s,type){
   var b=band(s,type);
-  return '<div class="meter"><div class="lab"><span>'+name+' <em>'+b.label+'</em></span><span>'+s.toFixed(1)+'</span></div>'+
-   '<div class="track"><i style="width:'+(s/5*100)+'%;background:'+b.color+'"></i></div></div>';
+  return '<div class="meter"><div class="lab"><span>'+name+' <em>'+b.label+'</em></span><span>'+s.toFixed(1)+'</span></div><div class="track"><i class="'+b.cls+'" style="width:'+(s/5*100)+'%"></i></div></div>';
 }
-function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function finish(){
-  var need=[['fname','your name'],['femail','your email'],['ftype','your type of organization'],['fsize','your team size'],['frole','your role']];
-  var miss=need.filter(function(f){return !$(f[0]).value.trim()}).map(function(f){return f[1]});
-  var err=$('formErr');
-  if(miss.length){ err.textContent='Please add '+miss.join(', ')+'.'; err.style.display='block'; $(need.filter(function(f){return !$(f[0]).value.trim()})[0][0]).focus(); return; }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('femail').value.trim())){ err.textContent='Please check your email address.'; err.style.display='block'; $('femail').focus(); return; }
-  err.style.display='none';
-  respondent={name:$('fname').value.trim(),email:$('femail').value.trim(),org:$('forg').value.trim(),type:$('ftype').value,size:$('fsize').value,role:$('frole').value};
-  var r=score(), ob=band(r.overall,'overall'), db=band(r.dependency,'dependency'), fh=firstHuddle(r);
-  var running=checked.size, missing=HUDDLES.filter(function(h,i){return !checked.has(i)}).map(function(h){return h[1]});
-  var first=esc(respondent.name.split(' ')[0]);
-  $('results').innerHTML=
-   '<p class="eyebrow">Your Baseline Snapshot'+(respondent.org?' &middot; '+esc(respondent.org):'')+'</p>'+
-   '<h2>'+(first?first+', here':'Here')+' is where you stand.</h2>'+
-   '<div class="score-hero"><b>'+r.overall.toFixed(1)+'</b><span class="pill" style="background:'+ob.color+'">'+ob.label+'</span></div>'+
-   '<p class="muted small">Your overall score is your lowest area, not your average.</p>'+
-   meter('Clarity',r.clarity,'clarity')+meter('Accountability',r.accountability,'accountability')+meter('Culture',r.culture,'culture')+
-   '<div class="block"><p class="eyebrow">How much runs through the top leader</p>'+
-   '<div class="score-hero"><b>'+r.dependency.toFixed(1)+'</b><span class="pill" style="background:'+db.color+'">'+db.label+'</span></div>'+
-   '<p>'+(r.dependency<3.5?'Most decisions and approvals still route through one person. That usually means you grew faster than your systems did.':'Work keeps moving without routing through one person.')+'</p></div>'+
-   '<div class="block"><p class="eyebrow">Huddles running</p><h2 style="margin-bottom:6px">'+running+' of 10</h2>'+
-   (missing.length?'<p class="muted small" style="margin:0">Not yet in place: '+missing.join(', ')+'.</p>':'<p>All 10 are in place. Next question: is each one reaching the whole team?</p>')+'</div>'+
-   '<div class="callout"><p class="eyebrow">Your first huddle to install</p><h2>'+fh.h+'</h2><p>'+fh.w+'</p></div>'+
-   '<div class="block no-print"><h2>Get a clear next step in 30 minutes.</h2>'+
-   '<p>In a free debrief, we look at what your scores mean and where to start. You get a straight read, whether or not we ever work together.</p>'+
-   '<blockquote style="margin:0 0 8px;padding:16px 18px;border-left:3px solid var(--accent);background:var(--bg);border-radius:8px"><p style="margin:0 0 6px;font-family:var(--display);font-size:16px">"He listens intently, diagnoses challenges with precision, and delivers actionable insights that inspire confidence."</p><cite style="font-style:normal;font-size:13px;color:var(--muted)">Luke B., Ph.D., Nonprofit Executive</cite></blockquote>'+
-   '<div class="row"><a class="btn" href="'+BOOKING_LINK+'" target="_blank" rel="noopener">Book my free 30 minute debrief</a>'+
-   '<button class="btn ghost" onclick="window.print()">Save my results as a PDF</button></div>'+
-   '<p class="muted small" style="margin-top:18px">This Snapshot is one view. The full Baseline asks your leadership and your team separately. Questions? <a href="mailto:'+CONTACT_EMAIL+'">'+CONTACT_EMAIL+'</a></p></div>';
-  show('results'); progress(100,'Results');
-  notify(r,ob,db,running,missing,fh);
+  var r=score(), ob=band(r.overall,'overall'), db=band(r.dependency,'dependency'), ff=firstFix(r), first=esc(st.who.name.split(' ')[0]);
+  $('s-results').innerHTML=
+    '<div class="res-head"><img src="../assets/img/baseline-lockup-on-sand.svg" alt="Baseline Assessment" width="143" height="56"><span>Snapshot'+(st.who.org?' · '+esc(st.who.org):'')+'</span></div>'+
+    '<h2>'+(first?first+', here':'Here')+' is where you stand.</h2>'+
+    '<div class="hero-score"><b>'+r.overall.toFixed(1)+'</b><span class="pill '+ob.cls+'">'+ob.label+'</span></div>'+
+    '<p class="soft small">Your overall score is your lowest area, not your average, because strengths can’t cover a weak spot.</p>'+
+    meter('Clarity',r.clarity,'clarity')+meter('Accountability',r.accountability,'accountability')+meter('Culture',r.culture,'culture')+
+    '<div class="block"><p class="eyebrow">How much runs through the top leader</p><div class="hero-score"><b>'+r.dependency.toFixed(1)+'</b><span class="pill '+db.cls+'">'+db.label+'</span></div>'+
+    '<p style="margin:0">'+(r.dependency<3.5?'Most decisions and approvals still route through one person. That usually means the mission grew faster than the systems did.':'Work keeps moving without routing through one person.')+'</p></div>'+
+    '<div class="block"><p class="eyebrow">Capacity</p><p style="margin:0">You rated your team’s capacity to deliver on its commitments at '+r.outcome+' of 5.'+(r.outcome<=3?' That’s the gap most leaders feel first.':'')+'</p></div>'+
+    '<div class="block"><p class="eyebrow">Core practices in place</p><p class="stat">'+r.inPlace+' of 10</p>'+
+    (r.missing.length?'<p class="soft small" style="margin:0">Not yet in place, or not sure: '+esc(r.missing.join(', '))+'.</p>':'<p style="margin:0">All 10 are in place. The next question is whether your whole team knows it.</p>')+'</div>'+
+    '<div class="fix"><p class="eyebrow">The first fix to make</p><h3>'+esc(ff.f.h)+'</h3><p style="margin:0">'+esc(ff.f.w)+'</p></div>'+
+    '<div class="block no-print"><h3>Want to talk through what this means?</h3>'+
+    '<p>I’ll walk you through your score and what I’d do first. No prep needed.</p>'+
+    '<figure class="pull" style="margin:0 0 6px"><blockquote>“He listens intently, diagnoses challenges with precision, and delivers actionable insights that inspire confidence.”</blockquote><cite>Luke B., Ph.D., Nonprofit Executive</cite></figure>'+
+    '<div class="row"><a class="btn" href="'+BOOKING_LINK+'" target="_blank" rel="noopener">Walk me through my score</a><button class="btn ghost" type="button" onclick="window.print()">Save as PDF</button></div>'+
+    '<p class="soft small" style="margin-top:18px">This Snapshot is your own read. The full Baseline asks your leadership and your team separately, and shows where you see it differently. Questions? <a href="mailto:'+CONTACT_EMAIL+'">'+CONTACT_EMAIL+'</a></p></div>';
+  show('s-results'); progress(100,'Your results');
+  notify(r,ob,db,ff);
 }
-function notify(r,ob,db,running,missing,fh){
-  var detail=['Name: '+respondent.name,'Email: '+respondent.email,'Organization: '+respondent.org,'Type: '+respondent.type,'Team size: '+respondent.size,'Role: '+respondent.role,'',
-   'Overall: '+r.overall.toFixed(1)+' ('+ob.label+')',
-   'Clarity: '+r.clarity.toFixed(1)+' | Accountability: '+r.accountability.toFixed(1)+' | Culture: '+r.culture.toFixed(1),
-   'Purpose '+r.sub.purpose+' | Direction '+r.sub.direction+' | Expectations '+r.sub.expectations,
-   'Rhythm '+r.sub.rhythm+' | Discipline '+r.sub.discipline,'Collective '+r.sub.collective+' | Individual '+r.sub.individual,
-   'Leader Dependency: '+r.dependency.toFixed(1)+' ('+db.label+'). Two weeks without leader '+ans[7]+' | Decisions not waiting '+ans[8]+' | Plan visible '+ans[9],
-   'Huddles running: '+running+' of 10. Missing: '+(missing.join(', ')||'none'),
-   'First huddle recommended: '+fh.h].join('\n');
-  var payload={name:respondent.name,email:respondent.email,org:respondent.org,type:respondent.type,size:respondent.size,role:respondent.role,
+function notify(r,ob,db,ff){
+  var w=st.who, sizeNum=parseInt(w.size,10)||0;
+  var loom=(LEADER_ROLES.indexOf(w.role)>-1 && sizeNum>=LOOM_MIN_TEAM)?'Yes':'No';
+  var lines=['Name: '+w.name,'Email: '+w.email,'Organization: '+w.org,'Sector: '+st.sector,'Role: '+w.role,'Team size: '+w.size,'',
+    'Overall: '+r.overall.toFixed(1)+' ('+ob.label+')',
+    'Clarity '+r.clarity.toFixed(1)+' | Accountability '+r.accountability.toFixed(1)+' | Culture '+r.culture.toFixed(1),
+    'Purpose '+r.v.purpose+' | Direction '+r.v.direction+' | Expectations '+r.v.expectations,
+    'Rhythm '+r.v.rhythm+' | Discipline '+r.v.discipline,'Collectively '+r.v.collectively+' | Individually '+r.v.individually,
+    'Capacity (outcome): '+r.outcome,
+    'Leader Dependency '+r.dependency.toFixed(1)+' ('+db.label+'). Two weeks away '+r.v.dep1+' | Decisions not waiting '+r.v.dep2+' | Plan visible '+r.v.dep3,
+    'Core practices: '+r.inPlace+' of 10. '+SHORT.map(function(s,i){return s+': '+st.prac[i];}).join('; '),
+    'First fix shown: '+ff.f.h];
+  var payload={name:w.name,email:w.email,org:w.org,type:st.sector,size:w.size,role:w.role,
     overall:r.overall.toFixed(1),overallBand:ob.label,clarity:r.clarity.toFixed(1),accountability:r.accountability.toFixed(1),culture:r.culture.toFixed(1),
-    dependency:r.dependency.toFixed(1),dependencyBand:db.label,purpose:r.sub.purpose,direction:r.sub.direction,expectations:r.sub.expectations,
-    rhythm:r.sub.rhythm,discipline:r.sub.discipline,collective:r.sub.collective,individual:r.sub.individual,
-    running:running+' of 10',missing:missing.join(', '),firstHuddle:fh.h,firstHuddleWhy:fh.w,
-    dep1:ans[7],dep2:ans[8],dep3:ans[9],detail:detail};
+    dependency:r.dependency.toFixed(1),dependencyBand:db.label,purpose:r.v.purpose,direction:r.v.direction,expectations:r.v.expectations,
+    rhythm:r.v.rhythm,discipline:r.v.discipline,collective:r.v.collectively,individual:r.v.individually,
+    running:r.inPlace+' of 10',missing:r.missing.join(', '),firstHuddle:ff.f.h,firstHuddleWhy:ff.f.w,firstKey:ff.key,
+    dep1:r.v.dep1,dep2:r.v.dep2,dep3:r.v.dep3,outcome:r.outcome,loom:loom,version:'v3',detail:lines.join('\n')};
   try{
     fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
-      .catch(function(err){console.warn('Lead notification failed',err)});
-  }catch(err){console.warn('Lead notification failed',err)}
+      .catch(function(err){console.warn('Lead notification failed',err);});
+  }catch(err){console.warn('Lead notification failed',err);}
 }
-$('seasonLine').textContent=SEASON_LINE;
 </script>
 </body>
 </html>

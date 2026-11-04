@@ -46,7 +46,8 @@ That system is what I install now. First through Frontier Group, the practice I 
 ### WHAT I'VE BUILT
 **Section header:** Things I've built to get that work done.
 
-**Frontier Baseline - the diagnostic** *(rewritten by Jeremy's direction 2026-10-26, D18)*
+**Baseline Assessment - the diagnostic** *(rewritten by Jeremy's direction 2026-10-26, D18; renamed from Frontier Baseline 2026-11-04, D25)*
+> Title: the Baseline Assessment lockup (image). Line under it: "10 markers. 3 drivers. 1 plan." Details row: "86 questions · 3 competencies · 7 disciplines · 10 health markers · about 25 minutes" (D26).
 Leaders guess at what is broken on their team. Baseline measures it across the 3 competencies every healthy operation runs on, clarity, accountability, and culture. You see what is working, what is not, and exactly what to fix first.
 > Graphic: the v2 instrument (Clarity: Purpose, Direction, Expectations; Accountability: Rhythm, Discipline; Culture: Collective, Individual), the Leader Dependency Index, and the score scale (Critical in Coral). Link label: "See a sample report".
 > Proof artifact: link the LIVE lite Baseline assessment (captured HTML in Website Migration/). Label it "See it." No email gate.
