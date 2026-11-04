@@ -49,15 +49,14 @@ That system is what I install now. First through Frontier Group, the practice I 
 **Baseline Assessment - the diagnostic** *(rewritten by Jeremy's direction 2026-10-26, D18; renamed from Frontier Baseline 2026-11-04, D25)*
 > Title: the Baseline Assessment lockup (image). Line under it: "10 markers. 3 drivers. 1 plan." Details row: "86 questions · 3 competencies · 7 disciplines · 10 health markers · about 25 minutes" (D26).
 Leaders guess at what is broken on their team. Baseline measures it across the 3 competencies every healthy operation runs on, clarity, accountability, and culture. You see what is working, what is not, and exactly what to fix first.
-> Graphic: the v2 instrument (Clarity: Purpose, Direction, Expectations; Accountability: Rhythm, Discipline; Culture: Collective, Individual), the Leader Dependency Index, and the score scale (Critical in Coral). Link label: "See a sample report".
-> Proof artifact: link the LIVE lite Baseline assessment (captured HTML in Website Migration/). Label it "See it." No email gate.
+> Simplified 2026-11-04: no graphic. The details row, then one link "Learn more" to /baseline/ (the sample report now lives behind the landing page).
 
 **The Huddle Operating System - the operating system** *(rewritten by Jeremy's direction 2026-10-26, D17)*
 You don’t need more meetings, you need better ones. Ten huddles carry strategy from the long view down to this week, five that build clarity and five that keep the team accountable. Your team moves in the exact direction you want to go, and the business stops depending on you for everything.
 > Shown as a 5 and 5 view, like the book. **Clarity, 5 Planning Huddles:** 2 Page Strategy, 1 Page Plan, Activity Map, Role Descriptions, Key Processes. **Accountability, 5 Check Point Huddles:** Annual Retreat, 90 Day Roadmap, Monthly Review, Team Huddle, 1:1. Source: the book's Book Rules.
 > Proof artifact: embed the framework diagram image (locate in Brand Assets/Graphis or the Kajabi image manifest; confirm the right one with Jeremy).
 
-**The TRC Method - the method** *(replaces the Reaction Draft Method, Jeremy's direction 2026-10-26, D18)*
+**The TRC Method - the method** *(REMOVED from the homepage 2026-11-04, Jeremy: keep the section to the two main offerings; copy kept here for reuse)*
 No more blank whiteboards and random agendas. Every huddle starts with the facts, reacts to a draft, and closes with an owner and a date on every next step. Less debate over whose reality is right, faster decisions, and work that actually gets done.
 > Track: Bring what is true into the room before anyone reacts. Results, and answers to the right questions. React: Put a draft in front of the room, inside a proven framework. Push back, sharpen it, make it yours. Commit: Decide the next best steps. Every one gets an owner and a date, confirmed out loud. Loop line: "Then the next huddle tracks what you committed to." Source: the book's TRC chapter. Link label: "See a session guide".
 > Proof artifact: a facilitator kit SAMPLE/excerpt (one or two pages), NOT a full kit. Full kits are paid IP. This sample is NOT in the captured assets (login-gated) - Jeremy must supply it or it ships as a placeholder in v1.
