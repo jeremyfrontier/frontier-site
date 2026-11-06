@@ -119,6 +119,7 @@ table.rv th.t{text-align:right}
 .arrows{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
 .arrows button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:#fff;font-size:18px;line-height:1;cursor:pointer;color:var(--dark)}
 .foot{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+.hp{position:absolute!important;left:-10000px!important;top:auto;width:1px;height:1px;overflow:hidden} /* bot trap: humans never see or fill it (2026-11-06) */
 </style>
 </head>
 <body>
@@ -134,6 +135,7 @@ table.rv th.t{text-align:right}
       <ul class="list"><li>Pick the 9 to 15 metrics that tell you if the year is working</li><li>Set a monthly target for each one</li><li>Download it free as a spreadsheet, in your language: business, nonprofit, or ministry</li></ul>
       <div class="block" style="margin-top:24px">
         <h2>First, Tell Us About You.</h2>
+        <div class="hp" aria-hidden="true"><label for="fweb">Leave this blank</label><input id="fweb" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="field"><label for="fname">Your Name</label><input id="fname" autocomplete="name"></div>
         <div class="field"><label for="femail">Email</label><input id="femail" type="email" autocomplete="email"></div>
         <div class="field"><label for="forg">Organization Name</label><input id="forg" autocomplete="organization"></div>
@@ -173,6 +175,7 @@ var KIT_LINK = 'https://thefrontiergroup.co/kit/';
 var KIT_PRICE = '$95, one time';
 var SHEET_THEME = 'ink'; /* spreadsheet colors: ink, coral, or green */
 var CONTACT_EMAIL = 'jeremy@thefrontiergroup.co';
+var PAGE_T0 = Date.now(); /* bot guard: the lead script drops forms finished faster than a person could (2026-11-06) */
 var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw-NiHxcoWD5Z-iTkVXKH9KlBmucxPfQzBDR4wIRbFKHNhtRyM5s6nAcqKkAah7LKrpSw/exec'; /* Apps Script web app URL: logs the lead, emails Jeremy call prep, emails the respondent their file */
 /* Real testimonials, quoted word for word (trimmed only with an ellipsis). */
 var QUOTES = [
@@ -552,7 +555,8 @@ function notify(model, b64, fname) {
   }); });
   var w = state.who;
   var payload = { name: w.name, email: w.email, org: w.org, title: w.title, type: w.type, industry: w.industry, size: w.size, objective: w.objective,
-    optin: 'Yes', noun: nounP(), year: model.year, metrics: metrics, fileName: fname, file: b64 };
+    optin: 'Yes', noun: nounP(), year: model.year, metrics: metrics, fileName: fname, file: b64,
+    website: document.getElementById('fweb').value, elapsed: Date.now() - PAGE_T0 };
   try {
     fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
       .catch(function (err) { console.warn('Lead notification failed', err); });

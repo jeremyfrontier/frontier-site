@@ -176,6 +176,7 @@ html{scroll-behavior:smooth;}
 .fix{background:var(--sand);border-left:4px solid var(--ink);border-radius:12px;padding:22px 20px;margin-top:26px;}
 .fix h3{margin-bottom:8px;}
 @media print{body{background:#fff}#landing>section:not(.closing),.closing h2,.closing>.wrap>p,.site-head,.bar,.no-print,.foot{display:none!important}.card{border:0;padding:0}.closing{border:0;padding:0}}
+.hp{position:absolute!important;left:-10000px!important;top:auto;width:1px;height:1px;overflow:hidden} /* bot trap: humans never see or fill it (2026-11-06) */
 </style>
 </head>
 <body>
@@ -330,6 +331,7 @@ html{scroll-behavior:smooth;}
           <h2>Tell me about your work.</h2>
           <div class="field"><label for="fsector">Which best describes it?</label><select id="fsector"><option value="">Select one</option><option value="Nonprofit">I’m with a nonprofit</option><option value="Church or ministry">I’m with a church or ministry</option><option value="Business">I’m in business</option></select></div>
           <p class="soft small">These help me read your results in your world.</p>
+          <div class="hp" aria-hidden="true"><label for="fweb">Leave this blank</label><input id="fweb" name="website" tabindex="-1" autocomplete="off"></div>
           <div class="field"><label for="fname">Your name</label><input id="fname" autocomplete="name"></div>
           <div class="field"><label for="femail">Email <span class="help">(your results go here too)</span></label><input id="femail" type="email" autocomplete="email"></div>
           <div class="field"><label for="forg">Organization <span class="help">(optional)</span></label><input id="forg" autocomplete="organization"></div>
@@ -369,6 +371,7 @@ html{scroll-behavior:smooth;}
 /* ---------- CONFIG: edit these lines only ---------- */
 var BOOKING_LINK = 'https://calendar.app.google/ApJbwKz4WxqyrWHK9';
 var CONTACT_EMAIL = 'jeremy@thefrontiergroup.co';
+var PAGE_T0 = Date.now(); /* bot guard: the lead script drops forms finished faster than a person could (2026-11-06) */
 var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyAyzXYfo_FjpYObtnrvh0VXlZlXmx1JIKirx3p67v6aijhmY1oGmAJ3QRya3wjMrY7tw/exec'; /* Apps Script web app: Leads sheet row plus both emails */
 /* --------------------------------------------------- */
 /* Snapshot items adapted from Baseline DNA v0.5 (DNA ids in comments), worded for the team as a whole.
@@ -557,7 +560,7 @@ function notify(r,ob,db,ff){
     dependency:r.dependency.toFixed(1),dependencyBand:db.label,purpose:r.v.purpose,direction:r.v.direction,expectations:r.v.expectations,
     rhythm:r.v.rhythm,discipline:r.v.discipline,collective:r.v.collectively,individual:r.v.individually,
     running:r.inPlace+' of 10',missing:r.missing.join(', '),firstHuddle:ff.f.h,firstHuddleWhy:ff.f.w,firstKey:ff.key,
-    dep1:r.v.dep1,dep2:r.v.dep2,dep3:r.v.dep3,outcome:r.outcome,loom:loom,version:'v3',detail:lines.join('\n')};
+    dep1:r.v.dep1,dep2:r.v.dep2,dep3:r.v.dep3,outcome:r.outcome,loom:loom,version:'v3',detail:lines.join('\n'),website:$('fweb').value,elapsed:Date.now()-PAGE_T0};
   try{
     fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
       .catch(function(err){console.warn('Lead notification failed',err);});
