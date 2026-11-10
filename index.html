@@ -122,20 +122,18 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
 .artifact:hover{gap:14px;}
 .artifact svg{width:15px;height:15px;flex:none;}
 
-/* ── Huddle Operating System: 5 and 5, like the book (Charcoal = clarity, Coral = accountability) */
+/* ── Huddle Operating System: 5 and 5 (sub-brand v1: Planning full ink, Check Point softer ink, no second color) */
 .hos{margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
-.fam{border-radius:14px;overflow:hidden;background:var(--surface);border:1px solid var(--rule);}
-.fam header{padding:18px 22px;display:flex;flex-direction:column;gap:2px;}
-.fam header span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.82;}
-.fam header strong{font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.6vw,30px);line-height:1.1;letter-spacing:-0.015em;}
-.fam-clarity header{background:var(--ink);color:var(--sand);}
-.fam-acct header{background:var(--coral);color:var(--ink);}
-.fam ol{list-style:none;margin:0;padding:6px 22px 10px;}
+.fam{border-radius:14px;overflow:hidden;background:var(--surface);border:2px solid var(--ink);}
+.fam-acct{border-color:rgba(44,44,44,.45);}
+.fam header{padding:18px 22px 8px;display:flex;flex-direction:column;gap:2px;}
+.fam header span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+.fam header strong{font-family:var(--sans);font-weight:700;font-size:clamp(20px,2.2vw,24px);line-height:1.2;letter-spacing:-0.01em;color:var(--ink);}
+.fam ol{list-style:none;margin:0;padding:0 22px 10px;}
 .fam li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px;color:var(--ink);display:flex;align-items:center;gap:12px;}
 .fam li:last-child{border-bottom:0;}
-.fam li::before{content:"";width:8px;height:8px;border-radius:50%;flex:none;}
-.fam-clarity li::before{background:var(--ink);}
-.fam-acct li::before{background:var(--coral);}
+.fam li::before{content:"";width:2px;height:14px;flex:none;background:var(--ink);}
+.fam-acct li::before{opacity:.45;}
 
 /* ── Baseline Assessment graphic ─────────────────────────── */
 .bl{margin-top:30px;display:grid;gap:14px;}
@@ -148,6 +146,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
 .bl-cat strong{display:block;font-family:var(--sans);font-weight:700;font-size:18px;margin-bottom:10px;}
 .card h3.bl-lockup{padding-right:64px;margin-bottom:14px;}
 .bl-lockup img{width:clamp(180px,22vw,230px);height:auto;}
+.bl-lockup.hl img{width:clamp(154px,18.85vw,197px);} /* same type size as the Baseline lockup (245/286) */
 .bl-sig{font-weight:700;font-size:clamp(19px,2vw,22px);color:var(--ink)!important;margin:0 0 14px!important;}
 .bl-details{font-size:14px;color:var(--ink-soft);margin:18px 0 0!important;}
 .bl-cat ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
@@ -350,7 +349,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacin
       <article class="card reveal">
         <img class="shape corner arrow" src="assets/img/arrow-coral.png" alt="" aria-hidden="true">
         <p class="label">The operating system</p>
-        <h3>The Huddle Operating System</h3>
+        <h3 class="bl-lockup hl"><img src="assets/img/huddle-lockup-on-sand.svg" alt="Huddle Operating System" width="245" height="115"></h3>
+        <p class="bl-sig">10 huddles. 3 reviews. 1 rhythm.</p>
         <p>You don’t need more meetings, you need better ones. Ten huddles carry strategy from the long view down to this week, five that build clarity and five that keep the team accountable. Your team moves in the exact direction you want to go, and the business stops depending on you for everything.</p>
 
         <div class="hos">
