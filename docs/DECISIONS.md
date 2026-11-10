@@ -143,3 +143,6 @@ Jeremy: "Helping nonprofit leaders with limited resources build ops and teams th
 
 ## D32. Homepage headline simplified (2026-11-10)
 Jeremy: "Helping nonprofit leaders build teams that own the work, with a simple system of huddles." Cut "with limited resources" (implied by nonprofit) and "ops and" (jargon; a team that owns the work is the operations fix). Underline stays on "huddles"; meta description and brief §3 follow. Supersedes the D31 wording.
+
+## D33. Huddle card leads What I built (2026-11-10)
+Jeremy: the Huddle Operating System card now comes before the Baseline Assessment card, matching the headline (huddles lead the positioning). No copy changes.
