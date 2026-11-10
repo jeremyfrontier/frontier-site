@@ -22,4 +22,4 @@
 
 **2026-11-10.** Security pass (D29): bot guard on both lead forms with the Apps Scripts redeployed in place (same URLs), `/privacy/` live and linked in every footer and under both forms, Newsreader self hosted (no page calls Google Fonts or a CDN), dead `baseline-lite.html` removed. Open: Jeremy's account checks (two step login on GitHub, GoDaddy plus domain lock, Google, Substack, Stripe, Notion).
 
-**2026-11-10.** New homepage headline (D31): "Helping nonprofit leaders with limited resources build ops and teams that own the work, with a simple system of huddles," underline on "huddles". Open: the headline runs six lines on desktop; shrink the h1 if Jeremy wants the portrait higher.
+**2026-11-10.** New homepage headline (D31): "Helping nonprofit leaders with limited resources build ops and teams that own the work, with a simple system of huddles," underline on "huddles". Hero h1 shrunk to clamp(34px,4vw,54px), 22ch, so it runs four lines on desktop and the portrait stays in the first screen (Jeremy).
