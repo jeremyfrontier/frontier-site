@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work Review Builder | Frontier Group</title>
 <meta name="description" content="Build the Work Review your team will actually use next year. Pick the metrics that matter, set a monthly target for each, and download it free.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,600&display=swap">
 <link rel="icon" href="../assets/img/favicon-64.png">
 <style>
+@font-face{font-family:'Newsreader';src:url('../assets/fonts/newsreader-var.woff2') format('woff2');font-weight:200 800;font-style:normal;font-display:swap} /* self hosted, OFL (2026-11-10) */
+@font-face{font-family:'Newsreader';src:url('../assets/fonts/newsreader-var-italic.woff2') format('woff2');font-weight:200 800;font-style:italic;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-500.woff2') format('woff2');font-weight:500;font-display:swap}
 @font-face{font-family:'DM Sans';src:url('../assets/fonts/dm-sans-700.woff2') format('woff2');font-weight:700;font-display:swap}
@@ -152,7 +153,7 @@ table.rv th.t{text-align:right}
           <p class="hint">This goes at the top of your Work Review, so every number points at it.</p></div>
         <p class="err" id="introErr" role="alert"></p>
         <div class="row"><button class="btn wide" type="button" onclick="startBuild()">Build My Work Review</button></div>
-        <p class="subnote">Building your Work Review subscribes you to the free <em>Uncommon Work</em> newsletter, and the book comes with it. Unsubscribe anytime.</p>
+        <p class="subnote">Building your Work Review subscribes you to the free <em>Uncommon Work</em> newsletter, and the book comes with it. Unsubscribe anytime. <a href="/privacy/">Privacy</a></p>
       </div>
     </section>
 
@@ -163,6 +164,7 @@ table.rv th.t{text-align:right}
   </div>
   <p class="foot">Frontier Group &middot; thefrontiergroup.co</p>
 </main>
+<footer style="padding:36px 0 56px;font-size:14px;color:#6A625E;text-align:center">&copy; 2026 Frontier Coaching, LLC &middot; thefrontiergroup.co &middot; <a href="/privacy/">Privacy</a></footer>
 
 <script src="xlsx.js"></script>
 <script>
