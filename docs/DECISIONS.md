@@ -137,3 +137,6 @@ Jeremy asked for a lockdown after reels on vibe coded site risks. Logins, databa
 
 ## D30. Homepage Huddle card links to the book (2026-11-10)
 Jeremy: the Huddle card ends on "Read the book", an in page link to the book section (`#book`), not to /kit. The book is the one ask everywhere and the welcome email brings the Kit with it. No "free" in the new link copy.
+
+## D31. New homepage headline (2026-11-10)
+Jeremy: "Helping nonprofit leaders with limited resources build ops and teams that own the work, with a simple system of huddles." Replaces "I help overwhelmed leaders build ops and teams that run on a system, not on them." The hand drawn underline moves from "system" to "huddles"; the meta description leads with the new line; brief §3 updated. Supporting paragraph unchanged.

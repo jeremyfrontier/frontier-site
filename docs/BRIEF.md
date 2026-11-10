@@ -23,7 +23,7 @@ A single scroll, static, one page personal site for Jeremy Rivers at thefrontier
 ## 3. Section-by-section copy (LOCKED - use verbatim)
 
 ### HERO
-**Headline:** I help overwhelmed leaders build ops and teams that run on a system, not on them.
+**Headline (Jeremy, 2026-11-10, D31):** Helping nonprofit leaders with limited resources build ops and teams that own the work, with a simple system of huddles. ("huddles" carries the hand drawn underline.)
 **Support:** The system is simple: a clear plan, clear roles, and a checkpoint rhythm that runs weekly to yearly and holds everyone accountable. It gets the entire team on the same page, executing with confidence day-to-day in the right direction.
 **CTA button:** Connect (soft; anchors to the Connect section)
 
