@@ -140,3 +140,6 @@ Jeremy: the Huddle card ends on "Read the book", an in page link to the book sec
 
 ## D31. New homepage headline (2026-11-10)
 Jeremy: "Helping nonprofit leaders with limited resources build ops and teams that own the work, with a simple system of huddles." Replaces "I help overwhelmed leaders build ops and teams that run on a system, not on them." The hand drawn underline moves from "system" to "huddles"; the meta description leads with the new line; brief §3 updated. Supporting paragraph unchanged.
+
+## D32. Homepage headline simplified (2026-11-10)
+Jeremy: "Helping nonprofit leaders build teams that own the work, with a simple system of huddles." Cut "with limited resources" (implied by nonprofit) and "ops and" (jargon; a team that owns the work is the operations fix). Underline stays on "huddles"; meta description and brief §3 follow. Supersedes the D31 wording.
