@@ -239,7 +239,7 @@ html{scroll-behavior:smooth;}
             <div class="drivers">
               <div class="d-clarity"><strong>Clarity</strong><span>Does everyone know why we exist, where we’re going, and what’s expected of them?</span></div>
               <div class="d-acct"><strong>Accountability</strong><span>Do we meet on a steady rhythm, and do those conversations keep us on track?</span></div>
-              <div class="d-culture"><strong>Culture</strong><span>Is there real trust, and does each person feel heard, valued, and supported?</span></div>
+              <div class="d-culture"><strong>Environment</strong><span>Is there real trust, and does each person feel heard, valued, and supported?</span></div>
             </div>
           </div>
         </li>
@@ -385,8 +385,8 @@ var Q = [
   {k:'expectations',area:'Clarity',s:'agree',t:'Everyone on our team knows the results their role is expected to deliver.'},        /* 5.3 */
   {k:'rhythm',area:'Accountability',s:'freq',t:'Our team meetings happen when they are scheduled.'},                                  /* 6.3 */
   {k:'discipline',area:'Accountability',s:'freq',t:'When we meet, we confirm the status of our previous action items.'},              /* 7.5 */
-  {k:'collectively',area:'Culture',s:'agree',t:'People on our team are honest with each other, even when it’s uncomfortable.'},     /* 8.2 */
-  {k:'individually',area:'Culture',s:'agree',t:'People here get feedback that is specific, timely, and helps them grow.'},          /* 9.5 */
+  {k:'collectively',area:'Environment',s:'agree',t:'People on our team are honest with each other, even when it’s uncomfortable.'},     /* 8.2 */
+  {k:'individually',area:'Environment',s:'agree',t:'People here get feedback that is specific, timely, and helps them grow.'},          /* 9.5 */
   {k:'dep3',area:'How work moves',s:'agree',t:'Our plan and priorities live somewhere the whole team can see, not mainly in our top leader’s head.'}, /* 4.11 */
   {k:'dep2',area:'How work moves',s:'agree',t:'Decisions rarely have to wait on our top leader to move forward.'},                 /* 5.10 */
   {k:'dep1',area:'How work moves',s:'agree',t:'If our top leader were unavailable for two weeks, our most important work would keep moving.'} /* 5.12 */
@@ -529,7 +529,7 @@ function finish(){
     '<h2>'+(first?first+', here':'Here')+' is where you stand.</h2>'+
     '<div class="hero-score"><b>'+r.overall.toFixed(1)+'</b><span class="pill '+ob.cls+'">'+ob.label+'</span></div>'+
     '<p class="soft small">Your overall score is your lowest area, not your average, because strengths can’t cover a weak spot.</p>'+
-    meter('Clarity',r.clarity,'clarity')+meter('Accountability',r.accountability,'accountability')+meter('Culture',r.culture,'culture')+
+    meter('Clarity',r.clarity,'clarity')+meter('Accountability',r.accountability,'accountability')+meter('Environment',r.culture,'culture')+
     '<div class="block"><p class="eyebrow">How much runs through the top leader</p><div class="hero-score"><b>'+r.dependency.toFixed(1)+'</b><span class="pill '+db.cls+'">'+db.label+'</span></div>'+
     '<p style="margin:0">'+(r.dependency<3.5?'Most decisions and approvals still route through one person. That usually means the mission grew faster than the systems did.':'Work keeps moving without routing through one person.')+'</p></div>'+
     '<div class="block"><p class="eyebrow">Capacity</p><p style="margin:0">You rated your team’s capacity to deliver on its commitments at '+r.outcome+' of 5.'+(r.outcome<=3?' That’s the gap most leaders feel first.':'')+'</p></div>'+
@@ -549,7 +549,7 @@ function notify(r,ob,db,ff){
   var loom=(LEADER_ROLES.indexOf(w.role)>-1 && sizeNum>=LOOM_MIN_TEAM)?'Yes':'No';
   var lines=['Name: '+w.name,'Email: '+w.email,'Organization: '+w.org,'Sector: '+st.sector,'Role: '+w.role,'Team size: '+w.size,'',
     'Overall: '+r.overall.toFixed(1)+' ('+ob.label+')',
-    'Clarity '+r.clarity.toFixed(1)+' | Accountability '+r.accountability.toFixed(1)+' | Culture '+r.culture.toFixed(1),
+    'Clarity '+r.clarity.toFixed(1)+' | Accountability '+r.accountability.toFixed(1)+' | Environment '+r.culture.toFixed(1),
     'Purpose '+r.v.purpose+' | Direction '+r.v.direction+' | Expectations '+r.v.expectations,
     'Rhythm '+r.v.rhythm+' | Discipline '+r.v.discipline,'Collectively '+r.v.collectively+' | Individually '+r.v.individually,
     'Capacity (outcome): '+r.outcome,
