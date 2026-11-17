@@ -25,3 +25,5 @@
 **2026-11-10.** New homepage headline (D31, simplified same day in D32): "Helping nonprofit leaders build teams that own the work, with a simple system of huddles," and the Huddle card now leads What I built (D33), underline on "huddles". Hero h1 shrunk to clamp(34px,4vw,54px), 22ch, so it runs four lines on desktop and the portrait stays in the first screen (Jeremy).
 
 **2026-11-10.** Booking buttons on /baseline, /work and /workreview now point to the new 30 minute "Discovery call" Google booking page (10 days out, 24 hours notice, 5 intake questions). Open: Jeremy redeploys the Snapshot Leads Apps Script so results emails use the new link; /work copy still predates the 2026-11-10 Baseline tiers.
+
+**2026-11-17.** Baseline third competency renamed Culture to Environment on `/baseline/` and the sample report (D34); Snapshot payload key stays `culture`. Open: Jeremy pastes the updated Snapshot Leads script (Drive) so results emails read Environment.
