@@ -26,7 +26,7 @@
   --pad:clamp(16px,5vw,64px); --ease:cubic-bezier(.2,.8,.2,1);
   /* Type scale: one source. Caps 12, small 14, body 17, lead 20, h3 22 to 28, h2 32 to 46, h1 36 to 60. */
   --fs-caps:12px; --fs-sm:14px; --fs-body:17px; --fs-lead:20px;
-  --fs-h3:clamp(21px,2.2vw,26px); --fs-h2:clamp(38px,5vw,64px); --fs-h1:clamp(36px,4.6vw,60px); --fs-num:56px;
+  --fs-h3:clamp(21px,2.2vw,26px); --fs-h2:clamp(27px,3.5vw,45px); --fs-h1:clamp(36px,4.6vw,60px); --fs-num:56px;
   --band:clamp(56px,7vw,104px);
 }
 *,*::before,*::after{box-sizing:border-box;}
@@ -67,6 +67,9 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 .sec.alt{background:var(--surface);border-block:1px solid var(--rule);}
 .sec.dark,.hero{background:var(--ink);color:var(--sand);}
 .sec.dark .eyebrow,.sec.dark .soft,.hero .under{color:rgba(246,241,239,.86);}
+[data-o="deadline"]{font-weight:700;color:#B83232;}
+.hero [data-o="deadline"],.sec.dark [data-o="deadline"],.strip [data-o="deadline"]{color:var(--coral);}
+.sec.dark .pricebox [data-o="deadline"]{color:#B83232;}
 .sec h2{font-size:var(--fs-h2);margin-bottom:18px;}
 .head p.sub,.sub{font-size:clamp(20px,2.1vw,27px);font-weight:600;line-height:1.3;letter-spacing:-0.01em;color:var(--ink);margin:0 0 18px;max-width:34ch;}
 .sec.dark .sub{color:var(--sand);}
@@ -135,7 +138,8 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 .bridge{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vw,28px);counter-reset:s;}
 .bridge>li{counter-increment:s;background:var(--ink);color:var(--sand);border:0;border-radius:18px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:14px;}
 .bridge>li::before{content:counter(s);color:#fff;display:block;font:800 clamp(72px,8vw,110px)/.9 var(--serif);letter-spacing:-0.03em;}
-.bridge h3{font-size:clamp(20px,2vw,24px);}
+.bridge h3{display:flex;align-items:center;gap:12px;font-size:clamp(20px,2vw,24px);}
+.si{width:30px;height:30px;flex:none;}
 .bridge p{margin:0;color:rgba(246,241,239,.9);}
 .bridge .pull cite{color:rgba(246,241,239,.8);}
 .bridge .pull{margin-top:auto;padding-top:6px;}
@@ -194,11 +198,17 @@ details.mk summary{cursor:pointer;font-weight:700;font-size:var(--fs-sm);color:v
 .sr2+.sr2{border-top:1px solid rgba(246,241,239,.16);}
 .sr2 b{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums;}
 .sr2.total{background:rgba(246,241,239,.08);font-weight:700;font-size:var(--fs-lead);}
-.pricebox{margin-top:20px;background:var(--surface);color:var(--ink);border-radius:18px;padding:clamp(24px,4vw,40px);text-align:center;}
+.offer-head{text-align:center;margin-inline:auto;}
+.head.offer-head p.sub{margin-inline:auto;max-width:40ch;}
+.hot{display:inline-block;background:var(--coral);color:var(--ink);font-weight:700;font-size:var(--fs-sm);letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:99px;margin:0 0 18px;}
+.sec.dark .hot [data-o="deadline"]{color:var(--ink);text-decoration:underline;}
+.pricebox{position:relative;margin-top:20px;background:var(--surface);color:var(--ink);border:4px solid var(--coral);border-radius:20px;padding:clamp(32px,5vw,52px) clamp(20px,4vw,40px) clamp(24px,4vw,40px);text-align:center;box-shadow:0 0 0 8px rgba(236,91,89,.22),0 24px 60px rgba(0,0,0,.45);}
+.save{position:absolute;top:-22px;right:clamp(12px,4vw,36px);background:var(--sun);color:var(--ink);font-weight:800;font-size:var(--fs-body);padding:10px 18px;border-radius:99px;transform:rotate(3deg);box-shadow:0 6px 16px rgba(0,0,0,.3);}
+.pricebox .urgent{margin:6px 0 4px;font-size:var(--fs-body);}
 .pricebox .caps{color:var(--ink-soft);margin:0 0 6px;}
 .pricebox .amt{font-family:var(--serif);font-weight:800;font-size:clamp(60px,8vw,92px);line-height:1;letter-spacing:-0.02em;margin:0 0 6px;}
 .pricebox .amt s{font-size:.4em;font-weight:600;color:var(--ink-soft);margin-right:12px;}
-.pricebox .btn{display:inline-block;margin:14px 0 8px;}
+.pricebox .btn{display:inline-block;margin:16px 0 10px;padding:20px 38px;font-size:19px;}
 .pricebox .small{color:var(--ink-soft);margin:0;}
 .promise{margin:22px auto 0;max-width:62ch;font-size:var(--fs-sm);line-height:1.6;color:rgba(246,241,239,.9);text-align:center;}
 .offer-foot{display:block;max-width:780px;margin:clamp(28px,4vw,44px) auto 0;}
@@ -213,6 +223,10 @@ details.mk summary{cursor:pointer;font-weight:700;font-size:var(--fs-sm);color:v
 .ta+.ta{border-top:1px solid var(--rule);}
 .ta>div{padding:20px 24px;font-size:var(--fs-body);line-height:1.5;}
 .ta .lab{font-weight:700;}
+.ta .us b,.ta .them b{font-weight:700;}
+.ta .mk2 span{display:block;}
+.ta .pp{display:block;}
+.ta .pp+.pp{margin-top:12px;}
 .ta .lab small{display:block;font-weight:500;color:var(--ink-soft);font-size:var(--fs-sm);margin-top:4px;}
 .ta .them{color:var(--ink);background:rgba(44,44,44,.05);border-left:2px solid var(--rule-strong);}
 .ta.hd .them{background:var(--taupe);color:var(--ink);}
@@ -275,6 +289,12 @@ details.mk summary{cursor:pointer;font-weight:700;font-size:var(--fs-sm);color:v
 @media(max-width:760px){.faq{grid-template-columns:1fr;}}
 
 /* Close band */
+.cta-strip{background:var(--coral);color:var(--ink);padding:22px 0;}
+.cta-strip .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px;}
+.cta-strip p{margin:0;font-size:var(--fs-lead);font-weight:500;}
+.cta-strip [data-o="deadline"]{color:var(--ink);}
+.cta-strip .btn{background:var(--ink);}
+.cta-strip .btn:hover{background:#000;}
 .close-band{text-align:center;}
 .close-band h2{font-weight:800;margin-bottom:14px;}
 .close-band p{margin:0 auto 6px;max-width:52ch;font-size:var(--fs-lead);}
@@ -425,11 +445,11 @@ html{scroll-behavior:smooth;}
       </div>
       <ol class="bridge">
         <li>
-          <h3>Submit</h3>
+          <h3><svg class="si" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 13l2 2 4-4"/></svg>Submit</h3>
           <p>Your team and leadership each take the survey, 20 to 25 minutes, on their own, over a two week window.</p>
         </li>
         <li>
-          <h3>Analyze</h3>
+          <h3><svg class="si" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M8 12v-2M10.5 12V8M13 12v-1"/></svg>Analyze</h3>
           <p>I analyze every answer and review every finding myself before anything reaches you.</p>
           <figure class="pull sm">
             <blockquote>“As a master of organizational development, he listens intently, diagnoses challenges with precision, and delivers actionable insights that inspire confidence.”</blockquote>
@@ -437,12 +457,18 @@ html{scroll-behavior:smooth;}
           </figure>
         </li>
         <li>
-          <h3>Review</h3>
+          <h3><svg class="si" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></svg>Review</h3>
           <p>You review a PDF report, a slide deck, a talking points script, and a 90 day plan in a 30 minute walkthrough with me.</p>
         </li>
       </ol>
     </div>
   </section>
+
+  <div class="cta-strip"><div class="wrap">
+    <p><b><span data-o="scarce">6 Spots</span></b>. Closes <b><span data-o="deadline">December 31</span></b>. While spots last.</p>
+    <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
+  </div></div>
+
 
   <!-- 4. WHAT YOU GET -->
   <section class="sec alt">
@@ -450,8 +476,8 @@ html{scroll-behavior:smooth;}
       <div class="get">
         <div>
           <h2>The Design</h2>
-          <p class="sub">Three Layers Deep, So You Leave With a Plan.</p>
-          <p class="soft">Most assessments stop at a score. The Baseline goes three layers down, so you leave with a plan, not just a number.</p>
+          <p class="sub">Three Layers Deep, and a Plan to Fix What You Find.</p>
+          <p class="soft">Most assessments stop at a score. The Baseline goes three layers down, so you know where you stand, what is driving it, and exactly what to do about it.</p>
           <ol class="layers">
             <li>
               <p class="lnum">Where You Stand</p>
@@ -506,10 +532,10 @@ html{scroll-behavior:smooth;}
   <!-- 5. THE OFFER. SWAPPABLE BLOCK: public page shows Tier 1 only (Jeremy, 2026-11-18). Replace everything from here to END OFFER BLOCK; keep id="offer". Tiers 2 and 3 are sold on the call. -->
   <section class="sec dark" id="offer">
     <div class="wrap">
-      <div class="head prose" style="text-align:center;margin-inline:auto">
+      <div class="head prose offer-head">
+        <p class="hot">Closes <span data-o="deadline">December 31</span>, or When All 6 Spots Are Claimed</p>
         <h2>End of Year Offer</h2>
-        <p class="sub" style="margin-inline:auto;max-width:40ch">Know for Certain If Your Structure Is Ready Before the Year Begins.</p>
-        <p class="soft" style="margin-inline:auto">The Baseline Assessment at the launch price: your scores, the three drivers behind them, and a 90 day plan.</p>
+        <p class="sub">Know for Certain If Your Structure Is Ready Before the Year Begins.</p>
       </div>
       <div class="offer1">
         <div class="stack" role="table" aria-label="What is in the Baseline Assessment">
@@ -524,10 +550,13 @@ html{scroll-behavior:smooth;}
         </div>
         <p class="small soft" style="margin:10px 0 0;text-align:center"><mark class="ph">[first three lines split the $1,500 allocation, pending approval]</mark></p>
         <div class="pricebox">
+          <span class="save">Save $1,740</span>
           <p class="caps">End of Year Price</p>
-          <p class="amt"><s>$2,500</s>$950</p>
+          <p class="amt"><s>$2,690</s>$950</p>
+          <p class="small">$2,690 total value. List price $2,500, plus the book and Kit as a gift.</p>
           <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
-          <p class="small"><span data-o="scarce">6 Spots</span>, closes <span data-o="deadline">December 31</span>. The button books a free 30 minute call.</p>
+          <p class="urgent"><b><span data-o="scarce">6 Spots</span></b>. Offer ends <b><span data-o="deadline">December 31</span></b> or while spots last.</p>
+          <p class="small">The button books a free 30 minute call.</p>
         </div>
         <div class="offer-foot">
           <figure class="pull sm">
@@ -554,20 +583,25 @@ html{scroll-behavior:smooth;}
         <div class="ta" role="row">
           <div class="lab" role="rowheader">Three Layer Design</div>
           <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Scores and raw data, with limited to no analysis.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Your 10 markers presented within the 3 drivers, plus a 90 day practical plan, with every finding read by me.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span><b>Your 10 markers, presented within the 3 drivers.</b> The markers show where you stand, and the drivers show what is causing it. Then a 90 day practical plan for what to fix first, with every finding read by me.</span></span></div>
         </div>
         <div class="ta" role="row">
           <div class="lab" role="rowheader">Intentional Process</div>
           <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Anonymous surveys, which can hide small teams and leave critical answers with no one to address them.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Confidential, not anonymous, so honest answers can be followed up on. Individual answers stay with me.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span><b>Confidential, not anonymous.</b> Individual answers stay with me, so honest answers can be followed up on, and anyone who is struggling can be reached one on one. Small groups are never broken out.</span></span></div>
         </div>
         <div class="ta" role="row">
           <div class="lab" role="rowheader">Built for You</div>
           <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Generic, cold, and sterile, straight out of the box.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Built around your organization: your language, your name on it, your departments for enhanced analysis, and questions of your own.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span><span class="pp"><b>Your name and your words.</b> Your organization’s name and your sector’s language, on what your team fills out and on your report.</span><span class="pp"><b>Custom questions you need answers to.</b> Up to 5 of your own, reported separately, so the 86 core questions stay fixed and later results still compare.</span><span class="pp"><b>Your departments, for enhanced results.</b> Results come back by group. A group of fewer than 3 people is folded into the team total, so no one is exposed.</span></span></span></div>
         </div>
       </div>
       <p class="fine" style="margin-top:14px">Comparison based on public information reviewed in November 2026.</p>
+      <figure class="bproof" style="margin-top:28px">
+        <img src="../assets/img/sample-report-groups.png" width="2040" height="680" alt="The By group table from the sample report, showing how Crews, Office and Leadership each scored seven disciplines.">
+        <figcaption>Your departments, for enhanced results: results by group, from the sample report. Fictional organization.</figcaption>
+      </figure>
+
 
       <div class="trust2">
         <figure class="pull">
@@ -577,19 +611,6 @@ html{scroll-behavior:smooth;}
         <p class="fine" style="margin:0">Two things every respondent is told up front. If an answer shows harm to a person, abuse, or illegal activity, the law may require action. And on a very small team, combined scores can sometimes hint at how someone answered.</p>
       </div>
 
-      <div class="built">
-        <h3 class="bt">Built for You</h3>
-        <p class="sub">Your Baseline, Not Off the Shelf.</p>
-        <div class="bgrid">
-          <div class="bc"><h3>Your Name and Your Words</h3><p>Your organization’s name and your sector’s language, on what your team fills out and on your report.</p></div>
-          <div class="bc"><h3>Custom Questions You Need Answers To</h3><p>Up to 5 of your own, reported separately, so the 86 core questions stay fixed and later results still compare.</p></div>
-          <div class="bc"><h3>Your Departments, for Enhanced Results</h3><p>Results come back by group. A group of fewer than 3 people is folded into the team total, so no one is exposed.</p></div>
-        </div>
-        <figure class="bproof">
-          <img src="../assets/img/sample-report-groups.png" width="2040" height="680" alt="The By group table from the sample report, showing how Crews, Office and Leadership each scored seven disciplines.">
-          <figcaption>From the sample report: results by group. Fictional organization.</figcaption>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -631,6 +652,12 @@ html{scroll-behavior:smooth;}
     </div>
   </section>
 
+  <div class="cta-strip"><div class="wrap">
+    <p><b><span data-o="scarce">6 Spots</span></b>. Closes <b><span data-o="deadline">December 31</span></b>. While spots last.</p>
+    <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
+  </div></div>
+
+
   <!-- 7. QUESTIONS AND THE CLOSE -->
   <section class="sec alt">
     <div class="wrap">
@@ -660,7 +687,7 @@ html{scroll-behavior:smooth;}
   <section class="sec closing" id="start">
     <div class="wrap">
       <h2>Try the Free Snapshot First.</h2>
-      <p class="soft" style="max-width:56ch">Take it in about 4 minutes. You’ll see your first readings on screen, and you can decide whether a check of your whole team is worth it.</p>
+      <p class="soft" style="max-width:56ch">Take it in about 4 minutes. You’ll see your first readings on screen, and you can decide whether a check of your whole team is worth it. The End of Year Offer closes <b><span data-o="deadline">December 31</span></b>, so claim your spot first if you already know.</p>
 <div id="app" class="app" aria-label="Snapshot">
       <p class="step no-print" id="stepLabel" aria-live="polite">Step 1 of 3</p>
       <div class="bar no-print" aria-hidden="true"><i id="barFill"></i></div>
