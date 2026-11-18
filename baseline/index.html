@@ -26,7 +26,7 @@
   --pad:clamp(16px,5vw,64px); --ease:cubic-bezier(.2,.8,.2,1);
   /* Type scale: one source. Caps 12, small 14, body 17, lead 20, h3 22 to 28, h2 32 to 46, h1 36 to 60. */
   --fs-caps:12px; --fs-sm:14px; --fs-body:17px; --fs-lead:20px;
-  --fs-h3:clamp(21px,2.2vw,26px); --fs-h2:clamp(27px,3.5vw,45px); --fs-h1:clamp(36px,4.6vw,60px); --fs-num:56px;
+  --fs-h3:clamp(21px,2.2vw,26px); --fs-h2:clamp(44px,6.1vw,79px); --fs-h1:clamp(40px,5.2vw,72px); --fs-num:56px;
   --band:clamp(56px,7vw,104px);
 }
 *,*::before,*::after{box-sizing:border-box;}
@@ -76,6 +76,7 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 .head p.sub{max-width:34ch;}
 .head{margin-bottom:clamp(28px,4vw,48px);}
 .head.prose{max-width:none;}
+.stakes-head p:not(.sub){max-width:68ch;}
 .head p{margin:0 0 1em;max-width:62ch;}
 .head p:last-child{margin:0;}
 
@@ -111,11 +112,11 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 @media(max-width:640px){.bd{grid-template-columns:110px 1fr 34px;}}
 
 /* Stakes */
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,3vw,32px);margin:0 0 clamp(40px,5vw,64px);}
-.stat-card{background:var(--ink);color:var(--sand);border:0;border-radius:16px;padding:clamp(22px,3vw,32px);}
-.stat-card b{color:#fff;display:block;font-family:var(--serif);font-weight:800;font-size:clamp(48px,6vw,72px);line-height:1;letter-spacing:-0.02em;margin-bottom:12px;}
-.stat-card p{margin:0 0 10px;font-size:var(--fs-lead);line-height:1.4;font-weight:500;max-width:34ch;}
-.stat-card .source{font-size:var(--fs-sm);color:rgba(246,241,239,.8);font-weight:400;margin:0;}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin:0 0 clamp(40px,5vw,64px);background:var(--ink);border-radius:24px;padding:clamp(28px,4vw,52px) clamp(18px,3vw,40px);}
+.stat-card{background:var(--surface);color:var(--ink);border:4px solid var(--coral);border-radius:20px;padding:clamp(22px,3vw,34px);text-align:center;box-shadow:0 0 0 6px rgba(236,91,89,.22),0 18px 44px rgba(0,0,0,.4);}
+.stat-card b{color:var(--ink);display:block;font-family:var(--serif);font-weight:800;font-size:clamp(48px,6vw,72px);line-height:1;letter-spacing:-0.02em;margin-bottom:12px;}
+.stat-card p{margin:0 auto 10px;font-size:var(--fs-body);line-height:1.4;font-weight:500;max-width:34ch;}
+.stat-card .source{font-size:var(--fs-sm);color:var(--ink-soft);font-weight:400;margin:0;}
 .shift{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);}
 .shift h3{font-size:var(--fs-caps);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px;}
 .shift ul{list-style:none;margin:0;padding:0;}
@@ -123,9 +124,9 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 .shift li::before{content:"";position:absolute;left:0;top:25px;width:9px;height:9px;border-radius:50%;background:var(--rule-strong);}
 .shift .to li{font-weight:700;}
 .shift .to li::before{background:var(--coral);}
-.stakes-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:clamp(36px,5vw,56px);align-items:start;}
+.stakes-foot{max-width:900px;margin:clamp(36px,5vw,56px) auto 0;}
 .stakes-foot p{margin:0;}
-@media(max-width:760px){.stats,.shift,.stakes-foot{grid-template-columns:1fr;}}
+@media(max-width:860px){.stats,.shift{grid-template-columns:1fr;}}
 
 /* Pull quotes */
 .pull{margin:0;padding-left:20px;border-left:3px solid var(--coral);}
@@ -368,8 +369,8 @@ html{scroll-behavior:smooth;}
       <div>
         <img class="lockup" src="../assets/img/baseline-lockup-on-charcoal.svg" alt="Baseline Assessment" width="286" height="111">
         <p class="tag">End of Year Offer · <span data-o="scarce">6 Spots</span> · Closes <span data-o="deadline">December 31</span></p>
-        <h1>Know for Certain If Your Structure Is Ready to Carry Out Your Annual Plan.</h1>
-        <p class="support">The Baseline Assessment is a checkup for your whole team: your results, a report and slide deck, and a 90 day plan for what to fix first.</p>
+        <h1>Your Plan Won’t Work If Your Structure Isn’t Ready.</h1>
+        <p class="support">Know for certain it is. The Baseline Assessment is a checkup for your whole team: your results, a report and slide deck, and a 90 day plan for what to fix first.</p>
         <p class="sig">10 markers. 3 drivers. 1 plan.</p>
         <div class="cta">
           <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
@@ -396,9 +397,10 @@ html{scroll-behavior:smooth;}
     <div class="wrap">
       <div class="head prose">
         <h2>Why It Matters</h2>
-        <p class="sub">A Good Plan Loses to a Poor Structure Every Time.</p>
-        <p>Most leaders are sure their team knows the plan. You can’t feel it from the inside, any more than you can feel your own blood pressure. It takes a measurement of the structure your plan has to run in: how your team decides, meets, and follows through.</p>
-        <p>If you are finishing your annual plan now, this is the moment to check the structure it has to run in.</p>
+        <p class="sub">You Can’t Feel It From the Inside.</p>
+        <p>Most leaders are sure their team knows the plan. A good plan loses to a poor structure every time, and you can’t feel that from the inside, any more than you can feel your own blood pressure.</p>
+        <p>It takes a measurement of the structure your plan has to run in: how your team decides, meets, and follows through. If you are finishing your annual plan now, this is the moment to check it.</p>
+        <p>Your team and your mission were entrusted to you. Knowing where they really stand is part of stewarding them well.</p>
       </div>
       <div class="stats">
         <div class="stat-card">
@@ -407,9 +409,14 @@ html{scroll-behavior:smooth;}
           <p class="source">A study of 11,000 managers. Sull and Homkes, Harvard Business Review, 2015.</p>
         </div>
         <div class="stat-card">
-          <b>46%</b>
-          <p>of nonprofit CEOs call their own burnout very much a concern, up from just under 30% a year earlier.</p>
-          <p class="source">Center for Effective Philanthropy, State of Nonprofits 2026.</p>
+          <b>78%</b>
+          <p>of employees lose time they were ready to work, with poor work allocation among the causes.</p>
+          <p class="source">Brodsky and Amabile, Journal of Applied Psychology, 2018.</p>
+        </div>
+        <div class="stat-card">
+          <b>23%</b>
+          <p>more profit for teams in the top quarter for engagement than teams in the bottom quarter.</p>
+          <p class="source">Gallup Q12 analysis of 183,806 teams.</p>
         </div>
       </div>
       <div class="shift">
@@ -427,7 +434,6 @@ html{scroll-behavior:smooth;}
         </ul></div>
       </div>
       <div class="stakes-foot">
-        <p>Your team and your mission were entrusted to you. Knowing where they really stand is part of stewarding them well.</p>
         <figure class="pull">
           <blockquote>“I’ve watched him scale an organization in an impressively short amount of time … and unclog inefficient and broken systems with the kind of wisdom and strategic thinking that only comes with experience and intuition developed over time.”</blockquote>
           <cite>Mattanah DeWitt, Director of Strategic Communications</cite>
