@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Baseline Assessment | Jeremy Rivers</title>
-<meta name="description" content="Know for certain where your operation and team stand. Start with the free Snapshot, your own read in 11 questions.">
+<meta name="description" content="An organizational health assessment, a 90 day plan, and proof it moved. First 90 early adopter, 3 spots. Or start with the free Snapshot.">
 <link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Baseline Assessment | Jeremy Rivers">
-<meta property="og:description" content="Know for certain where your operation and team stand. Start with the free Snapshot.">
+<meta property="og:description" content="An organizational health assessment, a 90 day plan, and proof it moved.">
 <meta property="og:image" content="../assets/img/icon-dark.png">
 <style>
 @font-face{font-family:'Fields';src:url('../assets/fonts/fields-600.otf') format('opentype');font-weight:500 650;font-display:swap;}
@@ -129,6 +129,46 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 .fine{margin:28px 0 0;font-size:var(--fs-sm);line-height:1.55;color:rgba(246,241,239,.8);max-width:72ch;}
 @media(max-width:640px){.cr{grid-template-columns:1fr 1fr;}.cr span:first-child{grid-column:1/-1;padding-bottom:0;}.ch span:first-child{display:none;}.why2{grid-template-columns:1fr;}}
 
+/* First 90 offer (D35) */
+.hero .tag{color:var(--coral);margin:0 0 18px;}
+.hero .btn.ghost{color:var(--sand);border-color:rgba(246,241,239,.5);}
+.hero .btn.ghost:hover{background:rgba(246,241,239,.1);}
+.cta .row2{display:flex;flex-wrap:wrap;gap:12px;}
+.board{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:clamp(20px,3vw,32px);margin:0 0 clamp(28px,4vw,44px);max-width:520px;}
+.board .caps{color:var(--ink-soft);margin:0 0 10px;}
+.board .big{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 18px;}
+.board .big b{font-family:var(--serif);font-weight:800;font-size:64px;line-height:1;letter-spacing:-0.02em;}
+.board .big span{font-size:var(--fs-caps);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A5A00;}
+.bd{display:grid;grid-template-columns:150px 1fr 36px;gap:12px;align-items:center;padding:7px 0;font-size:var(--fs-sm);}
+.bd i{display:block;height:8px;border-radius:8px;background:var(--rule);position:relative;overflow:hidden;}
+.bd i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--c);border-radius:8px;}
+.bd b{text-align:right;font-weight:700;}
+.board .note{font-size:var(--fs-sm);color:var(--ink-soft);margin:14px 0 0;}
+.shift{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,44px);margin-top:8px;}
+.shift h3{font-size:var(--fs-caps);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px;}
+.shift ul{list-style:none;margin:0;padding:0;}
+.shift li{padding:13px 0 13px 22px;border-top:1px solid var(--rule);position:relative;}
+.shift li::before{content:"";position:absolute;left:0;top:23px;width:9px;height:9px;border-radius:50%;background:var(--rule-strong);}
+.shift .to li{font-weight:700;}
+.shift .to li::before{background:var(--coral);}
+.objs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0 0;}
+.objs>div{border-top:5px solid var(--coral);padding-top:14px;}
+.objs h3{font-size:var(--fs-lead);margin-bottom:6px;}
+.objs p{margin:0;color:rgba(246,241,239,.9);}
+.stack{margin:28px 0 0;border:1px solid rgba(246,241,239,.22);border-radius:14px;overflow:hidden;}
+.sr{display:flex;justify-content:space-between;gap:20px;padding:13px 18px;}
+.sr+.sr{border-top:1px solid rgba(246,241,239,.16);}
+.sr b{white-space:nowrap;font-weight:700;}
+.sr.total{background:rgba(246,241,239,.07);font-weight:700;}
+.price{margin:24px 0 0;padding:clamp(22px,3.5vw,36px);border-radius:16px;background:var(--surface);color:var(--ink);}
+.price .caps{color:var(--ink-soft);margin:0 0 6px;}
+.price .amt{font-family:var(--serif);font-weight:800;font-size:clamp(44px,7vw,64px);line-height:1;letter-spacing:-0.02em;margin:0 0 10px;}
+.price .amt s{font-size:.5em;font-weight:600;color:var(--ink-soft);margin-right:10px;}
+.price p{margin:0 0 .8em;}
+.price .small{color:var(--ink-soft);}
+.price .btn{margin-top:8px;}
+@media(max-width:640px){.shift{grid-template-columns:1fr;}.objs{grid-template-columns:1fr;}.bd{grid-template-columns:110px 1fr 34px;}.sr{flex-direction:column;gap:2px;}}
+
 /* Snapshot app */
 .app{margin-top:28px;max-width:680px;scroll-margin-top:24px;}
 .app .step{color:var(--ink-soft);margin:0 0 8px;}
@@ -190,12 +230,45 @@ html{scroll-behavior:smooth;}
   <section class="hero">
     <div class="wrap">
       <img class="lockup" src="../assets/img/baseline-lockup-on-charcoal.svg" alt="Baseline Assessment" width="286" height="111">
-      <h1>Know for certain where your operation and team stand.</h1>
-      <p class="support">You make your biggest calls on a picture of your organization you’ve never actually checked. The Baseline Assessment checks it with your whole team, then hands you a 90 day plan.</p>
+      <p class="caps tag">First 90 · Early adopter · 3 spots</p>
+      <h1>Know for certain if your structure is ready to carry out your annual plan.</h1>
+      <p class="support">An organizational health assessment, a 90 day plan, and proof it moved. You make your biggest calls on a picture of your organization you have never actually checked. The Baseline is a checkup for your whole team.</p>
       <p class="sig">10 markers. 3 drivers. 1 plan.</p>
       <div class="cta">
-        <a class="btn" href="#start">See where I stand in 4 minutes</a>
-        <p class="under">Your own read first. Bring your team in when you’re ready.</p>
+        <div class="row2">
+          <a class="btn" href="#first-90">See the First 90</a>
+          <a class="btn ghost" href="#start">See where I stand in 4 minutes</a>
+        </div>
+        <p class="under">Your own read first, or start with your whole team. Either way you see where you stand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="board" role="group" aria-label="Sample scoreboard from a fictional organization">
+        <p class="caps">Your scoreboard (from a sample report)</p>
+        <p class="big"><b>2.6</b><span>Overall health · at risk</span></p>
+        <div class="bd"><span>Clarity</span><i style="--w:62%;--c:var(--sun)"></i><b>3.1</b></div>
+        <div class="bd"><span>Accountability</span><i style="--w:52%;--c:var(--sun)"></i><b>2.6</b></div>
+        <div class="bd"><span>Environment</span><i style="--w:74%;--c:var(--lichen)"></i><b>3.7</b></div>
+        <div class="bd"><span>Leader dependency</span><i style="--w:42%;--c:var(--coral)"></i><b>2.1</b></div>
+        <p class="note">Fictional organization. Yours is scored on 10 markers.</p>
+      </div>
+      <h2>From carrying everything to a team that runs the plan.</h2>
+      <div class="shift">
+        <div class="from"><h3>Where you are now</h3><ul>
+          <li>Every decision, every fire, every call still runs through you.</li>
+          <li>The plan lives on paper. The team nods, then the work drifts.</li>
+          <li>You can feel something is off, but you can’t point to what.</li>
+          <li>Your best people see it first, and they leave first.</li>
+        </ul></div>
+        <div class="to"><h3>Where you are at day 90</h3><ul>
+          <li>A team that knows the plan and runs it without waiting on you.</li>
+          <li>Decisions made on facts, not on a hunch.</li>
+          <li>You know your three drivers and which one to fix first.</li>
+          <li>Proof it moved: a day 90 pulse you can show your board.</li>
+        </ul></div>
       </div>
     </div>
   </section>
@@ -203,10 +276,10 @@ html{scroll-behavior:smooth;}
   <section class="sec">
     <div class="wrap"><div class="prose">
       <p class="eyebrow">Why it matters</p>
-      <h2>Most leaders are sure their team knows the plan.</h2>
-      <p>In a study of 11,000 managers, only a third could name their organization’s top three priorities.</p>
+      <h2>A good plan loses to a poor structure every time.</h2>
+      <p>Most leaders are sure their team knows the plan. In a study of 11,000 managers, only a third could name their organization’s top three priorities.</p>
       <p class="source">Sull and Homkes, Harvard Business Review, 2015.</p>
-      <p>When the plan rests on assumptions, the gaps become the assumptions your team makes, and the misfires land back on your desk. And from inside the operation, no leader can see it clearly on their own.</p>
+      <p>Where your team isn’t sure, people fill the gap with their own guesses, and the misfires land back on your desk. You can’t feel this from the inside, any more than you can feel your own blood pressure. It takes a measurement of the structure your plan has to run in: how your team decides, meets, and follows through.</p>
       <p>Your team and your mission were entrusted to you. Knowing where they really stand is part of stewarding them well.</p>
       <figure class="pull">
         <blockquote>“It gave me clarity in direction I didn’t even know I needed.”</blockquote>
@@ -247,7 +320,7 @@ html{scroll-behavior:smooth;}
           <div>
             <p class="lnum">Step 3 · What to do next</p>
             <h3>The 1 plan</h3>
-            <p>One plan, built from your results. The two or three most strategic moves to improve your health in the next 90 days, and a check back at 90 days to see what moved.</p>
+            <p>One plan, built from your results. The two or three most strategic moves to improve your health in the next 90 days, then a day 30 check in, a day 90 pulse that measures follow through, and a full rerun at month 6.</p>
           </div>
         </li>
       </ol>
@@ -268,6 +341,39 @@ html{scroll-behavior:smooth;}
     </div>
   </section>
 
+  <section class="sec dark" id="first-90">
+    <div class="wrap">
+      <p class="eyebrow">First 90 · Early adopter · 3 spots</p>
+      <h2>Start the year knowing for certain.</h2>
+      <p class="soft prose">The Baseline Assessment, the plan, and the follow through that shows it moved, in one 90 day engagement.</p>
+      <div class="objs">
+        <div><h3>“We’re tight on budget.”</h3><p>$2,550 for nonprofits and churches, and a guarantee that the 90 days move something.</p></div>
+        <div><h3>“It’ll be another report on a shelf.”</h3><p>It ends in a plan, a day 30 check in, and a day 90 pulse that measures follow through.</p></div>
+        <div><h3>“My team won’t be honest.”</h3><p>It’s confidential, takes 20 to 25 minutes each, and nobody’s words are ever quoted.</p></div>
+      </div>
+      <div class="stack" role="table" aria-label="What is in the First 90">
+        <div class="sr" role="row"><span role="cell">Baseline Read: assessment, analysis, 90 day plan, walkthrough</span><b role="cell">$2,500</b></div>
+        <div class="sr" role="row"><span role="cell">Live debrief</span><b role="cell">$750</b></div>
+        <div class="sr" role="row"><span role="cell">Announcement script and team share back deck</span><b role="cell">$500</b></div>
+        <div class="sr" role="row"><span role="cell">Day 30 check in call</span><b role="cell">$500</b></div>
+        <div class="sr" role="row"><span role="cell">Day 90 pulse and review call</span><b role="cell">$1,000</b></div>
+        <div class="sr" role="row"><span role="cell">Month 6 full rerun</span><b role="cell">$2,500</b></div>
+        <div class="sr" role="row"><span role="cell">90 days of email access to me between calls</span><b role="cell">$750</b></div>
+        <div class="sr" role="row"><span role="cell">Guarantee: up to 5 coaching hours</span><b role="cell">$1,500</b></div>
+        <div class="sr" role="row"><span role="cell">Uncommon Work and the Uncommon Kit</span><b role="cell">$190</b></div>
+        <div class="sr total" role="row"><span role="cell">Total value</span><b role="cell">$10,190</b></div>
+      </div>
+      <div class="price">
+        <p class="caps">Early adopter price</p>
+        <p class="amt"><s>$4,500</s>$3,000</p>
+        <p><b>$2,550 for nonprofits and churches (15% off).</b> Custom consultant assessments typically run $8,000 to $20,000.</p>
+        <p class="small">3 spots, first come. Sign by Dec 31, 2026, kickoff by Jan 9. Add a leadership Planning Day at $1,750 (list $2,500) when you book inside your assessment window. In return: honest feedback, a testimonial only if the 90 days earn one, and permission to share your results anonymously.</p>
+        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 3 spots: book a 30 minute call</a>
+      </div>
+      <p class="fine">Guarantee: if your day 90 pulse shows no movement on at least one of your chosen priorities or outcomes, measured with the same questions you answered in your Baseline, you receive up to 5 more coaching hours at no charge. Results vary. Results are reported only in combination; the law may require action if a response indicates harm to a person.</p>
+    </div>
+  </section>
+
   <section class="sec dark">
     <div class="wrap">
       <p class="eyebrow">Psychological safety</p>
@@ -277,7 +383,7 @@ html{scroll-behavior:smooth;}
       </div>
       <div class="ctable" role="table" aria-label="A typical survey compared with the Baseline">
         <div class="cr ch" role="row"><span role="columnheader"></span><span role="columnheader">A typical survey</span><span role="columnheader">The Baseline</span></div>
-        <div class="cr" role="row"><span role="rowheader">Anonymous or confidential</span><span role="cell">Anonymous, which lowers the bar for effort and candor, and leaves critical answers with no one to address them</span><span role="cell">Confidential, which raises the bar for effort and candor, and means critical answers get addressed. Individual answers stay with an independent professional, held in confidence</span></div>
+        <div class="cr" role="row"><span role="rowheader">Anonymous or confidential</span><span role="cell">Anonymous, which lowers the bar for effort and candor, and leaves critical answers with no one to address them</span><span role="cell">Confidential, which raises the bar for effort and candor, and means critical answers get addressed. Individual answers stay with me, held in confidence</span></div>
         <div class="cr" role="row"><span role="rowheader">A careless or throwaway answer</span><span role="cell">Quietly skews the average, and no one notices</span><span role="cell">Gets screened out, so the read stays accurate</span></div>
         <div class="cr" role="row"><span role="rowheader">Someone struggling in a particular way</span><span role="cell">Stays invisible, with a real concern and nowhere to take it</span><span role="cell">Can be reached confidentially, one on one, and helped through the hard thing</span></div>
         <div class="cr" role="row"><span role="rowheader">What you process</span><span role="cell">A pile of raw comments to sort through, and the emotional weight of reading them</span><span role="cell">Measured scores, themes, and insights, plus the gaps that point to the root issues</span></div>
@@ -295,7 +401,8 @@ html{scroll-behavior:smooth;}
       <img src="../assets/img/jeremy-speaking.jpg" alt="Jeremy Rivers facilitating a session" width="900" height="1125">
       <div class="prose">
         <p class="eyebrow">Who’s behind it</p>
-        <p>I joined a faith based nonprofit as the second hire. The founding team was three, and we grew to 50. The Baseline comes from what we learned the hard way about what keeps a growing team healthy.</p>
+        <p>I joined a faith based nonprofit as the second hire. The founding team was three, and we grew to 50. The Baseline comes from what we learned the hard way about what keeps a growing team healthy, and I read every finding myself.</p>
+        <p class="small soft">Executive coach certified by the International Coaching Federation and the John Maxwell Company. Leadership and strategy certificates from Harvard, MIT, and the University of Illinois.</p>
         <figure class="pull">
           <blockquote>“He sees what most people miss and brings his catalytic questions, insights, and ideas to bear in moments when an organization needs it most.”</blockquote>
           <cite>Mattanah DeWitt, Director of Strategic Communications</cite>
@@ -309,7 +416,7 @@ html{scroll-behavior:smooth;}
       <p class="eyebrow">Before you start</p>
       <div class="faq">
         <div><h3>What’s the Snapshot?</h3><p>A free taste of the Baseline, a short version you take on your own, before you bring your team in. You see your results on screen right away and get a copy by email.</p></div>
-        <div><h3>Is this a sales pitch?</h3><p>No. Your Snapshot results are yours whether or not we ever talk. If you’d like help reading them, you can book a time with me at the end.</p></div>
+        <div><h3>What happens after the Snapshot?</h3><p>Your results are yours whether or not we ever talk. If you want help reading them, you can book a time with me at the end.</p></div>
         <div><h3>My team is small. Does this still fit?</h3><p>Yes. It’s built for small teams where most decisions still find their way to the leader.</p></div>
       </div>
     </div>
@@ -318,10 +425,10 @@ html{scroll-behavior:smooth;}
   <section class="sec closing" id="start">
     <div class="wrap">
       <h2>Start with your own read.</h2>
-      <p class="soft" style="max-width:56ch">Take the free Snapshot in about 4 minutes. If what you see is worth a closer look, we’ll talk about bringing your team in.</p>
+      <p class="soft" style="max-width:56ch">Take the free Snapshot in about 4 minutes. You’ll see your first readings on screen, and you can decide whether a check of your whole team is worth it.</p>
       <figure class="pull" style="max-width:56ch;margin:0 0 8px">
         <blockquote>“Our first 90 days together were the most focused and productive I’ve ever been. We landed an $80K client and hit every goal in 30 days.”</blockquote>
-        <cite>Ben J., Event planning firm owner</cite>
+        <cite>Ben J., Event planning firm owner. Results vary; Ben’s result is his own.</cite>
       </figure>
 <div id="app" class="app" aria-label="Snapshot">
       <p class="step no-print" id="stepLabel" aria-live="polite">Step 1 of 3</p>
