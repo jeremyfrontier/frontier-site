@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Baseline Assessment | Jeremy Rivers</title>
-<meta name="description" content="An organizational health assessment, a 90 day plan, and proof it moved. Early Adopter Promotion, 3 spots. Or start with the free Snapshot.">
+<meta name="description" content="An organizational health assessment, a 90 day plan, and proof it moved. Launch promotion, 6 spots. Or start with the free Snapshot.">
 <link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -180,6 +180,28 @@ details.mk summary{cursor:pointer;font-weight:700;font-size:var(--fs-sm);color:v
 .price .pull{margin-top:22px;padding-top:18px;border-left:0;padding-left:0;border-top:1px solid var(--rule);}
 @media(max-width:900px){.offer{grid-template-columns:1fr;}.price{position:static;}.sr2{flex-direction:column;gap:2px;}}
 
+/* Offer: three tiers */
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px);align-items:start;}
+.tier{background:var(--surface);color:var(--ink);border-radius:18px;padding:clamp(22px,2.6vw,32px);border:1px solid var(--rule);}
+.tier.t-main{border:3px solid var(--coral);box-shadow:0 18px 48px rgba(0,0,0,.3);}
+.tier .caps{color:var(--ink-soft);margin:0 0 8px;}
+.tier h3{font-size:var(--fs-h3);margin-bottom:10px;}
+.tier .amt{font-family:var(--serif);font-weight:800;font-size:clamp(44px,4.4vw,58px);line-height:1;letter-spacing:-0.02em;margin:0 0 8px;}
+.tier .amt s{font-size:.45em;font-weight:600;color:var(--ink-soft);margin-right:10px;}
+.tier .small{color:var(--ink-soft);margin:0 0 14px;}
+.tier .btn{display:block;margin:6px 0 8px;}
+.tier .under2{margin:0 0 4px;}
+.tier .inc{font-weight:700;margin:20px 0 10px;padding-top:16px;border-top:1px solid var(--rule);}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+.tl li{display:flex;gap:10px;align-items:flex-start;font-size:var(--fs-sm);line-height:1.5;}
+.tl svg{flex:none;width:20px;height:20px;margin-top:1px;}
+.upg{margin:22px 0 0;text-align:center;font-size:var(--fs-body);}
+.offer-foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);margin-top:clamp(28px,4vw,44px);align-items:start;}
+.offer-foot .guar{margin:0;}
+.offer-foot .pull cite{color:rgba(246,241,239,.86);}
+.offer-foot .pull{border-left-color:var(--coral);}
+@media(max-width:960px){.tiers{grid-template-columns:1fr;}.offer-foot{grid-template-columns:1fr;}}
+
 /* Differentiators: option A, a scannable table */
 .tbl-a{border:1px solid var(--rule-strong);border-radius:16px;overflow:hidden;background:var(--surface);}
 .ta{display:grid;grid-template-columns:minmax(200px,.8fr) minmax(0,1fr) minmax(0,1.25fr);}
@@ -325,12 +347,12 @@ html{scroll-behavior:smooth;}
     <div class="wrap hero-grid">
       <div>
         <img class="lockup" src="../assets/img/baseline-lockup-on-charcoal.svg" alt="Baseline Assessment" width="286" height="111">
-        <p class="tag">Early Adopter Promotion · 3 Spots</p>
+        <p class="tag">Launch Promotion · 6 Spots</p>
         <h1>Know for Certain If Your Structure Is Ready to Carry Out Your Annual Plan.</h1>
-        <p class="support">The Baseline Assessment is a checkup for your whole team, then a 90 day engagement that turns the results into a plan and shows it moved.</p>
+        <p class="support">The Baseline Assessment is a checkup for your whole team: your results, a report and slide deck, and a 90 day plan for what to fix first.</p>
         <p class="sig">10 markers. 3 drivers. 1 plan.</p>
         <div class="cta">
-          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 3 Spots</a>
+          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 6 Spots</a>
           <a class="link2" href="#start">Or Try the Free Snapshot First</a>
         </div>
         <p class="under">The button books a free 30 minute call.</p>
@@ -377,11 +399,11 @@ html{scroll-behavior:smooth;}
           <li>You can feel something is off, but you can’t point to what.</li>
           <li>Your best people see it first, and they leave first.</li>
         </ul></div>
-        <div class="to"><h3>Where You Are at Day 90</h3><ul>
+        <div class="to"><h3>Where You Are After the Baseline</h3><ul>
           <li>A team that knows the plan and runs it without waiting on you.</li>
           <li>Decisions made on facts, not on a hunch.</li>
           <li>You know your three drivers and which one to fix first.</li>
-          <li>Proof it moved: a day 90 pulse you can show your board.</li>
+          <li>A report and slide deck you can show your board.</li>
         </ul></div>
       </div>
       <div class="stakes-foot">
@@ -415,8 +437,8 @@ html{scroll-behavior:smooth;}
           </figure>
         </li>
         <li>
-          <h3>You Get the Report, the Plan, and the Follow Through</h3>
-          <p>A walkthrough of your results, live or recorded. Then the 90 days begin.</p>
+          <h3>You Get the Report, the Plan, and a Walkthrough</h3>
+          <p>A PDF report, a slide deck, and a 90 day plan, then a 30 minute walkthrough of your results.</p>
         </li>
       </ol>
     </div>
@@ -429,7 +451,7 @@ html{scroll-behavior:smooth;}
         <div>
           <p class="eyebrow">What You Get</p>
           <h2>The Report and the Plan Behind It.</h2>
-          <p class="soft">Most assessments stop at a score. The Baseline goes three layers down, so you leave with a plan, not just a number.</p>
+          <p class="soft">Most assessments stop at a score. The Baseline goes three layers down, so you leave with a plan, not just a number. You get a PDF report, a slide deck, and a talking points script for your team.</p>
           <ol class="layers">
             <li>
               <p class="lnum">Where You Stand</p>
@@ -473,7 +495,7 @@ html{scroll-behavior:smooth;}
       <div class="shelf">
         <div>
           <h3>Worried It Will Be Another Report on a Shelf?</h3>
-          <p>It ends in a plan with owners and dates, and the 90 days that follow measure whether anyone acted on it.</p>
+          <p>It ends in a 90 day plan you can act on, with every finding reviewed by me. If you want help carrying it out, Baseline 90 adds check ins and a pulse that shows what moved.</p>
         </div>
         <figure class="pull">
           <blockquote>“The systems and planning rhythm we put in place completely changed how we operate. The team’s aligned, consistent, and I’m getting fewer calls.”</blockquote>
@@ -483,44 +505,53 @@ html{scroll-behavior:smooth;}
     </div>
   </section>
 
-  <!-- 5. THE OFFER. SWAPPABLE BLOCK: Jeremy is reworking the offer (launch Baseline plus tiers). Replace everything from here to END OFFER BLOCK; keep id="offer". -->
+  <!-- 5. THE OFFER. SWAPPABLE BLOCK: three tiers, good better best. Replace everything from here to END OFFER BLOCK; keep id="offer". -->
   <section class="sec dark" id="offer">
     <div class="wrap">
       <div class="head prose">
-        <p class="eyebrow">Early Adopter Promotion · 3 Spots</p>
+        <p class="eyebrow">Launch Promotion · 6 Spots</p>
         <h2>Start the Year Knowing for Certain.</h2>
-        <p class="soft">The Baseline Assessment, the plan, and the follow through that shows it moved, in one 90 day engagement.</p>
+        <p class="soft">Start with the Baseline Assessment. If you want help moving what you find, add the 90 day engagement on your call.</p>
       </div>
-      <div class="offer">
-        <div>
-          <div class="stack" role="table" aria-label="What is in the Baseline Assessment">
-            <div class="sr2" role="row"><span role="cell">Baseline Read: assessment, analysis, 90 day plan, walkthrough</span><b role="cell">$2,500</b></div>
-            <div class="sr2" role="row"><span role="cell">Live debrief</span><b role="cell">$750</b></div>
-            <div class="sr2" role="row"><span role="cell">Announcement script and team share back deck</span><b role="cell">$500</b></div>
-            <div class="sr2" role="row"><span role="cell">Day 30 check in call</span><b role="cell">$500</b></div>
-            <div class="sr2" role="row"><span role="cell">Day 90 pulse and review call</span><b role="cell">$1,000</b></div>
-            <div class="sr2" role="row"><span role="cell">Month 6 full rerun</span><b role="cell">$2,500</b></div>
-            <div class="sr2" role="row"><span role="cell">90 days of email access to me between calls</span><b role="cell">$750</b></div>
-            <div class="sr2" role="row"><span role="cell">Built for your organization: your name, your sector’s language, your departments, up to 5 questions of your own</span><b role="cell">$600</b></div>
-            <div class="sr2" role="row"><span role="cell">Guarantee: up to 5 coaching hours</span><b role="cell">$1,500</b></div>
-            <div class="sr2" role="row"><span role="cell">Uncommon Work and the Uncommon Kit</span><b role="cell">$190</b></div>
-            <div class="sr2 total" role="row"><span role="cell">Total value</span><b role="cell">$10,790</b></div>
-          </div>
-          <p class="guar"><b>Guarantee.</b> If your day 90 pulse shows no movement on at least one of your chosen priorities or Outcomes, measured with the same questions you answered in your Baseline, you receive up to 5 more coaching hours at no charge. Results vary. Results are reported only in combination; the law may require action if a response indicates harm to a person.</p>
-        </div>
-        <aside class="price" aria-label="Early adopter price">
-          <p class="caps">Early Adopter Price</p>
+      <div class="tiers">
+        <article class="tier t-main" aria-label="Baseline Assessment">
+          <p class="caps">Tier 1 · What This Page Sells</p>
+          <h3>Baseline Assessment</h3>
+          <p class="amt"><s>$2,500</s>$950</p>
+          <p class="small">Launch price. 6 spots, closes Dec 31, 2026.</p>
+          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 6 Spots</a>
+          <p class="small under2">The button books a free 30 minute call.</p>
+          <p class="inc">What you get:</p>
+          <ul class="tl"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your Baseline: your team and your leadership assessed in confidence on 10 health markers and the 3 drivers behind them</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Built for your organization: your name <mark class="ph">[logo pending]</mark>, your language, your departments with results by team, and up to 5 questions of your own</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your results in a PDF report and a slide deck, with a 90 day plan and every finding reviewed by me</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A talking points script for your team presentation</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A 30 minute walkthrough of your results</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Uncommon Work and the Uncommon Kit</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clear Results Promise: you get your scores, the three drivers behind them, and a plan you can act on. If any part of your report is not clear, I will walk you through it again until it is, at no charge. Your report and plan arrive within 10 days of your team finishing. <mark class="ph">[wording pending]</mark></span></li></ul>
+        </article>
+        <article class="tier" aria-label="Baseline 90">
+          <p class="caps">Tier 2 · On Your Call</p>
+          <h3>Baseline 90</h3>
           <p class="amt"><s>$4,500</s>$3,000</p>
-          <p><b>$2,550 for nonprofits and churches (15% off).</b> <mark class="ph">[Price anchor pending verified competitor research]</mark></p>
-          <p class="small">3 spots, first come. Sign by Dec 31, 2026, kickoff by Jan 9. Add a leadership Planning Day at $1,750 (list $2,500) when you book inside your assessment window. In return: honest feedback, a testimonial only if the 90 days earn one, and permission to share your results anonymously.</p>
-          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 3 Spots</a>
-          <p class="small" style="margin:0">The button books a free 30 minute call.</p>
-          <figure class="pull sm">
-            <blockquote>“Our first 90 days together were the most focused and productive I’ve ever been. We landed an $80K client and hit every goal in 30 days.”</blockquote>
-            <cite>Ben J., Event Planning Firm Owner. Results vary; Ben’s result is his own.</cite>
-          </figure>
-        </aside>
+          <p class="small">Early adopter price. <b>$2,550 for nonprofits and churches (15% off).</b> Sign by Dec 31, kickoff by Jan 9.</p>
+          <a class="btn ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Talk It Through on Your Call</a>
+          <p class="inc">Everything in Tier 1, plus:</p>
+          <ul class="tl"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A live debrief, plus 3 one on one 60 minute strategy sessions</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A 45 day check in call, halfway through (30 minutes)</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A day 90 pulse and review call (30 minutes), so you can see what moved</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A month 6 full rerun and review (30 minutes)</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>90 days of email access to me between calls</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Guarantee: up to 5 more coaching hours at no charge if your chosen priorities do not move by the day 90 pulse</span></li></ul>
+        </article>
+        <article class="tier" aria-label="Baseline 90 Plus">
+          <p class="caps">Tier 3 · On Your Call</p>
+          <h3>Baseline 90 Plus</h3>
+          <p class="amt">$9,500</p>
+          <p class="small">Everything in Baseline 90, plus the work done with you and your leaders.</p>
+          <a class="btn ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Talk It Through on Your Call</a>
+          <p class="inc">Everything in Tier 2, plus:</p>
+          <ul class="tl"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>I present your results to your team</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Particulars conversations with the people who need them (up to 5 hours)</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A Planning Day with your leadership team</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>10 hours of 1:1 coaching with me over the first 90 days</span></li></ul>
+        </article>
       </div>
+      <p class="upg">Start with Tier 1 and upgrade on your call. Your $950 is credited toward Baseline 90 or Baseline 90 Plus. <mark class="ph">[credit window pending]</mark></p>
+      <div class="offer-foot">
+        <figure class="pull sm">
+          <blockquote>“Our first 90 days together were the most focused and productive I’ve ever been. We landed an $80K client and hit every goal in 30 days.”</blockquote>
+          <cite>Ben J., Event Planning Firm Owner. Results vary; Ben’s result is his own.</cite>
+        </figure>
+        <p class="guar"><b>Baseline 90 guarantee.</b> If your day 90 pulse shows no movement on at least one of your chosen priorities or Outcomes, measured with the same questions you answered in your Baseline, you receive up to 5 more coaching hours at no charge. Results vary. Results are reported only in combination; the law may require action if a response indicates harm to a person.</p>
+      </div>
+      <p class="small soft" style="margin-top:16px">Price comparison: <mark class="ph">[price anchor pending verified competitor research]</mark></p>
     </div>
   </section>
 
@@ -543,7 +574,7 @@ html{scroll-behavior:smooth;}
       </div>
 
       <!-- Option A: a scannable table, Baseline column highlighted, rows written as outcomes -->
-      <div class="tbl-a" role="table" aria-label="A typical survey compared with the Baseline">
+      <div class="tbl-a" role="table" aria-label="Typical alternatives compared with the Baseline">
         <div class="ta hd" role="row"><div class="lab" role="columnheader"></div><div class="them" role="columnheader">Typical Alternatives</div><div class="us" role="columnheader">The Baseline</div></div>
         <div class="ta" role="row">
           <div class="lab" role="rowheader">Honest Answers You Can Follow Up On<small>A confidential process</small></div>
@@ -557,18 +588,23 @@ html{scroll-behavior:smooth;}
         </div>
         <div class="ta" role="row">
           <div class="lab" role="rowheader">A Plan, and a Person to Walk You Through It<small>A practical plan</small></div>
-          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Software reports, with human help often costs extra.</span></span></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Software reports, with human help often costing extra.</span></span></div>
           <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>I review every finding myself, then walk you through your results and a plan for the next 90 days.</span></span></div>
-        </div>
-        <div class="ta" role="row">
-          <div class="lab" role="rowheader">Follow Through on the Calendar<small>Proof it moved</small></div>
-          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Often a one time report, with reruns sold separately.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>A day 30 check in, a day 90 pulse, and a rerun at month 6, all included. You can’t move what you haven’t measured.</span></span></div>
         </div>
         <div class="ta" role="row">
           <div class="lab" role="rowheader">Your Language and Your Name on It<small>Built to fit</small></div>
           <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Generic corporate wording.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Your sector’s language, your name on it, your departments, and up to 5 questions of your own.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Your language, your name on it, your departments, and up to 5 questions of your own.</span></span></div>
+        </div>
+        <div class="ta" role="row">
+          <div class="lab" role="rowheader">Follow Through on the Calendar<small>Baseline 90 and Plus</small></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Often a one time report, with reruns sold separately.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Baseline 90 adds a day 45 check in, a day 90 pulse, and a rerun at month 6. You can’t move what you haven’t measured.</span></span></div>
+        </div>
+        <div class="ta" role="row">
+          <div class="lab" role="rowheader">Risk on Your Side<small>Promise and guarantee</small></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Guarantees vary, and many assessments end at the report.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Every Baseline has a Clear Results Promise. Baseline 90 adds a guarantee that your chosen priorities move.</span></span></div>
         </div>
       </div>
 
@@ -580,12 +616,14 @@ html{scroll-behavior:smooth;}
         <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Honest Answers You Can Follow Up On</strong>Confidential, not anonymous. Individual answers stay with me, so findings can be followed up with the right people.</div>
         <div class="t" role="cell"><span class="sr">No. </span>✗ Often a single score or a dashboard.</div>
         <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Know Where You Stand and Why</strong>10 markers show where you stand. 3 drivers show what is causing it.</div>
-        <div class="t" role="cell"><span class="sr">No. </span>✗ Software reports, with human help often costs extra.</div>
+        <div class="t" role="cell"><span class="sr">No. </span>✗ Software reports, with human help often costing extra.</div>
         <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ A Plan, and a Person to Walk You Through It</strong>I review every finding myself, then walk you through your results and a plan for the next 90 days.</div>
+        <div class="t" role="cell"><span class="sr">No. </span>✗ Generic corporate wording.</div>
+        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Your Language and Your Name on It</strong>Your language, your name on it, your departments, and up to 5 questions of your own.</div>
         <div class="t" role="cell"><span class="sr">No. </span>✗ Often a one time report, with reruns sold separately.</div>
-        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Follow Through on the Calendar</strong>A day 30 check in, a day 90 pulse, and a rerun at month 6, all included. You can’t move what you haven’t measured.</div>
-        <div class="t last" role="cell"><span class="sr">No. </span>✗ Generic corporate wording.</div>
-        <div class="u last" role="cell"><span class="sr">Yes. </span><strong>✓ Your Language and Your Name on It</strong>Your sector’s language, your name on it, your departments, and up to 5 questions of your own.</div>
+        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Follow Through on the Calendar</strong>Baseline 90 adds a day 45 check in, a day 90 pulse, and a rerun at month 6. You can’t move what you haven’t measured.</div>
+        <div class="t last" role="cell"><span class="sr">No. </span>✗ Guarantees vary, and many assessments end at the report.</div>
+        <div class="u last" role="cell"><span class="sr">Yes. </span><strong>✓ Risk on Your Side</strong>Every Baseline has a Clear Results Promise. Baseline 90 adds a guarantee that your chosen priorities move.</div>
       </div>
       <p class="fine" style="margin-top:14px">Comparison based on public information reviewed in November 2026.</p>
 
@@ -647,7 +685,7 @@ html{scroll-behavior:smooth;}
         <h2>Questions Before You Start.</h2>
       </div>
       <div class="faq">
-        <div><h3>What Does Early Adopter Mean?</h3><p>Three organizations get the Baseline 90 at the early adopter price. Three is how many I can serve well, so the spots are first come.</p></div>
+        <div><h3>Why Only 6 Spots?</h3><p>Six is how many I can serve well on a 7 to 10 day turnaround, so the spots are first come.</p></div>
         <div><h3>My Team Is Small. Does This Still Fit?</h3><p>Yes. It’s built for small teams where most decisions still find their way to the leader.</p></div>
         <div><h3>What’s the Snapshot?</h3><p>A free taste of the Baseline, a short version you take on your own before you bring your team in. You see your results on screen right away and get a copy by email.</p></div>
         <div><h3>What Happens After the Snapshot?</h3><p>Your results are yours whether or not we ever talk. If you want help reading them, you can book a time with me at the end.</p></div>
@@ -658,9 +696,9 @@ html{scroll-behavior:smooth;}
   <section class="sec dark close-band">
     <div class="wrap">
       <h2>Ready to Know Where Your Team Stands?</h2>
-      <p>3 spots, first come. Sign by Dec 31, 2026.</p>
+      <p>6 spots, first come. Closes Dec 31, 2026.</p>
       <div class="cta">
-        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 3 Spots</a>
+        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 6 Spots</a>
         <a class="link2" href="#start" style="color:var(--sand)">Or Try the Free Snapshot First</a>
       </div>
     </div>
