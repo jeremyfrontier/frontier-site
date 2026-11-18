@@ -48,6 +48,7 @@ h3{font-family:var(--sans);font-weight:700;font-size:var(--fs-h3);line-height:1.
 p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm);line-height:1.5;}
 .prose{max-width:62ch;}
 
+.strip{background:var(--ink);color:var(--sand);text-align:center;font-size:var(--fs-sm);font-weight:700;letter-spacing:.04em;padding:9px var(--pad);}
 .site-head{border-bottom:1px solid var(--rule);}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;}
 .site-head img{height:20px;width:auto;}
@@ -331,6 +332,7 @@ html{scroll-behavior:smooth;}
 </style>
 </head>
 <body>
+<div class="strip" role="note">Launch Offer: <span data-o="scarce">6 Spots</span>, Closes <span data-o="deadline">December 31</span></div>
 <header class="site-head">
   <div class="wrap">
     <a href="../" aria-label="Jeremy Rivers, home"><img src="../assets/img/wordmark-charcoal.png" alt="Frontier Group" width="640" height="100"></a>
@@ -344,15 +346,15 @@ html{scroll-behavior:smooth;}
     <div class="wrap hero-grid">
       <div>
         <img class="lockup" src="../assets/img/baseline-lockup-on-charcoal.svg" alt="Baseline Assessment" width="286" height="111">
-        <p class="tag">Launch Promotion · 6 Spots</p>
+        <p class="tag">Launch Offer · <span data-o="scarce">6 Spots</span> · Closes <span data-o="deadline">December 31</span></p>
         <h1>Know for Certain If Your Structure Is Ready to Carry Out Your Annual Plan.</h1>
         <p class="support">The Baseline Assessment is a checkup for your whole team: your results, a report and slide deck, and a 90 day plan for what to fix first.</p>
         <p class="sig">10 markers. 3 drivers. 1 plan.</p>
         <div class="cta">
-          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 6 Spots</a>
+          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
           <a class="link2" href="#start">Or Try the Free Snapshot First</a>
         </div>
-        <p class="under">The button books a free 30 minute call.</p>
+        <p class="under"><span data-o="scarce">6 Spots</span>, closes <span data-o="deadline">December 31</span>. The button books a free 30 minute call.</p>
       </div>
       <div class="board" role="group" aria-label="Sample scoreboard from a fictional organization">
         <p class="caps">Your Scoreboard (From a Sample Report)</p>
@@ -504,7 +506,7 @@ html{scroll-behavior:smooth;}
   <section class="sec dark" id="offer">
     <div class="wrap">
       <div class="head prose">
-        <p class="eyebrow">Launch Promotion · 6 Spots</p>
+        <p class="eyebrow">Launch Offer · <span data-o="scarce">6 Spots</span> · Closes <span data-o="deadline">December 31</span></p>
         <h2>Start the Year Knowing for Certain.</h2>
         <p class="soft">Start with the Baseline Assessment. If you want help moving what you find, add the 90 day engagement on your call.</p>
       </div>
@@ -513,9 +515,9 @@ html{scroll-behavior:smooth;}
           <p class="caps">Tier 1 · What This Page Sells</p>
           <h3>Baseline Assessment</h3>
           <p class="amt"><s>$2,500</s>$950</p>
-          <p class="small">Launch price. 6 spots, closes Dec 31, 2026.</p>
-          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 6 Spots</a>
-          <p class="small under2">The button books a free 30 minute call.</p>
+          <p class="small">Launch price. <span data-o="scarce">6 Spots</span>, closes <span data-o="deadline">December 31</span>.</p>
+          <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
+          <p class="small under2"><span data-o="scarce">6 Spots</span>, closes <span data-o="deadline">December 31</span>. The button books a free 30 minute call.</p>
           <p class="inc">What you get:</p>
           <ul class="tl"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your Baseline: your team and your leadership assessed in confidence on 10 health markers and the 3 drivers behind them</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Built for your organization: your name <mark class="ph">[logo pending]</mark>, your language, your departments with results by team, and up to 5 questions of your own</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your results in a PDF report and a slide deck, with a 90 day plan and every finding reviewed by me</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A talking points script for your team presentation</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A 30 minute walkthrough of your results</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Uncommon Work and the Uncommon Kit</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clear Results Promise: you get your scores, the three drivers behind them, and a plan you can act on. If any part of your report is not clear, I will walk you through it again until it is, at no charge. Your report and plan arrive within 10 days of your team finishing. <mark class="ph">[wording pending]</mark></span></li></ul>
         </article>
@@ -523,7 +525,7 @@ html{scroll-behavior:smooth;}
           <p class="caps">Tier 2 · On Your Call</p>
           <h3>Baseline 90</h3>
           <p class="amt"><s>$4,500</s>$3,000</p>
-          <p class="small">Early adopter price. <b>$2,550 for nonprofits and churches (15% off).</b> Sign by Dec 31, kickoff by Jan 9.</p>
+          <p class="small">Early adopter price. <b>$2,550 for nonprofits and churches (15% off).</b> Sign by December 31, kickoff by January 9.</p>
           <a class="btn ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Talk It Through on Your Call</a>
           <p class="inc">Everything in Tier 1, plus:</p>
           <ul class="tl"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A live debrief, plus 3 one on one 60 minute strategy sessions</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A 45 day check in call, halfway through (30 minutes)</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A day 90 pulse and review call (30 minutes), so you can see what moved</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A month 6 full rerun and review (30 minutes)</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>90 days of email access to me between calls</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Guarantee: up to 5 more coaching hours at no charge if your chosen priorities do not move by the day 90 pulse</span></li></ul>
@@ -660,7 +662,7 @@ html{scroll-behavior:smooth;}
         <h2>Questions Before You Start.</h2>
       </div>
       <div class="faq">
-        <div><h3>Why Only 6 Spots?</h3><p>Six is how many I can serve well on a 7 to 10 day turnaround, so the spots are first come.</p></div>
+        <div><h3>Why Only <span data-o="total">6</span> Spots?</h3><p>Six is how many I can serve well on a 7 to 10 day turnaround, so the spots are first come.</p></div>
         <div><h3>My Team Is Small. Does This Still Fit?</h3><p>Yes. It’s built for small teams where most decisions still find their way to the leader.</p></div>
         <div><h3>What’s the Snapshot?</h3><p>A free taste of the Baseline, a short version you take on your own before you bring your team in. You see your results on screen right away and get a copy by email.</p></div>
         <div><h3>What Happens After the Snapshot?</h3><p>Your results are yours whether or not we ever talk. If you want help reading them, you can book a time with me at the end.</p></div>
@@ -671,9 +673,9 @@ html{scroll-behavior:smooth;}
   <section class="sec dark close-band">
     <div class="wrap">
       <h2>Ready to Know Where Your Team Stands?</h2>
-      <p>6 spots, first come. Closes Dec 31, 2026.</p>
+      <p><span data-o="scarce">6 Spots</span>, first come. Closes <span data-o="deadline">December 31</span>.</p>
       <div class="cta">
-        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 6 Spots</a>
+        <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener" data-o="claim">Claim 1 of 6 Spots</a>
         <a class="link2" href="#start" style="color:var(--sand)">Or Try the Free Snapshot First</a>
       </div>
     </div>
@@ -925,6 +927,16 @@ function notify(r,ob,db,ff){
       .catch(function(err){console.warn('Lead notification failed',err);});
   }catch(err){console.warn('Lead notification failed',err);}
 }
+</script>
+<script>
+/* PAGE LEVEL OFFER VALUES: change here only. Example: left:4 shows "4 of 6 Spots Left". */
+var OFFER={total:6,left:6,deadline:'December 31'};
+(function(){
+  var scarce=OFFER.left===OFFER.total?OFFER.total+' Spots':OFFER.left+' of '+OFFER.total+' Spots Left';
+  var claim=OFFER.left===OFFER.total?'Claim 1 of '+OFFER.total+' Spots':'Claim 1 of '+OFFER.left+' Remaining Spots';
+  var map={scarce:scarce,claim:claim,deadline:OFFER.deadline,total:String(OFFER.total)};
+  document.querySelectorAll('[data-o]').forEach(function(e){var v=map[e.getAttribute('data-o')];if(v)e.textContent=v;});
+})();
 </script>
 </body>
 </html>
