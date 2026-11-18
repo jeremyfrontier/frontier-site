@@ -97,6 +97,8 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 .bd.head2 i{background:none;height:auto;overflow:visible;}
 .bd.head2 i::before,.bd.head2 i::after{content:none;}
 .bd.head2 em{font-style:normal;position:absolute;right:0;white-space:nowrap;}
+.fixfirst{margin:18px 0 0;border-left:4px solid var(--coral);background:var(--sand);border-radius:0 10px 10px 0;padding:12px 16px;font-size:var(--fs-sm);line-height:1.5;}
+.fixfirst b{display:block;font-size:var(--fs-caps);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px;}
 .board .note{font-size:var(--fs-sm);color:var(--ink-soft);margin:14px 0 0;}
 @media(max-width:640px){.bd{grid-template-columns:110px 1fr 34px;}}
 
@@ -172,6 +174,7 @@ details.mk summary{cursor:pointer;font-weight:700;font-size:var(--fs-sm);color:v
 .price .amt{font-family:var(--serif);font-weight:800;font-size:clamp(44px,4.4vw,58px);line-height:1;letter-spacing:-0.02em;margin:0 0 12px;}
 .price .amt s{font-size:.45em;font-weight:600;color:var(--ink-soft);margin-right:10px;}
 .price p{margin:0 0 .8em;}
+.ph{background:#FFF4C2;color:var(--ink);padding:1px 6px;border-radius:4px;font-weight:500;}
 .price .small{color:var(--ink-soft);}
 .price .btn{display:block;margin:18px 0 6px;}
 .price .pull{margin-top:22px;padding-top:18px;border-left:0;padding-left:0;border-top:1px solid var(--rule);}
@@ -222,6 +225,17 @@ body[data-tbl="a"] .tbl-b,body[data-tbl="b"] .tbl-a{display:none;}
 .trust2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:clamp(28px,4vw,44px);align-items:start;}
 .trust2 p{margin:0;}
 @media(max-width:760px){.trust2{grid-template-columns:1fr;}}
+
+/* Built for Your Organization */
+.built{margin-top:clamp(56px,7vw,96px);}
+.bgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.4vw,28px);}
+.bc{background:var(--surface);border:1px solid var(--rule);border-top:5px solid var(--coral);border-radius:14px;padding:clamp(20px,3vw,30px);}
+.bc h3{font-size:clamp(20px,2vw,24px);margin-bottom:8px;}
+.bc p{margin:0;color:var(--ink-soft);}
+.bproof{margin:clamp(20px,3vw,32px) 0 0;border:1px solid var(--rule-strong);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:0 14px 40px rgba(44,44,44,.1);}
+.bproof img{width:100%;}
+.bproof figcaption{font-size:var(--fs-sm);color:var(--ink-soft);padding:10px 14px;border-top:1px solid var(--rule);}
+@media(max-width:760px){.bgrid{grid-template-columns:1fr;}}
 
 /* Who */
 .who{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start;}
@@ -329,6 +343,7 @@ html{scroll-behavior:smooth;}
         <div class="bd"><span>Accountability</span><i style="--w:52%;--c:var(--sun)"></i><b>2.6</b></div>
         <div class="bd"><span>Environment</span><i style="--w:74%;--c:var(--lichen)"></i><b>3.7</b></div>
         <div class="bd"><span>Leader dependency</span><i style="--w:42%;--c:var(--coral)"></i><b>2.1</b></div>
+        <div class="fixfirst"><b>Fix first</b><span>Decisions still run through the leader. Start with a weekly team huddle.</span></div>
         <p class="note">Fictional organization. Yours is scored on 10 markers.</p>
       </div>
     </div>
@@ -341,6 +356,7 @@ html{scroll-behavior:smooth;}
         <p class="eyebrow">Why It Matters</p>
         <h2>A Good Plan Loses to a Poor Structure Every Time.</h2>
         <p>Most leaders are sure their team knows the plan. You can’t feel it from the inside, any more than you can feel your own blood pressure. It takes a measurement of the structure your plan has to run in: how your team decides, meets, and follows through.</p>
+        <p>If you are finishing your annual plan now, this is the moment to check the structure it has to run in.</p>
       </div>
       <div class="stats">
         <div class="stat-card">
@@ -467,7 +483,7 @@ html{scroll-behavior:smooth;}
     </div>
   </section>
 
-  <!-- 5. THE OFFER -->
+  <!-- 5. THE OFFER. SWAPPABLE BLOCK: Jeremy is reworking the offer (launch Baseline plus tiers). Replace everything from here to END OFFER BLOCK; keep id="offer". -->
   <section class="sec dark" id="offer">
     <div class="wrap">
       <div class="head prose">
@@ -485,7 +501,7 @@ html{scroll-behavior:smooth;}
             <div class="sr2" role="row"><span role="cell">Day 90 pulse and review call</span><b role="cell">$1,000</b></div>
             <div class="sr2" role="row"><span role="cell">Month 6 full rerun</span><b role="cell">$2,500</b></div>
             <div class="sr2" role="row"><span role="cell">90 days of email access to me between calls</span><b role="cell">$750</b></div>
-            <div class="sr2" role="row"><span role="cell">Built for your organization: your name and logo, your sector’s language, up to 5 questions of your own</span><b role="cell">$600</b></div>
+            <div class="sr2" role="row"><span role="cell">Built for your organization: your name, your sector’s language, your departments, up to 5 questions of your own</span><b role="cell">$600</b></div>
             <div class="sr2" role="row"><span role="cell">Guarantee: up to 5 coaching hours</span><b role="cell">$1,500</b></div>
             <div class="sr2" role="row"><span role="cell">Uncommon Work and the Uncommon Kit</span><b role="cell">$190</b></div>
             <div class="sr2 total" role="row"><span role="cell">Total value</span><b role="cell">$10,790</b></div>
@@ -495,7 +511,7 @@ html{scroll-behavior:smooth;}
         <aside class="price" aria-label="Early adopter price">
           <p class="caps">Early Adopter Price</p>
           <p class="amt"><s>$4,500</s>$3,000</p>
-          <p><b>$2,550 for nonprofits and churches (15% off).</b> Custom consultant assessments typically run $8,000 to $20,000.</p>
+          <p><b>$2,550 for nonprofits and churches (15% off).</b> <mark class="ph">[Price anchor pending verified competitor research]</mark></p>
           <p class="small">3 spots, first come. Sign by Dec 31, 2026, kickoff by Jan 9. Add a leadership Planning Day at $1,750 (list $2,500) when you book inside your assessment window. In return: honest feedback, a testimonial only if the 90 days earn one, and permission to share your results anonymously.</p>
           <a class="btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ26gFl0Rnr1QWQ-C7Zim-UTG6jx4H92-PFbE9ysJ-nLGD2Q_L1dV50hheoVR0b9WtuRXjUL_JVy" target="_blank" rel="noopener">Claim 1 of 3 Spots</a>
           <p class="small" style="margin:0">The button books a free 30 minute call.</p>
@@ -508,13 +524,15 @@ html{scroll-behavior:smooth;}
     </div>
   </section>
 
+  <!-- END OFFER BLOCK -->
+
   <!-- 6. TRUST -->
   <section class="sec">
     <div class="wrap">
       <div class="head prose">
         <p class="eyebrow">Why It’s Different</p>
         <h2>What Makes the Baseline Different.</h2>
-        <p>Four things a typical survey does not do.</p>
+        <p>How the Baseline compares with typical alternatives.</p>
       </div>
 
       <!-- DRAFT ONLY: pick one table, then this bar and the other table are deleted -->
@@ -526,42 +544,50 @@ html{scroll-behavior:smooth;}
 
       <!-- Option A: a scannable table, Baseline column highlighted, rows written as outcomes -->
       <div class="tbl-a" role="table" aria-label="A typical survey compared with the Baseline">
-        <div class="ta hd" role="row"><div class="lab" role="columnheader"></div><div class="them" role="columnheader">A Typical Survey</div><div class="us" role="columnheader">The Baseline</div></div>
+        <div class="ta hd" role="row"><div class="lab" role="columnheader"></div><div class="them" role="columnheader">Typical Alternatives</div><div class="us" role="columnheader">The Baseline</div></div>
         <div class="ta" role="row">
-          <div class="lab" role="rowheader">Honest Answers From Your Team<small>A confidential process</small></div>
-          <div class="them" role="cell"><span class="tag-m">A Typical Survey</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Anonymous, so effort and candor stay low and critical answers have no one to address them.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Confidential, not anonymous. Individual answers stay with me, and anyone struggling can be reached one on one.</span></span></div>
+          <div class="lab" role="rowheader">Honest Answers You Can Follow Up On<small>A confidential process</small></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Anonymous surveys, where critical answers have no one to address them.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Confidential, not anonymous. Individual answers stay with me, so findings can be followed up with the right people.</span></span></div>
         </div>
         <div class="ta" role="row">
           <div class="lab" role="rowheader">Know Where You Stand and Why<small>Markers plus the drivers</small></div>
-          <div class="them" role="cell"><span class="tag-m">A Typical Survey</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>A score, with no explanation of what is behind it.</span></span></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Often a single score or a dashboard.</span></span></div>
           <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>10 markers show where you stand. 3 drivers show what is causing it.</span></span></div>
         </div>
         <div class="ta" role="row">
-          <div class="lab" role="rowheader">Know What to Do Next<small>A practical plan</small></div>
-          <div class="them" role="cell"><span class="tag-m">A Typical Survey</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>A pile of raw comments to sort through, and the weight of reading them.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Measured scores and themes, and the two or three most strategic moves for your next 90 days.</span></span></div>
+          <div class="lab" role="rowheader">A Plan, and a Person to Walk You Through It<small>A practical plan</small></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Software reports, with human help often costs extra.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>I review every finding myself, then walk you through your results and a plan for the next 90 days.</span></span></div>
         </div>
         <div class="ta" role="row">
-          <div class="lab" role="rowheader">Proof It Moved<small>Follow through</small></div>
-          <div class="them" role="cell"><span class="tag-m">A Typical Survey</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>One and done. The report is the end.</span></span></div>
-          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>A 90 day engagement: a day 30 check in, a day 90 pulse, and a rerun at month 6. You can’t move what you haven’t measured, so this is where it starts.</span></span></div>
+          <div class="lab" role="rowheader">Follow Through on the Calendar<small>Proof it moved</small></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Often a one time report, with reruns sold separately.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>A day 30 check in, a day 90 pulse, and a rerun at month 6, all included. You can’t move what you haven’t measured.</span></span></div>
+        </div>
+        <div class="ta" role="row">
+          <div class="lab" role="rowheader">Your Language and Your Name on It<small>Built to fit</small></div>
+          <div class="them" role="cell"><span class="tag-m">Typical Alternatives</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E6DCD7"/><path d="M8 8l8 8M16 8l-8 8" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round"/></svg><span><span class="sr">No. </span>Generic corporate wording.</span></span></div>
+          <div class="us" role="cell"><span class="tag-m">The Baseline</span><span class="mk2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C4D8A3"/><path d="M7 12.5l3.2 3.2L17 8.8" fill="none" stroke="#2C2C2C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="sr">Yes. </span>Your sector’s language, your name on it, your departments, and up to 5 questions of your own.</span></span></div>
         </div>
       </div>
 
       <!-- Option B: two pillars, one muted, one raised -->
-      <div class="tbl-b" role="table" aria-label="A typical survey compared with the Baseline">
-        <div class="t h" role="columnheader">A Typical Survey</div>
+      <div class="tbl-b" role="table" aria-label="Typical alternatives compared with the Baseline">
+        <div class="t h" role="columnheader">Typical Alternatives</div>
         <div class="u h" role="columnheader">The Baseline</div>
-        <div class="t" role="cell"><span class="sr">No. </span>✗ Anonymous. Critical answers have no one to address them.</div>
-        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Honest answers, confidentially</strong>Individual answers stay with me, and anyone struggling can be reached one on one.</div>
-        <div class="t" role="cell"><span class="sr">No. </span>✗ A score, with no explanation.</div>
-        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Where you stand and why</strong>10 markers show where you stand. 3 drivers show what is causing it.</div>
-        <div class="t" role="cell"><span class="sr">No. </span>✗ A pile of raw comments.</div>
-        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ A practical plan</strong>The two or three most strategic moves for your next 90 days.</div>
-        <div class="t last" role="cell"><span class="sr">No. </span>✗ One and done.</div>
-        <div class="u last" role="cell"><span class="sr">Yes. </span><strong>✓ Follow through that proves it moved</strong>A day 30 check in, a day 90 pulse, and a rerun at month 6. You can’t move what you haven’t measured.</div>
+        <div class="t" role="cell"><span class="sr">No. </span>✗ Anonymous surveys, where critical answers have no one to address them.</div>
+        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Honest Answers You Can Follow Up On</strong>Confidential, not anonymous. Individual answers stay with me, so findings can be followed up with the right people.</div>
+        <div class="t" role="cell"><span class="sr">No. </span>✗ Often a single score or a dashboard.</div>
+        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Know Where You Stand and Why</strong>10 markers show where you stand. 3 drivers show what is causing it.</div>
+        <div class="t" role="cell"><span class="sr">No. </span>✗ Software reports, with human help often costs extra.</div>
+        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ A Plan, and a Person to Walk You Through It</strong>I review every finding myself, then walk you through your results and a plan for the next 90 days.</div>
+        <div class="t" role="cell"><span class="sr">No. </span>✗ Often a one time report, with reruns sold separately.</div>
+        <div class="u" role="cell"><span class="sr">Yes. </span><strong>✓ Follow Through on the Calendar</strong>A day 30 check in, a day 90 pulse, and a rerun at month 6, all included. You can’t move what you haven’t measured.</div>
+        <div class="t last" role="cell"><span class="sr">No. </span>✗ Generic corporate wording.</div>
+        <div class="u last" role="cell"><span class="sr">Yes. </span><strong>✓ Your Language and Your Name on It</strong>Your sector’s language, your name on it, your departments, and up to 5 questions of your own.</div>
       </div>
+      <p class="fine" style="margin-top:14px">Comparison based on public information reviewed in November 2026.</p>
 
       <div class="trust2">
         <figure class="pull">
@@ -569,6 +595,24 @@ html{scroll-behavior:smooth;}
           <cite>Tiffany W., Nonprofit Leader</cite>
         </figure>
         <p class="fine" style="margin:0">Two things every respondent is told up front. If an answer shows harm to a person, abuse, or illegal activity, the law may require action. And on a very small team, combined scores can sometimes hint at how someone answered.</p>
+      </div>
+
+      <div class="built">
+        <div class="head prose">
+          <p class="eyebrow">Made to Fit</p>
+          <h2>Built for Your Organization.</h2>
+          <p>Your Baseline, not off the shelf.</p>
+        </div>
+        <div class="bgrid">
+          <div class="bc"><h3>Your Words</h3><p>Your sector’s language throughout, so a church hears ministry and a nonprofit hears mission.</p></div>
+          <div class="bc"><h3>Your Name on It</h3><p>Your organization’s name on what your team fills out and on the report you get back.</p></div>
+          <div class="bc"><h3>Up to 5 Questions of Your Own</h3><p>Added at the end and reported separately as Your Questions. The 86 core questions stay fixed, so day 90 and month 6 still compare. I coach you to keep yours tight.</p></div>
+          <div class="bc"><h3>Your Departments, With Results by Team</h3><p>List your departments. Each person says which one they are on, and your results come back by team. A group of fewer than 3 people is folded into the team total, so no one is exposed.</p></div>
+        </div>
+        <figure class="bproof">
+          <img src="../assets/img/sample-report-groups.png" width="1020" height="330" alt="The By group table from the sample report, showing how Crews, Office and Leadership each scored seven disciplines.">
+          <figcaption>From the sample report: results by group. Fictional organization.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
