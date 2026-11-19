@@ -104,6 +104,12 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 @media(max-width:920px){.hero-grid{grid-template-columns:1fr;}}
 
 /* Scoreboard, in the lab results look: shaded reference range on every bar */
+.board-wrap{display:flex;flex-direction:column;gap:var(--sp-3);}
+.btn.white{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#fff;color:var(--ink);padding:18px 30px;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,.28);}
+.btn.white:hover{background:var(--sand);}
+.btn.white svg{transition:transform .24s ease-out;}
+.btn.white:hover svg{transform:translateX(5px);}
+@media(prefers-reduced-motion:reduce){.btn.white svg{transition:none;}.btn.white:hover svg{transform:none;}}
 .board{background:var(--surface);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r);padding:var(--card-pad);box-shadow:0 18px 48px rgba(0,0,0,.28);}
 .board .caps{color:var(--ink-soft);margin:0 0 10px;}
 .board .big{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 20px;}
@@ -373,6 +379,7 @@ html{scroll-behavior:smooth;}
         </div>
         <p class="under"><span data-o="scarce">6 Spots</span>, closes <span data-o="deadline">December 31</span>. The button books a free 30 minute call.</p>
       </div>
+      <div class="board-wrap">
       <div class="board" role="group" aria-label="Sample scoreboard from a fictional organization">
         <p class="caps">Your Scoreboard (From a Sample Report)</p>
         <p class="big"><b>2.6</b><span>Overall health · at risk</span></p>
@@ -383,6 +390,8 @@ html{scroll-behavior:smooth;}
         <div class="bd"><span>Leader dependency</span><i style="--w:42%;--c:var(--coral)"></i><b>2.1</b></div>
         <div class="fixfirst"><b>Next 90 Days</b><span class="goal">Goal: Move Accountability from 2.6 to 3.0.</span><ul class="nextsteps"><li>Next step: a consistent weekly team meeting that gets changes to the crews.</li></ul></div>
         <p class="note">Fictional organization. Yours is scored on 10 markers.</p>
+      </div>
+      <a class="btn white" href="../assets/artifacts/baseline-sample-report.html" target="_blank" rel="noopener">See the Full Example Report <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </section>
@@ -562,7 +571,7 @@ html{scroll-behavior:smooth;}
         <div class="offer-foot">
           <figure class="pull sm">
             <blockquote>“Our first 90 days together were the most focused and productive I’ve ever been. We landed an $80K client and hit every goal in 30 days.”</blockquote>
-            <cite>Ben J., Event Planning Firm Owner. Results vary; Ben’s result is his own.</cite>
+            <cite>Ben J., Event Planning Firm Owner.</cite>
           </figure>
         </div>
       </div>
@@ -649,7 +658,6 @@ html{scroll-behavior:smooth;}
         <figure class="qc"><p class="obj">Will My Team Be Honest?</p><blockquote>“By prioritizing relationships, I saw a renewed sense of purpose and fulfillment in my leadership.”</blockquote><cite>Tiffany W., Nonprofit Leader</cite></figure>
         <figure class="qc"><p class="obj">Will It Change Anything?</p><blockquote>“August ended up being our best and most profitable month in three years, and that’s usually our slowest.”</blockquote><cite>Bret Stout, President/CEO, Eagle’s Wings Athletics</cite></figure>
       </div>
-      <p class="fine">Results vary; each result is the person’s own.</p>
     </div>
   </section>
 
