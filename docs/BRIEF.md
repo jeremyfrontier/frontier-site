@@ -48,7 +48,7 @@ That system is what I install now. First through Frontier Group, the practice I 
 
 **Baseline Assessment - the diagnostic** *(rewritten by Jeremy's direction 2026-10-26, D18; renamed from Frontier Baseline 2026-11-04, D25)*
 > Title: the Baseline Assessment lockup (image). Line under it: "10 markers. 3 drivers. 1 plan." Details row: "86 questions · 3 competencies · 7 disciplines · 10 health markers · about 25 minutes" (D26).
-Leaders guess at what is broken on their team. Baseline measures it across the 3 competencies every healthy operation runs on, clarity, accountability, and culture. You see what is working, what is not, and exactly what to fix first.
+Leaders guess at what is broken on their team. Baseline measures it across the 3 competencies every healthy operation runs on, clarity, accountability, and environment. You see what is working, what is not, and exactly what to fix first.
 > Simplified 2026-11-04: no graphic. The details row, then one link "Learn more" to /baseline/ (the sample report now lives behind the landing page).
 
 **The Huddle Operating System - the operating system** *(rewritten by Jeremy's direction 2026-10-26, D17)*
@@ -103,3 +103,4 @@ That system is what I install now. Strategy carried all the way down to the week
 ### Hero supporting paragraph (Jeremy, 2026-10-26, D20; replaces "The system is simple...")
 A system is required to get the team on the same page, taking ownership, moving in one direction, without you needing to be involved for it to get done. Not more effort or the next best trend. A system.
 
+> **Homepage changes, Jeremy 2026-11-18 (D38):** the hero gets a subheadline, the Baseline page's headline: "Your Plan Won’t Work If Your Structure Isn’t Ready." (Title Case, above the support paragraph). In What I've Built, the Baseline Assessment card comes first and the Huddle Operating System card second. The Baseline card says environment, not culture (D34 miss).

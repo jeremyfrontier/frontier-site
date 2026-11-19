@@ -159,3 +159,6 @@ Jeremy: the page sells one thing, Tier 1, the Baseline Assessment at a $950 laun
 ## D37. /work redirected to /baseline (2026-11-18)
 Jeremy: redirect the old offer page. /work still showed the retired Founding Pilot (3 of 3 spots, $2,500 Planning Day, $4,500 package) and contradicted the $950 Baseline Assessment launch. The page is now a small redirect (meta refresh and script, canonical to /baseline, noindex) because GitHub Pages cannot send a server side 301. The old page is archived in the OS `_TO DELETE` folder and in git history.
 
+## D38. Homepage: Baseline card first, hero subheadline from the Baseline page (2026-11-18)
+Jeremy: put the Baseline Assessment above the Huddle Operating System again in What I've Built, and use the Baseline page's hero headline as the homepage subheadline. The hero now has the subheadline "Your Plan Won’t Work If Your Structure Isn’t Ready." (Title Case) above the support paragraph; the headline and support copy are unchanged. The Baseline card said culture and now says environment (a D34 miss). Note for Jeremy: this nudges the homepage toward the Baseline offer, against the earlier employer safe, hiring manager first rule (2026-11-04); his call.
+

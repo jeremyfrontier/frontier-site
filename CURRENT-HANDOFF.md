@@ -31,3 +31,5 @@
 **2026-11-18.** /baseline redesigned around the $950 Baseline Assessment launch (D36): one offer, "Claim 1 of 6 Spots", closes December 31; sample report at day 45. Open: /work still shows the old Founding Pilot; update the spot count in the page's OFFER config as spots are claimed.
 
 **2026-11-18 (later).** /work now redirects to /baseline (D37). Open: none on /work.
+
+**2026-11-18 (evening).** Homepage: Baseline card above Huddle, hero subheadline "Your Plan Won’t Work If Your Structure Isn’t Ready." (D38); the card says environment. Open: Jeremy's call on the employer safe homepage rule.
