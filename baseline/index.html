@@ -114,6 +114,7 @@ p{margin:0 0 1.1em;} .soft{color:var(--ink-soft);} .small{font-size:var(--fs-sm)
 /* Stakes */
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin:0 0 clamp(40px,5vw,64px);background:var(--ink);border-radius:24px;padding:clamp(28px,4vw,52px) clamp(18px,3vw,40px);}
 .stat-card{background:var(--surface);color:var(--ink);border:4px solid var(--coral);border-radius:20px;padding:clamp(22px,3vw,34px);text-align:center;box-shadow:0 0 0 6px rgba(236,91,89,.22),0 18px 44px rgba(0,0,0,.4);}
+.stat-card .only{display:block;font-size:var(--fs-caps);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 2px;}
 .stat-card b{color:var(--ink);display:block;font-family:var(--serif);font-weight:800;font-size:clamp(48px,6vw,72px);line-height:1;letter-spacing:-0.02em;margin-bottom:12px;}
 .stat-card p{margin:0 auto 10px;font-size:var(--fs-body);line-height:1.4;font-weight:500;max-width:34ch;}
 .stat-card .source{font-size:var(--fs-sm);color:var(--ink-soft);font-weight:400;margin:0;}
@@ -404,19 +405,20 @@ html{scroll-behavior:smooth;}
       </div>
       <div class="stats">
         <div class="stat-card">
+          <b>1 in 3</b>
+          <p>managers could name their organization’s top three priorities.</p>
+          <p class="source">A study of 11,000 managers. Sull and Homkes, Harvard Business Review, 2015.</p>
+        </div>
+        <div class="stat-card">
+          <span class="only">Only</span>
+          <b>8%</b>
+          <p>of employees strongly agree their organization takes action on employee surveys.</p>
+          <p class="source">Gallup.</p>
+        </div>
+        <div class="stat-card">
           <b>46%</b>
           <p>of nonprofit CEOs say their own burnout is very much a concern. A year earlier it was under 30%.</p>
           <p class="source">Center for Effective Philanthropy, State of Nonprofits 2026.</p>
-        </div>
-        <div class="stat-card">
-          <b>29%</b>
-          <p>of nonprofits are effectively measuring the outcomes of the dollars they invest.</p>
-          <p class="source">Survey of 353 nonprofit senior decision makers. Oracle NetSuite and FINN Partners, 2019.</p>
-        </div>
-        <div class="stat-card">
-          <b>65%</b>
-          <p>of nonprofit staff with a clear career path are not considering leaving. Without one, it is 27%.</p>
-          <p class="source">Wakefield Research for Momentive Software, 2026 workforce report.</p>
         </div>
       </div>
       <div class="shift">
