@@ -29,3 +29,5 @@
 **2026-11-17.** Baseline third competency renamed Culture to Environment on `/baseline/` and the sample report (D34); Snapshot payload key stays `culture`. Open: Jeremy pastes the updated Snapshot Leads script (Drive) so results emails read Environment.
 
 **2026-11-18.** /baseline redesigned around the $950 Baseline Assessment launch (D36): one offer, "Claim 1 of 6 Spots", closes December 31; sample report at day 45. Open: /work still shows the old Founding Pilot; update the spot count in the page's OFFER config as spots are claimed.
+
+**2026-11-18 (later).** /work now redirects to /baseline (D37). Open: none on /work.
