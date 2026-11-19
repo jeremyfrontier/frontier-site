@@ -33,3 +33,5 @@
 **2026-11-18 (later).** /work now redirects to /baseline (D37). Open: none on /work.
 
 **2026-11-18 (evening).** Homepage: Baseline card above Huddle, hero subheadline "Your Plan Won’t Work If Your Structure Isn’t Ready." (D38); the card says environment. Open: Jeremy's call on the employer safe homepage rule.
+
+**2026-11-18 (night).** /baseline: the sample report link is now a charcoal button with an arrow ("See the Full Example Report"), one line on a phone.
